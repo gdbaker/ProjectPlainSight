@@ -653,3 +653,959 @@ LogInit: Object subsystem initialized
 [2018.01.18-20.43.05:019][679]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel' has LevelScriptBlueprint '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel.Minimal_Default' with GeneratedClass '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default_C' with ClassGeneratedBy '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel.Minimal_Default'
 [2018.01.18-20.43.09:796][247]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel' has LevelScriptBlueprint '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel.Minimal_Default' with GeneratedClass '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default_C' with ClassGeneratedBy '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel.Minimal_Default'
 [2018.01.18-20.43.09:830][247]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel' has LevelScriptBlueprint '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel.Minimal_Default' with GeneratedClass '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default_C' with ClassGeneratedBy '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel.Minimal_Default'
+[2018.01.18-21.06.22:458][300]SourceControl: Source control is disabled
+[2018.01.18-21.11.45:335][647]LogTexture: Display: Building textures: Chr_FPS_Fabric_N_01 (BC5, 512X512)
+[2018.01.18-21.11.45:335][647]LogTexture: Display: Building textures: T_Vista_Grass_N (BC5, 1024X1024)
+[2018.01.18-21.11.45:335][647]LogTexture: Display: Building textures: Chr_FPS_D (AutoDXT, 2048X2048)
+[2018.01.18-21.11.45:335][647]LogTexture: Display: Building textures: Chr_FPS_M_03tga (AutoDXT, 2048X2048)
+[2018.01.18-21.11.45:335][647]LogTexture: Display: Building textures: Chr_FPS_N (BC5, 2048X2048)
+[2018.01.18-21.11.45:335][647]LogTexture: Display: Building textures: Chr_FPS_Metal_01 (BC5, 2048X2048)
+[2018.01.18-21.11.45:335][647]LogTexture: Display: Building textures: Chr_FPS_Metal_02 (AutoDXT, 2048X2048)
+[2018.01.18-21.11.45:335][647]LogTexture: Display: Building textures: T_Sctraches_01 (AutoDXT, 2048X2048)
+[2018.01.18-21.11.45:335][647]LogTexture: Display: Building textures: Chr_FPS_M (BGRA8, 2048X2048)
+[2018.01.18-21.11.45:335][647]LogTexture: Display: Building textures: Chr_FPS_02_M (AutoDXT, 2048X2048)
+[2018.01.18-21.11.48:119][958]LogEditorViewport: Clicking on Actor (LMB): PlayerStart (Player Start)
+[2018.01.18-21.11.48:947][ 54]Cmd: DELETE
+[2018.01.18-21.11.48:947][ 54]Cmd: ACTOR DELETE
+[2018.01.18-21.11.48:949][ 54]LogEditorActor: Deleted Actor: PlayerStart
+[2018.01.18-21.11.48:956][ 54]LogEditorActor: Deleted 1 Actors (0.008 secs)
+[2018.01.18-21.11.50:422][230]LogTemp: Repeating last play command: Selected Viewport
+[2018.01.18-21.11.50:439][230]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel' has LevelScriptBlueprint '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel.Minimal_Default' with GeneratedClass '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default_C' with ClassGeneratedBy '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel.Minimal_Default'
+[2018.01.18-21.11.50:439][230]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.01.18-21.11.50:440][230]PIE: New page: PIE session: Minimal_Default (Jan 18, 2018, 7:11:50 AM)
+[2018.01.18-21.11.50:440][230]LogPlayLevel: Creating play world package: /Game/StarterContent/Maps/UEDPIE_0_Minimal_Default
+[2018.01.18-21.11.50:446][230]LogPlayLevel: PIE: StaticDuplicateObject took: (0.006414s)
+[2018.01.18-21.11.50:446][230]LogAIModule: Creating AISystem for world Minimal_Default
+[2018.01.18-21.11.50:447][230]LogPlayLevel: PIE: World Init took: (0.000557s)
+[2018.01.18-21.11.50:447][230]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/StarterContent/Maps/Minimal_Default.Minimal_Default to /Game/StarterContent/Maps/UEDPIE_0_Minimal_Default.Minimal_Default (0.007164s)
+[2018.01.18-21.11.50:458][230]LogInit: XAudio2 using 'Speakers (2- Wireless Stereo Headset)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.01.18-21.11.50:464][230]LogInit: FAudioDevice initialized.
+[2018.01.18-21.11.50:492][230]LogLoad: Game class is 'GameModeBase'
+[2018.01.18-21.11.50:493][230]LogWorld: Bringing World /Game/StarterContent/Maps/UEDPIE_0_Minimal_Default.Minimal_Default up for play (max tick rate 0) at 2018.01.18-14.11.50
+[2018.01.18-21.11.50:493][230]LogWorld: Bringing up level for play took: 0.000669
+[2018.01.18-21.11.50:494][230]PIE: Play in editor start time for /Game/StarterContent/Maps/UEDPIE_0_Minimal_Default 0.602
+[2018.01.18-21.11.50:494][230]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel' has LevelScriptBlueprint '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel.Minimal_Default' with GeneratedClass '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default_C' with ClassGeneratedBy '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel.Minimal_Default'
+[2018.01.18-21.11.55:874][872]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel' has LevelScriptBlueprint '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel.Minimal_Default' with GeneratedClass '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default_C' with ClassGeneratedBy '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel.Minimal_Default'
+[2018.01.18-21.11.55:902][872]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel' has LevelScriptBlueprint '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel.Minimal_Default' with GeneratedClass '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default_C' with ClassGeneratedBy '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel.Minimal_Default'
+[2018.01.18-21.11.57:729][ 89]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (BP_Sky_Sphere)
+[2018.01.18-21.11.58:238][147]LogEditorViewport: Clicking on Actor (LMB): SkeletalMeshActor (HeroFPP_Skeleton)
+[2018.01.18-21.11.58:678][195]Cmd: DELETE
+[2018.01.18-21.11.58:678][195]Cmd: ACTOR DELETE
+[2018.01.18-21.11.58:679][195]LogEditorActor: Deleted Actor: SkeletalMeshActor
+[2018.01.18-21.11.58:686][195]LogEditorActor: Deleted 1 Actors (0.009 secs)
+[2018.01.18-21.11.59:292][268]LogEditorViewport: Clicking on Actor (LMB): SphereReflectionCapture (SphereReflectionCapture10)
+[2018.01.18-21.12.00:957][463]Cmd: DELETE
+[2018.01.18-21.12.00:957][463]Cmd: ACTOR DELETE
+[2018.01.18-21.12.00:958][463]LogEditorActor: Deleted Actor: SphereReflectionCapture
+[2018.01.18-21.12.00:965][463]LogEditorActor: Deleted 1 Actors (0.008 secs)
+[2018.01.18-21.12.05:191][969]LogEditorViewport: Clicking on Actor (LMB): SphereReflectionCapture (SphereReflectionCapture)
+[2018.01.18-21.12.06:184][ 85]Cmd: DELETE
+[2018.01.18-21.12.06:184][ 85]Cmd: ACTOR DELETE
+[2018.01.18-21.12.06:185][ 85]LogEditorActor: Deleted Actor: SphereReflectionCapture
+[2018.01.18-21.12.06:192][ 85]LogEditorActor: Deleted 1 Actors (0.008 secs)
+[2018.01.18-21.12.08:264][334]Cmd: TRANSACTION UNDO
+[2018.01.18-21.12.08:264][334]LogEditorTransaction: Undo Delete Actors
+[2018.01.18-21.12.08:281][334]LogSlate: Took 0.000150 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (159K)
+[2018.01.18-21.12.12:740][865]Cmd: DELETE
+[2018.01.18-21.12.12:740][865]Cmd: ACTOR DELETE
+[2018.01.18-21.12.12:741][865]LogEditorActor: Deleted Actor: SphereReflectionCapture
+[2018.01.18-21.12.12:748][865]LogEditorActor: Deleted 1 Actors (0.008 secs)
+[2018.01.18-21.12.14:985][133]LogEditorViewport: Clicking on Actor (LMB): DirectionalLight (Light Source)
+[2018.01.18-21.12.15:319][169]Cmd: DELETE
+[2018.01.18-21.12.15:319][169]Cmd: ACTOR DELETE
+[2018.01.18-21.12.15:320][169]LogEditorActor: Actor Light Source is referenced by BP_Sky_Sphere.
+[2018.01.18-21.12.17:884][169]LogEditorActor: Deleted Actor: DirectionalLight
+[2018.01.18-21.12.17:891][169]LogEditorActor: Deleted 1 Actors (2.571 secs)
+[2018.01.18-21.12.18:829][282]LogEditorViewport: Clicking on Actor (LMB): SkyLight (SkyLight)
+[2018.01.18-21.12.18:924][290]Cmd: DELETE
+[2018.01.18-21.12.18:924][290]Cmd: ACTOR DELETE
+[2018.01.18-21.12.18:925][290]LogEditorActor: Deleted Actor: SkyLight
+[2018.01.18-21.12.18:931][290]LogEditorActor: Deleted 1 Actors (0.007 secs)
+[2018.01.18-21.12.19:727][386]LogEditorViewport: Clicking on Actor (LMB): AmbientSound (Starter_Background_Cue)
+[2018.01.18-21.12.19:811][391]Cmd: DELETE
+[2018.01.18-21.12.19:811][391]Cmd: ACTOR DELETE
+[2018.01.18-21.12.19:812][391]LogEditorActor: Deleted Actor: AmbientSound
+[2018.01.18-21.12.19:819][391]LogEditorActor: Deleted 1 Actors (0.008 secs)
+[2018.01.18-21.12.20:732][501]LogEditorViewport: Clicking on Actor (LMB): AtmosphericFog (Atmospheric Fog)
+[2018.01.18-21.12.20:920][520]Cmd: DELETE
+[2018.01.18-21.12.20:920][520]Cmd: ACTOR DELETE
+[2018.01.18-21.12.20:921][520]LogEditorActor: Deleted Actor: AtmosphericFog
+[2018.01.18-21.12.20:928][520]LogEditorActor: Deleted 1 Actors (0.007 secs)
+[2018.01.18-21.12.21:408][578]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Floor)
+[2018.01.18-21.12.21:511][585]Cmd: DELETE
+[2018.01.18-21.12.21:511][585]Cmd: ACTOR DELETE
+[2018.01.18-21.12.21:512][585]LogEditorActor: Deleted Actor: StaticMeshActor
+[2018.01.18-21.12.21:519][585]LogEditorActor: Deleted 1 Actors (0.007 secs)
+[2018.01.18-21.12.21:928][634]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Floor)
+[2018.01.18-21.12.21:946][634]Cmd: DELETE
+[2018.01.18-21.12.21:946][634]Cmd: ACTOR DELETE
+[2018.01.18-21.12.21:947][634]LogEditorActor: Deleted Actor: StaticMeshActor
+[2018.01.18-21.12.21:954][634]LogEditorActor: Deleted 1 Actors (0.008 secs)
+[2018.01.18-21.12.22:355][682]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Table)
+[2018.01.18-21.12.22:397][683]Cmd: DELETE
+[2018.01.18-21.12.22:397][683]Cmd: ACTOR DELETE
+[2018.01.18-21.12.22:398][683]LogEditorActor: Deleted Actor: StaticMeshActor
+[2018.01.18-21.12.22:405][683]LogEditorActor: Deleted 1 Actors (0.008 secs)
+[2018.01.18-21.12.22:718][721]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (BP_Sky_Sphere)
+[2018.01.18-21.12.22:758][723]Cmd: DELETE
+[2018.01.18-21.12.22:758][723]Cmd: ACTOR DELETE
+[2018.01.18-21.12.22:759][723]LogEditorActor: Deleted Actor: BP_Sky_Sphere_C
+[2018.01.18-21.12.22:766][723]LogEditorActor: Deleted 1 Actors (0.007 secs)
+[2018.01.18-21.12.23:320][790]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Chair)
+[2018.01.18-21.12.23:369][792]Cmd: DELETE
+[2018.01.18-21.12.23:369][792]Cmd: ACTOR DELETE
+[2018.01.18-21.12.23:370][792]LogEditorActor: Deleted Actor: StaticMeshActor
+[2018.01.18-21.12.23:377][792]LogEditorActor: Deleted 1 Actors (0.008 secs)
+[2018.01.18-21.12.23:807][844]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Chair)
+[2018.01.18-21.12.23:825][844]Cmd: DELETE
+[2018.01.18-21.12.23:825][844]Cmd: ACTOR DELETE
+[2018.01.18-21.12.23:826][844]LogEditorActor: Deleted Actor: StaticMeshActor
+[2018.01.18-21.12.23:833][844]LogEditorActor: Deleted 1 Actors (0.008 secs)
+[2018.01.18-21.12.24:344][905]LogEditorViewport: Clicking Background
+[2018.01.18-21.12.26:653][182]LogEditorViewport: Clicking on Actor (LMB): PostProcessVolume (GlobalPostProcessVolume)
+[2018.01.18-21.12.26:880][202]Cmd: DELETE
+[2018.01.18-21.12.26:880][202]Cmd: ACTOR DELETE
+[2018.01.18-21.12.26:881][202]LogEditorActor: Deleted Actor: PostProcessVolume
+[2018.01.18-21.12.26:890][202]LogEditorActor: Deleted 1 Actors (0.010 secs)
+[2018.01.18-21.12.43:434][278]LightingResults: New page: Lighting Build
+[2018.01.18-21.12.43:434][278]MapCheck: New page: Map Check
+[2018.01.18-21.12.43:434][278]LightingResults: New page: Lighting Build
+[2018.01.18-21.12.43:444][278]LogAIModule: Creating AISystem for world Untitled
+[2018.01.18-21.12.43:480][278]LoadErrors: New page: New Map
+[2018.01.18-21.12.51:008][151]LogTexture: Display: Building textures: Texture2D_2 (G8, 128X128)
+[2018.01.18-21.13.37:803][687]LogMaterial: Missing cached shader map for material M_Bush, compiling. 
+[2018.01.18-21.13.56:351][874]LogMaterial: Missing cached shader map for material M_Brick_Clay_Old, compiling. 
+[2018.01.18-21.21.15:924][599]LogTexture: Display: Building textures: Texture2D_0 (BGRA8, 512X512)
+[2018.01.18-21.21.15:937][599]LogMaterial: Missing cached shader map for material M_Brick_Clay_Old, compiling. 
+[2018.01.18-21.21.23:727][508]LogBlueprintUserMessages: [Default__Landscape_Sculpt_Mode_C] You have a Landscape
+[2018.01.18-21.21.59:784][751]Cmd: TRANSACTION UNDO
+[2018.01.18-21.21.59:784][751]LogEditorTransaction: Undo Landscape Editing: Hydraulic Erosion
+[2018.01.18-21.21.59:789][751]LogTexture: Display: Building textures: Texture2D_0 (BGRA8, 512X512)
+[2018.01.18-21.22.00:119][786]Cmd: TRANSACTION UNDO
+[2018.01.18-21.22.00:119][786]LogEditorTransaction: Undo Landscape Editing: Hydraulic Erosion
+[2018.01.18-21.22.00:123][786]LogTexture: Display: Building textures: Texture2D_0 (BGRA8, 512X512)
+[2018.01.18-21.22.00:314][805]Cmd: TRANSACTION UNDO
+[2018.01.18-21.22.00:314][805]LogEditorTransaction: Undo Landscape Editing: Hydraulic Erosion
+[2018.01.18-21.22.00:321][805]LogTexture: Display: Building textures: Texture2D_0 (BGRA8, 512X512)
+[2018.01.18-21.22.00:460][819]Cmd: TRANSACTION UNDO
+[2018.01.18-21.22.00:460][819]LogEditorTransaction: Undo Landscape Editing: Sculpt
+[2018.01.18-21.22.00:466][819]LogTexture: Display: Building textures: Texture2D_0 (BGRA8, 512X512)
+[2018.01.18-21.22.01:762][971]Cmd: TRANSACTION UNDO
+[2018.01.18-21.22.01:762][971]LogEditorTransaction: Undo Landscape Editing: Sculpt
+[2018.01.18-21.22.01:769][971]LogTexture: Display: Building textures: Texture2D_0 (BGRA8, 512X512)
+[2018.01.18-21.22.01:933][988]Cmd: TRANSACTION UNDO
+[2018.01.18-21.22.01:933][988]LogEditorTransaction: Undo Landscape Editing: Sculpt
+[2018.01.18-21.22.02:105][  6]Cmd: TRANSACTION UNDO
+[2018.01.18-21.22.02:105][  6]LogEditorTransaction: Undo Creating New Landscape
+[2018.01.18-21.22.02:268][ 21]Cmd: TRANSACTION UNDO
+[2018.01.18-21.22.02:268][ 21]LogEditorTransaction: Undo Change Landscape Resolution Y
+[2018.01.18-21.22.02:440][ 40]Cmd: TRANSACTION UNDO
+[2018.01.18-21.22.02:440][ 40]LogEditorTransaction: Undo Change Landscape Resolution Y
+[2018.01.18-21.22.07:027][589]LogEditorViewport: Clicking Background
+[2018.01.18-21.22.12:469][236]LogTexture: Display: Building textures: Texture2D_1 (BGRA8, 512X512)
+[2018.01.18-21.23.10:524][789]LogTexture: Display: Building textures: Texture2D_1 (BGRA8, 512X512)
+[2018.01.18-21.23.10:671][789]LogSavePackage: Save=173.76ms
+[2018.01.18-21.23.10:672][789]LogSavePackage: Moving '../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Saved/Untitled_1_Auto16131C6F24D7358DBA7712B89055DA04B.tmp' to '../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Saved/Autosaves/Temp/Untitled_1_Auto1.umap'
+[2018.01.18-21.23.10:674][789]LogSavePackage: Display: Finished SavePackage ../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Saved/Autosaves/Temp/Untitled_1_Auto1.umap
+[2018.01.18-21.23.10:679][789]LogFileHelpers: Editor autosave (incl. sublevels) for '/Temp/Untitled_1' took 0.197
+[2018.01.18-21.23.10:679][789]LogFileHelpers: Editor autosave (incl. sublevels) for all levels took 0.197
+[2018.01.18-21.25.06:830][877]LogEditorViewport: Clicking on Actor (double click): Landscape (Landscape1)
+[2018.01.18-21.25.35:780][ 83]LogTexture: Display: Building textures: Texture2D_2 (BGRA8, 64X64)
+[2018.01.18-21.25.35:786][ 83]LogTexture: Display: Building textures: Texture2D_3 (BGRA8, 64X64)
+[2018.01.18-21.25.35:791][ 83]LogTexture: Display: Building textures: Texture2D_4 (BGRA8, 64X64)
+[2018.01.18-21.25.35:794][ 83]LogTexture: Display: Building textures: Texture2D_5 (BGRA8, 64X64)
+[2018.01.18-21.25.35:798][ 83]LogTexture: Display: Building textures: Texture2D_6 (BGRA8, 64X64)
+[2018.01.18-21.25.35:802][ 83]LogTexture: Display: Building textures: Texture2D_7 (BGRA8, 64X64)
+[2018.01.18-21.25.35:805][ 83]LogTexture: Display: Building textures: Texture2D_8 (BGRA8, 64X64)
+[2018.01.18-21.25.35:809][ 83]LogTexture: Display: Building textures: Texture2D_9 (BGRA8, 64X64)
+[2018.01.18-21.25.35:813][ 83]LogTexture: Display: Building textures: Texture2D_10 (BGRA8, 64X64)
+[2018.01.18-21.25.35:817][ 83]LogTexture: Display: Building textures: Texture2D_11 (BGRA8, 64X64)
+[2018.01.18-21.25.35:820][ 83]LogTexture: Display: Building textures: Texture2D_12 (BGRA8, 64X64)
+[2018.01.18-21.25.35:824][ 83]LogTexture: Display: Building textures: Texture2D_13 (BGRA8, 64X64)
+[2018.01.18-21.25.35:828][ 83]LogTexture: Display: Building textures: Texture2D_14 (BGRA8, 64X64)
+[2018.01.18-21.25.35:832][ 83]LogTexture: Display: Building textures: Texture2D_15 (BGRA8, 64X64)
+[2018.01.18-21.25.35:835][ 83]LogTexture: Display: Building textures: Texture2D_16 (BGRA8, 64X64)
+[2018.01.18-21.25.35:839][ 83]LogTexture: Display: Building textures: Texture2D_17 (BGRA8, 64X64)
+[2018.01.18-21.25.38:023][191]LogTexture: Display: Building textures: Texture2D_18 (BGRA8, 64X64)
+[2018.01.18-21.25.38:026][191]LogTexture: Display: Building textures: Texture2D_19 (BGRA8, 64X64)
+[2018.01.18-21.25.38:029][191]LogTexture: Display: Building textures: Texture2D_20 (BGRA8, 64X64)
+[2018.01.18-21.26.30:790][ 25]LogBlueprintUserMessages: [Default__Landscape_Painting_Mode_C] You have a Landscape
+[2018.01.18-21.26.46:141][866]LogEditorViewport: Clicking on Actor (context menu): Landscape (Landscape1)
+[2018.01.18-21.26.48:040][ 92]Cmd: CAMERA ALIGN ACTIVEVIEWPORTONLY
+[2018.01.18-21.27.23:190][300]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyBody_Land01_Stereo...
+[2018.01.18-21.27.23:221][300]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyBody_Land02...
+[2018.01.18-21.27.23:238][300]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyBody_Land02_Stereo...
+[2018.01.18-21.27.23:263][300]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyBody_Land03...
+[2018.01.18-21.27.23:279][300]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyBody_Land03_Stereo...
+[2018.01.18-21.27.23:305][300]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyBody_Land04...
+[2018.01.18-21.27.23:320][300]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyBody_Land04_Stereo...
+[2018.01.18-21.27.23:348][300]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyBody_Land05...
+[2018.01.18-21.27.23:359][300]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyBody_Land05_Stereo...
+[2018.01.18-21.28.24:072][482]LogMaterial: Missing cached shader map for material Landscape_Material, compiling. 
+[2018.01.18-21.28.25:259][606]LogMaterial: Missing cached shader map for material Landscape_Material, compiling. 
+[2018.01.18-21.28.25:316][606]LogMaterial: Missing cached shader map for material Landscape_Material, compiling. 
+[2018.01.18-21.28.25:325][606]LogMaterial: Missing cached shader map for material Landscape_Material, compiling. 
+[2018.01.18-21.28.25:339][606]LogMaterial: Missing cached shader map for material Landscape_Material, compiling. 
+[2018.01.18-21.28.25:355][606]LogMaterial: Missing cached shader map for material Landscape_Material, compiling. 
+[2018.01.18-21.29.25:081][876]LogTexture: Display: Building textures: Texture2D_21 (BGRA8, 64X64)
+[2018.01.18-21.29.25:090][876]LogMaterial: Missing cached shader map for material Landscape_Material, compiling. 
+[2018.01.18-21.29.25:137][876]LogTexture: Display: Building textures: Texture2D_22 (BGRA8, 64X64)
+[2018.01.18-21.29.25:143][876]LogTexture: Display: Building textures: Texture2D_23 (BGRA8, 64X64)
+[2018.01.18-21.29.25:148][876]LogTexture: Display: Building textures: Texture2D_24 (BGRA8, 64X64)
+[2018.01.18-21.29.25:154][876]LogTexture: Display: Building textures: Texture2D_25 (BGRA8, 64X64)
+[2018.01.18-21.29.25:160][876]LogTexture: Display: Building textures: Texture2D_26 (BGRA8, 64X64)
+[2018.01.18-21.29.25:167][876]LogTexture: Display: Building textures: Texture2D_27 (BGRA8, 64X64)
+[2018.01.18-21.29.25:175][876]LogTexture: Display: Building textures: Texture2D_28 (BGRA8, 64X64)
+[2018.01.18-21.29.25:184][876]LogTexture: Display: Building textures: Texture2D_29 (BGRA8, 64X64)
+[2018.01.18-21.29.25:192][876]LogTexture: Display: Building textures: Texture2D_30 (BGRA8, 64X64)
+[2018.01.18-21.29.25:200][876]LogTexture: Display: Building textures: Texture2D_31 (BGRA8, 64X64)
+[2018.01.18-21.29.25:207][876]LogTexture: Display: Building textures: Texture2D_32 (BGRA8, 64X64)
+[2018.01.18-21.29.25:215][876]LogTexture: Display: Building textures: Texture2D_33 (BGRA8, 64X64)
+[2018.01.18-21.29.25:222][876]LogTexture: Display: Building textures: Texture2D_34 (BGRA8, 64X64)
+[2018.01.18-21.29.25:229][876]LogTexture: Display: Building textures: Texture2D_35 (BGRA8, 64X64)
+[2018.01.18-21.29.25:250][876]LogTexture: Display: Building textures: Texture2D_36 (BGRA8, 64X64)
+[2018.01.18-21.30.09:625][ 87]LogEditorViewport: Clicking Background
+[2018.01.18-21.31.04:938][100]LogTexture: Display: Building textures: Texture2D_37 (BGRA8, 64X64)
+[2018.01.18-21.31.04:945][100]LogMaterial: Missing cached shader map for material Landscape_Material, compiling. 
+[2018.01.18-21.31.04:990][100]LogTexture: Display: Building textures: Texture2D_38 (BGRA8, 64X64)
+[2018.01.18-21.31.04:995][100]LogTexture: Display: Building textures: Texture2D_39 (BGRA8, 64X64)
+[2018.01.18-21.31.05:175][111]LogTexture: Display: Building textures: Texture2D_40 (BGRA8, 64X64)
+[2018.01.18-21.31.05:370][119]LogTexture: Display: Building textures: Texture2D_41 (BGRA8, 64X64)
+[2018.01.18-21.31.05:377][119]LogTexture: Display: Building textures: Texture2D_42 (BGRA8, 64X64)
+[2018.01.18-21.31.05:453][121]LogTexture: Display: Building textures: Texture2D_43 (BGRA8, 64X64)
+[2018.01.18-21.31.05:497][122]LogTexture: Display: Building textures: Texture2D_44 (BGRA8, 64X64)
+[2018.01.18-21.31.05:503][122]LogTexture: Display: Building textures: Texture2D_45 (BGRA8, 64X64)
+[2018.01.18-21.31.10:735][620]LogMaterial: Missing cached shader map for material Landscape_Material, compiling. 
+[2018.01.18-21.31.11:946][680]LogTexture: Display: Building textures: Texture2D_46 (BGRA8, 64X64)
+[2018.01.18-21.31.12:003][682]LogTexture: Display: Building textures: Texture2D_47 (BGRA8, 64X64)
+[2018.01.18-21.31.14:495][801]LogTexture: Display: Building textures: Texture2D_48 (BGRA8, 64X64)
+[2018.01.18-21.31.25:175][949]LogTexture: Display: Building textures: Texture2D_49 (BGRA8, 64X64)
+[2018.01.18-21.31.36:220][992]LogTexture: Display: Building textures: Texture2D_50 (BGRA8, 64X64)
+[2018.01.18-21.31.36:226][992]LogMaterial: Missing cached shader map for material Landscape_Material, compiling. 
+[2018.01.18-21.31.36:273][992]LogTexture: Display: Building textures: Texture2D_51 (BGRA8, 64X64)
+[2018.01.18-21.31.36:281][992]LogMaterial: Missing cached shader map for material Landscape_Material, compiling. 
+[2018.01.18-21.31.36:336][992]LogTexture: Display: Building textures: Texture2D_52 (BGRA8, 64X64)
+[2018.01.18-21.31.36:394][995]LogTexture: Display: Building textures: Texture2D_53 (BGRA8, 64X64)
+[2018.01.18-21.31.36:398][995]LogTexture: Display: Building textures: Texture2D_54 (BGRA8, 64X64)
+[2018.01.18-21.31.36:562][  3]LogTexture: Display: Building textures: Texture2D_55 (BGRA8, 64X64)
+[2018.01.18-21.31.36:569][  3]LogTexture: Display: Building textures: Texture2D_56 (BGRA8, 64X64)
+[2018.01.18-21.31.36:601][  4]LogTexture: Display: Building textures: Texture2D_57 (BGRA8, 64X64)
+[2018.01.18-21.31.36:609][  4]LogTexture: Display: Building textures: Texture2D_58 (BGRA8, 64X64)
+[2018.01.18-21.31.45:591][886]LogTexture: Display: Building textures: Texture2D_59 (BGRA8, 64X64)
+[2018.01.18-21.31.46:573][943]LogTexture: Display: Building textures: Texture2D_60 (BGRA8, 64X64)
+[2018.01.18-21.31.47:985][ 54]LogMaterial: Missing cached shader map for material Landscape_Material, compiling. 
+[2018.01.18-21.31.48:158][ 59]LogTexture: Display: Building textures: Texture2D_61 (BGRA8, 64X64)
+[2018.01.18-21.31.48:163][ 59]LogTexture: Display: Building textures: Texture2D_62 (BGRA8, 64X64)
+[2018.01.18-21.33.11:387][160]LogTexture: Display: Building textures: Texture2D_21 (BGRA8, 64X64)
+[2018.01.18-21.33.11:388][160]LogTexture: Display: Building textures: Texture2D_1 (BGRA8, 512X512)
+[2018.01.18-21.33.11:396][160]LogTexture: Display: Building textures: Texture2D_22 (BGRA8, 64X64)
+[2018.01.18-21.33.11:396][160]LogTexture: Display: Building textures: Texture2D_23 (BGRA8, 64X64)
+[2018.01.18-21.33.11:397][160]LogTexture: Display: Building textures: Texture2D_24 (BGRA8, 64X64)
+[2018.01.18-21.33.11:397][160]LogTexture: Display: Building textures: Texture2D_47 (BGRA8, 64X64)
+[2018.01.18-21.33.11:398][160]LogTexture: Display: Building textures: Texture2D_46 (BGRA8, 64X64)
+[2018.01.18-21.33.11:398][160]LogTexture: Display: Building textures: Texture2D_25 (BGRA8, 64X64)
+[2018.01.18-21.33.11:399][160]LogTexture: Display: Building textures: Texture2D_48 (BGRA8, 64X64)
+[2018.01.18-21.33.11:399][160]LogTexture: Display: Building textures: Texture2D_33 (BGRA8, 64X64)
+[2018.01.18-21.33.11:399][160]LogTexture: Display: Building textures: Texture2D_61 (BGRA8, 64X64)
+[2018.01.18-21.33.11:400][160]LogTexture: Display: Building textures: Texture2D_62 (BGRA8, 64X64)
+[2018.01.18-21.33.11:400][160]LogTexture: Display: Building textures: Texture2D_32 (BGRA8, 64X64)
+[2018.01.18-21.33.11:400][160]LogTexture: Display: Building textures: Texture2D_26 (BGRA8, 64X64)
+[2018.01.18-21.33.11:401][160]LogTexture: Display: Building textures: Texture2D_30 (BGRA8, 64X64)
+[2018.01.18-21.33.11:401][160]LogTexture: Display: Building textures: Texture2D_27 (BGRA8, 64X64)
+[2018.01.18-21.33.11:402][160]LogTexture: Display: Building textures: Texture2D_41 (BGRA8, 64X64)
+[2018.01.18-21.33.11:402][160]LogTexture: Display: Building textures: Texture2D_28 (BGRA8, 64X64)
+[2018.01.18-21.33.11:403][160]LogTexture: Display: Building textures: Texture2D_37 (BGRA8, 64X64)
+[2018.01.18-21.33.11:403][160]LogTexture: Display: Building textures: Texture2D_50 (BGRA8, 64X64)
+[2018.01.18-21.33.11:404][160]LogTexture: Display: Building textures: Texture2D_51 (BGRA8, 64X64)
+[2018.01.18-21.33.11:404][160]LogTexture: Display: Building textures: Texture2D_2 (BGRA8, 64X64)
+[2018.01.18-21.33.11:405][160]LogTexture: Display: Building textures: Texture2D_29 (BGRA8, 64X64)
+[2018.01.18-21.33.11:405][160]LogTexture: Display: Building textures: Texture2D_3 (BGRA8, 64X64)
+[2018.01.18-21.33.11:405][160]LogTexture: Display: Building textures: Texture2D_4 (BGRA8, 64X64)
+[2018.01.18-21.33.11:406][160]LogTexture: Display: Building textures: Texture2D_5 (BGRA8, 64X64)
+[2018.01.18-21.33.11:406][160]LogTexture: Display: Building textures: Texture2D_18 (BGRA8, 64X64)
+[2018.01.18-21.33.11:407][160]LogTexture: Display: Building textures: Texture2D_38 (BGRA8, 64X64)
+[2018.01.18-21.33.11:407][160]LogTexture: Display: Building textures: Texture2D_31 (BGRA8, 64X64)
+[2018.01.18-21.33.11:407][160]LogTexture: Display: Building textures: Texture2D_6 (BGRA8, 64X64)
+[2018.01.18-21.33.11:408][160]LogTexture: Display: Building textures: Texture2D_49 (BGRA8, 64X64)
+[2018.01.18-21.33.11:408][160]LogTexture: Display: Building textures: Texture2D_7 (BGRA8, 64X64)
+[2018.01.18-21.33.11:409][160]LogTexture: Display: Building textures: Texture2D_8 (BGRA8, 64X64)
+[2018.01.18-21.33.11:409][160]LogTexture: Display: Building textures: Texture2D_59 (BGRA8, 64X64)
+[2018.01.18-21.33.11:410][160]LogTexture: Display: Building textures: Texture2D_9 (BGRA8, 64X64)
+[2018.01.18-21.33.11:410][160]LogTexture: Display: Building textures: Texture2D_57 (BGRA8, 64X64)
+[2018.01.18-21.33.11:410][160]LogTexture: Display: Building textures: Texture2D_19 (BGRA8, 64X64)
+[2018.01.18-21.33.11:411][160]LogTexture: Display: Building textures: Texture2D_39 (BGRA8, 64X64)
+[2018.01.18-21.33.11:411][160]LogTexture: Display: Building textures: Texture2D_44 (BGRA8, 64X64)
+[2018.01.18-21.33.11:411][160]LogTexture: Display: Building textures: Texture2D_52 (BGRA8, 64X64)
+[2018.01.18-21.33.11:412][160]LogTexture: Display: Building textures: Texture2D_10 (BGRA8, 64X64)
+[2018.01.18-21.33.11:412][160]LogTexture: Display: Building textures: Texture2D_11 (BGRA8, 64X64)
+[2018.01.18-21.33.11:413][160]LogTexture: Display: Building textures: Texture2D_12 (BGRA8, 64X64)
+[2018.01.18-21.33.11:413][160]LogTexture: Display: Building textures: Texture2D_42 (BGRA8, 64X64)
+[2018.01.18-21.33.11:413][160]LogTexture: Display: Building textures: Texture2D_13 (BGRA8, 64X64)
+[2018.01.18-21.33.11:414][160]LogTexture: Display: Building textures: Texture2D_40 (BGRA8, 64X64)
+[2018.01.18-21.33.11:414][160]LogTexture: Display: Building textures: Texture2D_20 (BGRA8, 64X64)
+[2018.01.18-21.33.11:414][160]LogTexture: Display: Building textures: Texture2D_53 (BGRA8, 64X64)
+[2018.01.18-21.33.11:415][160]LogTexture: Display: Building textures: Texture2D_54 (BGRA8, 64X64)
+[2018.01.18-21.33.11:415][160]LogTexture: Display: Building textures: Texture2D_34 (BGRA8, 64X64)
+[2018.01.18-21.33.11:416][160]LogTexture: Display: Building textures: Texture2D_35 (BGRA8, 64X64)
+[2018.01.18-21.33.11:416][160]LogTexture: Display: Building textures: Texture2D_14 (BGRA8, 64X64)
+[2018.01.18-21.33.11:417][160]LogTexture: Display: Building textures: Texture2D_45 (BGRA8, 64X64)
+[2018.01.18-21.33.11:417][160]LogTexture: Display: Building textures: Texture2D_15 (BGRA8, 64X64)
+[2018.01.18-21.33.11:418][160]LogTexture: Display: Building textures: Texture2D_43 (BGRA8, 64X64)
+[2018.01.18-21.33.11:418][160]LogTexture: Display: Building textures: Texture2D_16 (BGRA8, 64X64)
+[2018.01.18-21.33.11:419][160]LogTexture: Display: Building textures: Texture2D_60 (BGRA8, 64X64)
+[2018.01.18-21.33.11:419][160]LogTexture: Display: Building textures: Texture2D_17 (BGRA8, 64X64)
+[2018.01.18-21.33.11:419][160]LogTexture: Display: Building textures: Texture2D_58 (BGRA8, 64X64)
+[2018.01.18-21.33.11:420][160]LogTexture: Display: Building textures: Texture2D_55 (BGRA8, 64X64)
+[2018.01.18-21.33.11:420][160]LogTexture: Display: Building textures: Texture2D_56 (BGRA8, 64X64)
+[2018.01.18-21.33.11:420][160]LogTexture: Display: Building textures: Texture2D_36 (BGRA8, 64X64)
+[2018.01.18-21.33.11:568][160]LogSavePackage: Save=203.98ms
+[2018.01.18-21.33.11:568][160]LogSavePackage: Moving '../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Saved/Untitled_1_Auto2602F095049B69E3117EEDD8CB7FEEA9B.tmp' to '../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Saved/Autosaves/Temp/Untitled_1_Auto2.umap'
+[2018.01.18-21.33.11:570][160]LogSavePackage: Display: Finished SavePackage ../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Saved/Autosaves/Temp/Untitled_1_Auto2.umap
+[2018.01.18-21.33.11:572][160]LogFileHelpers: Editor autosave (incl. sublevels) for '/Temp/Untitled_1' took 0.217
+[2018.01.18-21.33.11:572][160]LogFileHelpers: Editor autosave (incl. sublevels) for all levels took 0.217
+[2018.01.18-21.33.11:574][160]OBJ SavePackage: Generating thumbnails for [0] asset(s) in package [/Game/Untitled_1_sharedassets/Dirt_LayerInfo] ([1] browsable assets)...
+[2018.01.18-21.33.11:574][160]OBJ SavePackage: Finished generating thumbnails for package [/Game/Untitled_1_sharedassets/Dirt_LayerInfo]
+[2018.01.18-21.33.11:580][160]LogSavePackage: Save=3.97ms
+[2018.01.18-21.33.11:580][160]LogSavePackage: Moving '../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Saved/Dirt_LayerInfo_Auto2A74BA3544183929646008FB56C26BD5F.tmp' to '../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Saved/Autosaves/Game/Untitled_1_sharedassets/Dirt_LayerInfo_Auto2.uasset'
+[2018.01.18-21.33.11:582][160]LogSavePackage: Display: Finished SavePackage ../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Saved/Autosaves/Game/Untitled_1_sharedassets/Dirt_LayerInfo_Auto2.uasset
+[2018.01.18-21.33.11:582][160]OBJ SavePackage: Generating thumbnails for [0] asset(s) in package [/Game/Untitled_1_sharedassets/Grass_LayerInfo] ([1] browsable assets)...
+[2018.01.18-21.33.11:582][160]OBJ SavePackage: Finished generating thumbnails for package [/Game/Untitled_1_sharedassets/Grass_LayerInfo]
+[2018.01.18-21.33.11:589][160]LogSavePackage: Save=4.92ms
+[2018.01.18-21.33.11:589][160]LogSavePackage: Moving '../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Saved/Grass_LayerInfo_Auto216353BB84740154077FD6A887B4F219D.tmp' to '../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Saved/Autosaves/Game/Untitled_1_sharedassets/Grass_LayerInfo_Auto2.uasset'
+[2018.01.18-21.33.11:590][160]LogSavePackage: Display: Finished SavePackage ../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Saved/Autosaves/Game/Untitled_1_sharedassets/Grass_LayerInfo_Auto2.uasset
+[2018.01.18-21.33.11:590][160]OBJ SavePackage: Generating thumbnails for [0] asset(s) in package [/Game/Untitled_1_sharedassets/Snow_LayerInfo] ([1] browsable assets)...
+[2018.01.18-21.33.11:590][160]OBJ SavePackage: Finished generating thumbnails for package [/Game/Untitled_1_sharedassets/Snow_LayerInfo]
+[2018.01.18-21.33.11:596][160]LogSavePackage: Save=4.41ms
+[2018.01.18-21.33.11:596][160]LogSavePackage: Moving '../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Saved/Snow_LayerInfo_Auto27DFF21CF4A3644437CEF1F8A0E706249.tmp' to '../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Saved/Autosaves/Game/Untitled_1_sharedassets/Snow_LayerInfo_Auto2.uasset'
+[2018.01.18-21.33.11:598][160]LogSavePackage: Display: Finished SavePackage ../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Saved/Autosaves/Game/Untitled_1_sharedassets/Snow_LayerInfo_Auto2.uasset
+[2018.01.18-21.33.11:598][160]LogFileHelpers: Auto-saving content packages took 0.025
+[2018.01.18-21.37.39:473][460]LightingResults: New page: Lighting Build
+[2018.01.18-21.37.39:473][460]MapCheck: New page: Map Check
+[2018.01.18-21.37.39:473][460]LightingResults: New page: Lighting Build
+[2018.01.18-21.37.39:490][460]LogAIModule: Creating AISystem for world Untitled
+[2018.01.18-21.37.39:534][460]LoadErrors: New page: New Map
+[2018.01.18-21.37.51:781][583]LogEditorViewport: Clicking Background
+[2018.01.18-21.38.02:057][813]LogTexture: Display: Building textures: Texture2D_3 (G8, 128X128)
+[2018.01.18-21.38.05:625][239]LogTexture: Display: Building textures: Texture2D_4 (G8, 128X128)
+[2018.01.18-21.38.06:791][377]LogTexture: Display: Building textures: Texture2D_5 (G8, 128X128)
+[2018.01.18-21.38.32:470][411]LogAudioDerivedData: Display: Building compressed audio format OGG wave Weapon_AssaultRifle_Swap03...
+[2018.01.18-21.38.32:478][411]LogAudioDerivedData: Display: Building compressed audio format OGG wave Weapon_AssaultRifle_Swap01...
+[2018.01.18-21.38.32:490][411]LogAudioDerivedData: Display: Building compressed audio format OGG wave Weapon_AssaultRifle_Swap02...
+[2018.01.18-21.38.32:504][411]LogAudioDerivedData: Display: Building compressed audio format OGG wave Weapon_AssaultRifle_Reload01...
+[2018.01.18-21.38.32:518][411]LogAudioDerivedData: Display: Building compressed audio format OGG wave Weapon_AssaultRifle_Reload03...
+[2018.01.18-21.38.32:532][411]LogAudioDerivedData: Display: Building compressed audio format OGG wave Weapon_AssaultRifle_Reload02...
+[2018.01.18-21.38.32:580][411]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyBody_BodyMove01...
+[2018.01.18-21.38.32:589][411]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyBody_BodyMove01_Stereo...
+[2018.01.18-21.38.32:602][411]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyBody_BodyMove02...
+[2018.01.18-21.38.32:617][411]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyBody_BodyMove02_Stereo...
+[2018.01.18-21.38.32:642][411]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyBody_BodyMove03...
+[2018.01.18-21.38.32:656][411]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyBody_BodyMove03_Stereo...
+[2018.01.18-21.38.32:678][411]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyBody_BodyMove04...
+[2018.01.18-21.38.32:689][411]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyBody_BodyMove04_Stereo...
+[2018.01.18-21.38.32:714][411]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyBody_Fall01...
+[2018.01.18-21.38.32:727][411]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyBody_Fall02...
+[2018.01.18-21.38.32:745][411]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyBody_Fall03...
+[2018.01.18-21.38.32:759][411]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyBody_Fall04...
+[2018.01.18-21.38.32:776][411]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyBody_HandSwipe01...
+[2018.01.18-21.38.32:792][411]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyBody_HandSwipe02...
+[2018.01.18-21.38.32:803][411]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyBody_HandSwipe03...
+[2018.01.18-21.38.32:819][411]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyBody_HandSwipe04...
+[2018.01.18-21.38.36:455][837]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyFlesh_Gib01...
+[2018.01.18-21.38.36:470][837]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyFlesh_Gib01_Stereo...
+[2018.01.18-21.38.36:496][837]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyFlesh_Gib02...
+[2018.01.18-21.38.36:511][837]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyFlesh_Gib02_Stereo...
+[2018.01.18-21.38.36:537][837]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyFlesh_Gib03...
+[2018.01.18-21.38.36:554][837]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyFlesh_Gib03_Stereo...
+[2018.01.18-21.38.36:585][837]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyFlesh_Gib04...
+[2018.01.18-21.38.36:601][837]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyFlesh_Gib04_Stereo...
+[2018.01.18-21.38.36:629][837]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyFlesh_Gib05...
+[2018.01.18-21.38.36:642][837]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyFlesh_Gib05_Stereo...
+[2018.01.18-21.38.36:665][837]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyFlesh_Gib06...
+[2018.01.18-21.38.36:680][837]LogAudioDerivedData: Display: Building compressed audio format OGG wave FoleyFlesh_Gib06_Stereo...
+[2018.01.18-21.38.36:705][837]LogLinker: Warning: Can't find file '/Script/ShooterGame'
+[2018.01.18-21.38.36:706][837]LogLinker: Warning: Can't find file for asset '/Script/ShooterGame' while loading ../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Content/Sounds/FoleyFlesh/Mono/FoleyFlesh_Gib_Cue.uasset.
+[2018.01.18-21.38.36:706][837]LoadErrors: Error: /Game/Sounds/FoleyFlesh/Mono/FoleyFlesh_Gib_Cue : Can't find file for asset. /Script/ShooterGame
+[2018.01.18-21.38.36:706][837]LogLinker: Warning: Can't find file '/Script/ShooterGame'
+[2018.01.18-21.38.36:706][837]LogLinker: Warning: Can't find file for asset '/Script/ShooterGame' while loading ../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Content/Sounds/FoleyFlesh/Mono/FoleyFlesh_Gib_Cue.uasset.
+[2018.01.18-21.38.36:708][837]LogLinker: Warning: Can't find file '/Script/ShooterGame'
+[2018.01.18-21.38.36:708][837]LogLinker: Warning: Can't find file for asset '/Script/ShooterGame' while loading NULL.
+[2018.01.18-21.38.36:708][837]LogLinker: Warning: Can't find file '/Script/ShooterGame'
+[2018.01.18-21.38.36:708][837]LogLinker: Warning: Can't find file for asset '/Script/ShooterGame' while loading NULL.
+[2018.01.18-21.38.36:709][837]LogLinker: Warning: Can't find file '/Script/ShooterGame'
+[2018.01.18-21.38.36:709][837]LogLinker: Warning: Can't find file for asset '/Script/ShooterGame' while loading NULL.
+[2018.01.18-21.38.36:709][837]LogLinker: Warning: Can't find file '/Script/ShooterGame'
+[2018.01.18-21.38.36:709][837]LoadErrors: Failed to load /Script/ShooterGame.SoundNodeLocalPlayer Referenced by FoleyFlesh_Gib_Cue
+[2018.01.18-21.38.36:709][837]LogLinker: Warning: Can't find file for asset '/Script/ShooterGame' while loading NULL.
+[2018.01.18-21.38.36:709][837]LogLinker: Warning: Can't find file '/Script/ShooterGame'
+[2018.01.18-21.38.36:709][837]LogLinker: Warning: Can't find file for asset '/Script/ShooterGame' while loading NULL.
+[2018.01.18-21.38.36:709][837]LogLinker: Warning: Can't find file '/Script/ShooterGame'
+[2018.01.18-21.38.36:709][837]LogLinker: Warning: Can't find file for asset '/Script/ShooterGame' while loading NULL.
+[2018.01.18-21.38.36:709][837]LogLinker: Warning: Can't find file '/Script/ShooterGame'
+[2018.01.18-21.38.36:709][837]LogLinker: Warning: Can't find file for asset '/Script/ShooterGame' while loading NULL.
+[2018.01.18-21.38.36:709][837]LogLinker: Warning: Can't find file '/Script/ShooterGame'
+[2018.01.18-21.38.36:709][837]LoadErrors: Failed to load /Script/ShooterGame.SoundNodeLocalPlayer Referenced by SoundCueGraphNode_7
+[2018.01.18-21.38.36:709][837]LogLinker: Warning: Can't find file for asset '/Script/ShooterGame' while loading NULL.
+[2018.01.18-21.38.36:713][837]LogAudioDerivedData: Display: Building compressed audio format OGG wave Footstep_Generic01...
+[2018.01.18-21.38.36:722][837]LogAudioDerivedData: Display: Building compressed audio format OGG wave Footstep_Generic01_Stereo...
+[2018.01.18-21.38.36:736][837]LogAudioDerivedData: Display: Building compressed audio format OGG wave Footstep_Generic02...
+[2018.01.18-21.38.36:763][838]LogAudioDerivedData: Display: Building compressed audio format OGG wave Footstep_Generic02_Stereo...
+[2018.01.18-21.38.36:783][838]LogAudioDerivedData: Display: Building compressed audio format OGG wave Footstep_Generic03...
+[2018.01.18-21.38.36:795][838]LogAudioDerivedData: Display: Building compressed audio format OGG wave Footstep_Generic03_Stereo...
+[2018.01.18-21.38.36:812][838]LogAudioDerivedData: Display: Building compressed audio format OGG wave Footstep_Generic04...
+[2018.01.18-21.38.36:821][838]LogAudioDerivedData: Display: Building compressed audio format OGG wave Footstep_Generic04_Stereo...
+[2018.01.18-21.38.36:836][838]LogAudioDerivedData: Display: Building compressed audio format OGG wave Footstep_Generic05...
+[2018.01.18-21.38.36:847][838]LogAudioDerivedData: Display: Building compressed audio format OGG wave Footstep_Generic05_Stereo...
+[2018.01.18-21.38.36:862][838]LogAudioDerivedData: Display: Building compressed audio format OGG wave Footstep_Generic06...
+[2018.01.18-21.38.36:877][838]LogAudioDerivedData: Display: Building compressed audio format OGG wave Footstep_Generic06_Stereo...
+[2018.01.18-21.38.36:901][838]LogAudioDerivedData: Display: Building compressed audio format OGG wave Footstep_Generic07...
+[2018.01.18-21.38.36:912][838]LogAudioDerivedData: Display: Building compressed audio format OGG wave Footstep_Generic07_Stereo...
+[2018.01.18-21.38.36:928][838]LogAudioDerivedData: Display: Building compressed audio format OGG wave Footstep_Generic08...
+[2018.01.18-21.38.36:939][838]LogAudioDerivedData: Display: Building compressed audio format OGG wave Footstep_Generic08_Stereo...
+[2018.01.18-21.38.36:952][838]LogAudioDerivedData: Display: Building compressed audio format OGG wave Footstep_Generic09...
+[2018.01.18-21.38.36:962][838]LogAudioDerivedData: Display: Building compressed audio format OGG wave Footstep_Generic09_Stereo...
+[2018.01.18-21.38.36:975][838]LogAudioDerivedData: Display: Building compressed audio format OGG wave Footstep_Generic10...
+[2018.01.18-21.38.36:988][838]LogAudioDerivedData: Display: Building compressed audio format OGG wave Footstep_Generic10_Stereo...
+[2018.01.18-21.38.37:006][838]LogAudioDerivedData: Display: Building compressed audio format OGG wave Footstep_Generic11...
+[2018.01.18-21.38.37:017][838]LogAudioDerivedData: Display: Building compressed audio format OGG wave Footstep_Generic11_Stereo...
+[2018.01.18-21.38.37:030][838]LogAudioDerivedData: Display: Building compressed audio format OGG wave Footstep_Generic12...
+[2018.01.18-21.38.37:040][838]LogAudioDerivedData: Display: Building compressed audio format OGG wave Footstep_Generic12_Stereo...
+[2018.01.18-21.38.40:699][245]LogMaterial: Missing cached shader map for material Material_0, compiling. 
+[2018.01.18-21.38.40:752][246]LogMaterial: Missing cached shader map for material Material_1, compiling. 
+[2018.01.18-21.38.40:753][246]LogMaterial: Warning: /Engine/Transient.Material_1 (no disk path found): Failed to compile Material for platform PCD3D_SM5, Default Material will be used in game.
+[2018.01.18-21.38.40:753][246]LogMaterial: 	Missing Preview connection for function input 'Material'
+[2018.01.18-21.38.40:757][246]LogMaterial: Missing cached shader map for material Material_2, compiling. 
+[2018.01.18-21.38.40:842][250]LogMaterial: Missing cached shader map for material Material_3, compiling. 
+[2018.01.18-21.38.40:882][251]LogMaterial: Missing cached shader map for material Material_4, compiling. 
+[2018.01.18-21.38.40:921][252]LogMaterial: Missing cached shader map for material Material_5, compiling. 
+[2018.01.18-21.38.40:971][253]LogMaterial: Missing cached shader map for material Material_6, compiling. 
+[2018.01.18-21.39.14:773][907]LogMaterial: Missing cached shader map for material M_Ground_Gravel, compiling. 
+[2018.01.18-21.42.11:957][643]LogTexture: Display: Building textures: Texture2D_0 (BGRA8, 64X64)
+[2018.01.18-21.42.11:961][643]LogMaterial: Missing cached shader map for material M_Ground_Gravel, compiling. 
+[2018.01.18-21.42.53:433][516]Cmd: TRANSACTION UNDO
+[2018.01.18-21.42.53:433][516]LogEditorTransaction: Undo Landscape Editing: Sculpt
+[2018.01.18-21.42.53:435][516]LogTexture: Display: Building textures: Texture2D_0 (BGRA8, 64X64)
+[2018.01.18-21.43.05:081][901]LogTemp: Repeating last play command: Selected Viewport
+[2018.01.18-21.43.05:092][901]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.01.18-21.43.05:092][901]PIE: New page: PIE session: Untitled_2 (Jan 18, 2018, 7:43:05 AM)
+[2018.01.18-21.43.05:092][901]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_2
+[2018.01.18-21.43.05:096][901]LogPlayLevel: PIE: StaticDuplicateObject took: (0.003655s)
+[2018.01.18-21.43.05:096][901]LogAIModule: Creating AISystem for world Untitled
+[2018.01.18-21.43.05:096][901]LogPlayLevel: PIE: World Init took: (0.000573s)
+[2018.01.18-21.43.05:097][901]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_2.Untitled to /Temp/UEDPIE_0_Untitled_2.Untitled (0.004434s)
+[2018.01.18-21.43.05:116][901]LogInit: XAudio2 using 'Speakers (2- Wireless Stereo Headset)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.01.18-21.43.05:121][901]LogInit: FAudioDevice initialized.
+[2018.01.18-21.43.05:148][901]LogLoad: Game class is 'GameModeBase'
+[2018.01.18-21.43.05:149][901]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_2.Untitled up for play (max tick rate 0) at 2018.01.18-14.43.05
+[2018.01.18-21.43.05:149][901]LogWorld: Bringing up level for play took: 0.000628
+[2018.01.18-21.43.05:150][901]PIE: Play in editor start time for /Temp/UEDPIE_0_Untitled_2 -0.742
+[2018.01.18-21.43.20:230][701]Cmd: TRANSACTION UNDO
+[2018.01.18-21.43.20:230][701]LogEditorTransaction: Undo Landscape Editing: Sculpt
+[2018.01.18-21.43.20:232][701]LogTexture: Display: Building textures: Texture2D_0 (BGRA8, 64X64)
+[2018.01.18-21.43.20:546][737]Cmd: TRANSACTION UNDO
+[2018.01.18-21.43.20:546][737]LogEditorTransaction: Undo Landscape Editing: Sculpt
+[2018.01.18-21.43.20:548][737]LogTexture: Display: Building textures: Texture2D_0 (BGRA8, 64X64)
+[2018.01.18-21.43.30:621][928]MapCheck: New page: Map Check
+[2018.01.18-21.43.30:633][928]LightingResults: New page: Lighting Build - Jan 18, 2018, 7:43:30 AM
+[2018.01.18-21.43.30:674][928]LogSwarmInterface: [OpenConnection] Registering TCP channel ...
+[2018.01.18-21.43.30:700][928]LogSwarmInterface: [OpenConnection] Connecting to agent ...
+[2018.01.18-21.43.30:707][928]LogSwarmInterface: [TryOpenConnection] Testing the Agent
+[2018.01.18-21.43.31:243][928]LogSwarmInterface: [TryOpenConnection] Opening Connection to Agent
+[2018.01.18-21.43.31:243][928]LogSwarmInterface: [TryOpenConnection] Local Process ID is 9080
+[2018.01.18-21.43.33:361][928]LogStaticLightingSystem: Warning: No importance volume found, so the scene bounding box was used.  You can optimize your scene's quality and lighting build times by adding importance volumes.
+[2018.01.18-21.43.33:362][928]LogStaticLightingSystem: Running Lightmass w/ ImmediateImport mode ENABLED
+[2018.01.18-21.43.33:362][928]LogStaticLightingSystem: Running Lightmass w/ ImmediateProcess mode ENABLED
+[2018.01.18-21.43.33:362][928]LogStaticLightingSystem: Running Lightmass w/ Sorting mode ENABLED
+[2018.01.18-21.43.33:362][928]LogStaticLightingSystem: Running Lightmass w/ Mapping paddings ENABLED
+[2018.01.18-21.43.33:362][928]LogStaticLightingSystem: Running Lightmass w/ Mapping debug paddings DISABLED
+[2018.01.18-21.43.33:487][928]LogEditorBuildUtils: Build time 0:02
+[2018.01.18-21.43.33:492][928]LogMaterial: Missing cached shader map for material FLightmassMaterialRenderer LandscapeMaterialInstanceConstant_1, compiling. 
+[2018.01.18-21.43.33:497][928]LogMaterial: Missing cached shader map for material FLightmassMaterialRenderer LandscapeMaterialInstanceConstant_1, compiling. 
+[2018.01.18-21.43.35:638][ 48]Job is a success!
+[2018.01.18-21.43.35:679][ 49]LogVolumetricLightmapImport: Imported Volumetric Lightmap in 0.007s
+[2018.01.18-21.43.35:679][ 49]LogVolumetricLightmapImport:      Indirection Texture 16x16x16 = 0.0Mb
+[2018.01.18-21.43.35:679][ 49]LogVolumetricLightmapImport:      BrickData 50x5x5 = 0.0Mb
+[2018.01.18-21.43.35:679][ 49]LogVolumetricLightmapImport:      Bricks at Level
+[2018.01.18-21.43.35:680][ 49]LogVolumetricLightmapImport:          0: 10.0% covering 100.0% of volume
+[2018.01.18-21.43.35:680][ 49]LogVolumetricLightmapImport:          1: 90.0% covering 14.1% of volume
+[2018.01.18-21.43.35:680][ 49]LogVolumetricLightmapImport:          2: 0.0% covering 0.0% of volume
+[2018.01.18-21.43.35:694][ 49]LogTexture: Display: Building textures: HQ_Lightmap0_1 (AutoDXT, 256X256)
+[2018.01.18-21.43.35:694][ 49]LogTexture: Display: Building textures: LQ_Lightmap_0_1 (DXT1, 256X256)
+[2018.01.18-21.43.35:714][ 49]Lightmass on DESKTOP-T965EAC: 954 ms total, 111 ms importing, 23 ms setup, 372 ms photons, 425 ms processing, 0 ms extra exporting [16/16 mappings]. Threads: 2.82 sec total, 675 ms processing.
+[2018.01.18-21.43.35:730][ 49]LogStaticLightingSystem: Illumination: 5.08 sec (5 ms encoding lightmaps, 0 ms encoding shadowmaps)
+[2018.01.18-21.43.35:730][ 49]LogStaticLightingSystem: Lightmap texture memory:  0.1 MB (0.1 MB streaming, 0.0 MB non-streaming), 2 textures
+[2018.01.18-21.43.35:730][ 49]LogStaticLightingSystem: Shadowmap texture memory: 0.0 MB (0.0 MB streaming, 0.0 MB non-streaming), 0 textures
+[2018.01.18-21.43.36:363][ 49]DumpUnbuiltLightIteractions
+[2018.01.18-21.43.36:363][ 49]Lights with unbuilt interactions: 0
+[2018.01.18-21.43.36:363][ 49]
+[2018.01.18-21.43.36:363][ 49]Primitives with unbuilt interactions: 0
+[2018.01.18-21.43.36:372][ 50]Cmd: MAP CHECK NOTIFYRESULTS
+[2018.01.18-21.43.36:373][ 50]MapCheck: New page: Untitled_2 - Jan 18, 2018, 7:43:36 AM
+[2018.01.18-21.43.36:429][ 50]MapCheck: Map check complete: 0 Error(s), 0 Warning(s), took 56.703ms to complete.
+[2018.01.18-21.43.50:820][768]Cmd: DELETE
+[2018.01.18-21.43.50:820][768]Cmd: ACTOR DELETE
+[2018.01.18-21.43.50:822][768]LogEditorActor: Deleted Actor: PointLight
+[2018.01.18-21.43.50:829][768]LogEditorActor: Deleted 1 Actors (0.008 secs)
+[2018.01.18-21.44.16:066][744]MapCheck: New page: Map Check
+[2018.01.18-21.44.16:072][744]LightingResults: New page: Lighting Build - Jan 18, 2018, 7:44:16 AM
+[2018.01.18-21.44.16:082][744]LogSwarmInterface: [OpenConnection] Registering TCP channel ...
+[2018.01.18-21.44.16:083][744]LogSwarmInterface: [OpenConnection] Connecting to agent ...
+[2018.01.18-21.44.16:083][744]LogSwarmInterface: [TryOpenConnection] Testing the Agent
+[2018.01.18-21.44.16:084][744]LogSwarmInterface: [TryOpenConnection] Opening Connection to Agent
+[2018.01.18-21.44.16:084][744]LogSwarmInterface: [TryOpenConnection] Local Process ID is 9080
+[2018.01.18-21.44.20:594][744]LogStaticLightingSystem: Warning: No importance volume found, so the scene bounding box was used.  You can optimize your scene's quality and lighting build times by adding importance volumes.
+[2018.01.18-21.44.20:594][744]LogStaticLightingSystem: Running Lightmass w/ ImmediateImport mode ENABLED
+[2018.01.18-21.44.20:594][744]LogStaticLightingSystem: Running Lightmass w/ ImmediateProcess mode ENABLED
+[2018.01.18-21.44.20:594][744]LogStaticLightingSystem: Running Lightmass w/ Sorting mode ENABLED
+[2018.01.18-21.44.20:595][744]LogStaticLightingSystem: Running Lightmass w/ Mapping paddings ENABLED
+[2018.01.18-21.44.20:595][744]LogStaticLightingSystem: Running Lightmass w/ Mapping debug paddings DISABLED
+[2018.01.18-21.44.20:659][744]LogEditorBuildUtils: Build time 0:04
+[2018.01.18-21.44.22:059][842]Job is a success!
+[2018.01.18-21.44.22:095][844]LogVolumetricLightmapImport: Imported Volumetric Lightmap in 0.007s
+[2018.01.18-21.44.22:095][844]LogVolumetricLightmapImport:      Indirection Texture 16x16x16 = 0.0Mb
+[2018.01.18-21.44.22:095][844]LogVolumetricLightmapImport:      BrickData 345x5x5 = 0.2Mb
+[2018.01.18-21.44.22:095][844]LogVolumetricLightmapImport:      Bricks at Level
+[2018.01.18-21.44.22:095][844]LogVolumetricLightmapImport:          0: 1.4% covering 100.0% of volume
+[2018.01.18-21.44.22:095][844]LogVolumetricLightmapImport:          1: 13.0% covering 14.1% of volume
+[2018.01.18-21.44.22:095][844]LogVolumetricLightmapImport:          2: 85.5% covering 1.4% of volume
+[2018.01.18-21.44.22:143][844]LogTexture: Display: Building textures: HQ_Lightmap1_1 (AutoDXT, 256X256)
+[2018.01.18-21.44.22:143][844]LogTexture: Display: Building textures: LQ_Lightmap_1_1 (DXT1, 256X256)
+[2018.01.18-21.44.22:143][844]LogTexture: Display: Building textures: ShadowMapTexture2D_0 (G8, 512X32)
+[2018.01.18-21.44.22:158][844]Lightmass on DESKTOP-T965EAC: 1.14 sec total, 96 ms importing, 23 ms setup, 403 ms photons, 599 ms processing, 0 ms extra exporting [16/16 mappings]. Threads: 4.03 sec total, 1.08 sec processing.
+[2018.01.18-21.44.22:161][844]LogStaticLightingSystem: Illumination: 6.07 sec (33 ms encoding lightmaps, 7 ms encoding shadowmaps)
+[2018.01.18-21.44.22:161][844]LogStaticLightingSystem: Lightmap texture memory:  0.1 MB (0.1 MB streaming, 0.0 MB non-streaming), 2 textures
+[2018.01.18-21.44.22:161][844]LogStaticLightingSystem: Shadowmap texture memory: 0.0 MB (0.0 MB streaming, 0.0 MB non-streaming), 1 textures
+[2018.01.18-21.44.22:595][844]DumpUnbuiltLightIteractions
+[2018.01.18-21.44.22:595][844]Lights with unbuilt interactions: 0
+[2018.01.18-21.44.22:595][844]
+[2018.01.18-21.44.22:595][844]Primitives with unbuilt interactions: 0
+[2018.01.18-21.44.22:616][845]Cmd: MAP CHECK NOTIFYRESULTS
+[2018.01.18-21.44.22:616][845]MapCheck: New page: Untitled_2 - Jan 18, 2018, 7:44:22 AM
+[2018.01.18-21.44.22:671][845]MapCheck: Map check complete: 0 Error(s), 0 Warning(s), took 54.734ms to complete.
+[2018.01.18-21.44.34:887][294]LogSlate: Took 0.000170 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/Roboto-Italic.ttf' (157K)
+[2018.01.18-21.45.28:293][620]MapCheck: New page: Map Check
+[2018.01.18-21.45.28:301][620]LightingResults: New page: Lighting Build - Jan 18, 2018, 7:45:28 AM
+[2018.01.18-21.45.28:310][620]LogSwarmInterface: [OpenConnection] Registering TCP channel ...
+[2018.01.18-21.45.28:311][620]LogSwarmInterface: [OpenConnection] Connecting to agent ...
+[2018.01.18-21.45.28:311][620]LogSwarmInterface: [TryOpenConnection] Testing the Agent
+[2018.01.18-21.45.28:312][620]LogSwarmInterface: [TryOpenConnection] Opening Connection to Agent
+[2018.01.18-21.45.28:312][620]LogSwarmInterface: [TryOpenConnection] Local Process ID is 9080
+[2018.01.18-21.45.32:819][620]LogStaticLightingSystem: Warning: No importance volume found, so the scene bounding box was used.  You can optimize your scene's quality and lighting build times by adding importance volumes.
+[2018.01.18-21.45.32:819][620]LogStaticLightingSystem: Running Lightmass w/ ImmediateImport mode ENABLED
+[2018.01.18-21.45.32:819][620]LogStaticLightingSystem: Running Lightmass w/ ImmediateProcess mode ENABLED
+[2018.01.18-21.45.32:819][620]LogStaticLightingSystem: Running Lightmass w/ Sorting mode ENABLED
+[2018.01.18-21.45.32:819][620]LogStaticLightingSystem: Running Lightmass w/ Mapping paddings ENABLED
+[2018.01.18-21.45.32:819][620]LogStaticLightingSystem: Running Lightmass w/ Mapping debug paddings DISABLED
+[2018.01.18-21.45.32:887][620]LogEditorBuildUtils: Build time 0:04
+[2018.01.18-21.45.34:279][714]Job is a success!
+[2018.01.18-21.45.34:310][716]LogVolumetricLightmapImport: Imported Volumetric Lightmap in 0.007s
+[2018.01.18-21.45.34:310][716]LogVolumetricLightmapImport:      Indirection Texture 16x16x16 = 0.0Mb
+[2018.01.18-21.45.34:310][716]LogVolumetricLightmapImport:      BrickData 360x5x5 = 0.2Mb
+[2018.01.18-21.45.34:311][716]LogVolumetricLightmapImport:      Bricks at Level
+[2018.01.18-21.45.34:311][716]LogVolumetricLightmapImport:          0: 1.4% covering 100.0% of volume
+[2018.01.18-21.45.34:311][716]LogVolumetricLightmapImport:          1: 12.5% covering 14.1% of volume
+[2018.01.18-21.45.34:311][716]LogVolumetricLightmapImport:          2: 86.1% covering 1.5% of volume
+[2018.01.18-21.45.34:360][716]LogTexture: Display: Building textures: HQ_Lightmap0_1 (AutoDXT, 256X256)
+[2018.01.18-21.45.34:361][716]LogTexture: Display: Building textures: LQ_Lightmap_0_1 (DXT1, 256X256)
+[2018.01.18-21.45.34:361][716]LogTexture: Display: Building textures: ShadowMapTexture2D_1 (G8, 512X32)
+[2018.01.18-21.45.34:374][716]Lightmass on DESKTOP-T965EAC: 1.13 sec total, 96 ms importing, 22 ms setup, 406 ms photons, 581 ms processing, 0 ms extra exporting [16/16 mappings]. Threads: 3.91 sec total, 1.02 sec processing.
+[2018.01.18-21.45.34:378][716]LogStaticLightingSystem: Illumination: 6.06 sec (33 ms encoding lightmaps, 9 ms encoding shadowmaps)
+[2018.01.18-21.45.34:378][716]LogStaticLightingSystem: Lightmap texture memory:  0.1 MB (0.1 MB streaming, 0.0 MB non-streaming), 2 textures
+[2018.01.18-21.45.34:378][716]LogStaticLightingSystem: Shadowmap texture memory: 0.0 MB (0.0 MB streaming, 0.0 MB non-streaming), 1 textures
+[2018.01.18-21.45.34:820][716]DumpUnbuiltLightIteractions
+[2018.01.18-21.45.34:820][716]Lights with unbuilt interactions: 0
+[2018.01.18-21.45.34:820][716]
+[2018.01.18-21.45.34:820][716]Primitives with unbuilt interactions: 0
+[2018.01.18-21.45.34:829][717]Cmd: MAP CHECK NOTIFYRESULTS
+[2018.01.18-21.45.34:829][717]MapCheck: New page: Untitled_2 - Jan 18, 2018, 7:45:34 AM
+[2018.01.18-21.45.34:882][717]MapCheck: Map check complete: 0 Error(s), 0 Warning(s), took 53.125ms to complete.
+[2018.01.18-21.45.41:265][475]MapCheck: New page: Map Check
+[2018.01.18-21.45.41:275][475]LightingResults: New page: Lighting Build - Jan 18, 2018, 7:45:41 AM
+[2018.01.18-21.45.41:282][475]LogSwarmInterface: [OpenConnection] Registering TCP channel ...
+[2018.01.18-21.45.41:284][475]LogSwarmInterface: [OpenConnection] Connecting to agent ...
+[2018.01.18-21.45.41:284][475]LogSwarmInterface: [TryOpenConnection] Testing the Agent
+[2018.01.18-21.45.41:284][475]LogSwarmInterface: [TryOpenConnection] Opening Connection to Agent
+[2018.01.18-21.45.41:284][475]LogSwarmInterface: [TryOpenConnection] Local Process ID is 9080
+[2018.01.18-21.45.45:791][475]LogStaticLightingSystem: Warning: No importance volume found, so the scene bounding box was used.  You can optimize your scene's quality and lighting build times by adding importance volumes.
+[2018.01.18-21.45.45:791][475]LogStaticLightingSystem: Running Lightmass w/ ImmediateImport mode ENABLED
+[2018.01.18-21.45.45:791][475]LogStaticLightingSystem: Running Lightmass w/ ImmediateProcess mode ENABLED
+[2018.01.18-21.45.45:791][475]LogStaticLightingSystem: Running Lightmass w/ Sorting mode ENABLED
+[2018.01.18-21.45.45:791][475]LogStaticLightingSystem: Running Lightmass w/ Mapping paddings ENABLED
+[2018.01.18-21.45.45:791][475]LogStaticLightingSystem: Running Lightmass w/ Mapping debug paddings DISABLED
+[2018.01.18-21.45.45:854][475]LogEditorBuildUtils: Build time 0:04
+[2018.01.18-21.45.47:276][573]Job is a success!
+[2018.01.18-21.45.47:312][574]LogVolumetricLightmapImport: Imported Volumetric Lightmap in 0.007s
+[2018.01.18-21.45.47:312][574]LogVolumetricLightmapImport:      Indirection Texture 16x16x16 = 0.0Mb
+[2018.01.18-21.45.47:312][574]LogVolumetricLightmapImport:      BrickData 345x5x5 = 0.2Mb
+[2018.01.18-21.45.47:312][574]LogVolumetricLightmapImport:      Bricks at Level
+[2018.01.18-21.45.47:312][574]LogVolumetricLightmapImport:          0: 1.4% covering 100.0% of volume
+[2018.01.18-21.45.47:312][574]LogVolumetricLightmapImport:          1: 13.0% covering 14.1% of volume
+[2018.01.18-21.45.47:312][574]LogVolumetricLightmapImport:          2: 85.5% covering 1.4% of volume
+[2018.01.18-21.45.47:359][574]LogTexture: Display: Building textures: HQ_Lightmap1_1 (AutoDXT, 256X256)
+[2018.01.18-21.45.47:359][574]LogTexture: Display: Building textures: LQ_Lightmap_1_1 (DXT1, 256X256)
+[2018.01.18-21.45.47:359][574]LogTexture: Display: Building textures: ShadowMapTexture2D_2 (G8, 512X32)
+[2018.01.18-21.45.47:373][574]Lightmass on DESKTOP-T965EAC: 1.16 sec total, 92 ms importing, 23 ms setup, 403 ms photons, 624 ms processing, 0 ms extra exporting [16/16 mappings]. Threads: 4.21 sec total, 1.09 sec processing.
+[2018.01.18-21.45.47:377][574]LogStaticLightingSystem: Illumination: 6.08 sec (32 ms encoding lightmaps, 8 ms encoding shadowmaps)
+[2018.01.18-21.45.47:377][574]LogStaticLightingSystem: Lightmap texture memory:  0.1 MB (0.1 MB streaming, 0.0 MB non-streaming), 2 textures
+[2018.01.18-21.45.47:377][574]LogStaticLightingSystem: Shadowmap texture memory: 0.0 MB (0.0 MB streaming, 0.0 MB non-streaming), 1 textures
+[2018.01.18-21.45.47:791][574]DumpUnbuiltLightIteractions
+[2018.01.18-21.45.47:791][574]Lights with unbuilt interactions: 0
+[2018.01.18-21.45.47:791][574]
+[2018.01.18-21.45.47:791][574]Primitives with unbuilt interactions: 0
+[2018.01.18-21.45.47:800][575]Cmd: MAP CHECK NOTIFYRESULTS
+[2018.01.18-21.45.47:800][575]MapCheck: New page: Untitled_2 - Jan 18, 2018, 7:45:47 AM
+[2018.01.18-21.45.47:852][575]MapCheck: Map check complete: 0 Error(s), 0 Warning(s), took 52.077ms to complete.
+[2018.01.18-21.45.57:674][744]Cmd: TRANSACTION UNDO
+[2018.01.18-21.45.57:674][744]LogEditorTransaction: Undo Edit Bloom Scale
+[2018.01.18-21.46.20:433][418]MapCheck: New page: Map Check
+[2018.01.18-21.46.20:439][418]LightingResults: New page: Lighting Build - Jan 18, 2018, 7:46:20 AM
+[2018.01.18-21.46.20:447][418]LogSwarmInterface: [OpenConnection] Registering TCP channel ...
+[2018.01.18-21.46.20:448][418]LogSwarmInterface: [OpenConnection] Connecting to agent ...
+[2018.01.18-21.46.20:448][418]LogSwarmInterface: [TryOpenConnection] Testing the Agent
+[2018.01.18-21.46.20:449][418]LogSwarmInterface: [TryOpenConnection] Opening Connection to Agent
+[2018.01.18-21.46.20:449][418]LogSwarmInterface: [TryOpenConnection] Local Process ID is 9080
+[2018.01.18-21.46.24:956][418]LogStaticLightingSystem: Warning: No importance volume found, so the scene bounding box was used.  You can optimize your scene's quality and lighting build times by adding importance volumes.
+[2018.01.18-21.46.24:956][418]LogStaticLightingSystem: Running Lightmass w/ ImmediateImport mode ENABLED
+[2018.01.18-21.46.24:956][418]LogStaticLightingSystem: Running Lightmass w/ ImmediateProcess mode ENABLED
+[2018.01.18-21.46.24:956][418]LogStaticLightingSystem: Running Lightmass w/ Sorting mode ENABLED
+[2018.01.18-21.46.24:956][418]LogStaticLightingSystem: Running Lightmass w/ Mapping paddings ENABLED
+[2018.01.18-21.46.24:956][418]LogStaticLightingSystem: Running Lightmass w/ Mapping debug paddings DISABLED
+[2018.01.18-21.46.25:020][418]LogEditorBuildUtils: Build time 0:04
+[2018.01.18-21.46.29:781][779]Job is a success!
+[2018.01.18-21.46.29:816][780]LogVolumetricLightmapImport: Imported Volumetric Lightmap in 0.007s
+[2018.01.18-21.46.29:816][780]LogVolumetricLightmapImport:      Indirection Texture 16x16x16 = 0.0Mb
+[2018.01.18-21.46.29:816][780]LogVolumetricLightmapImport:      BrickData 360x5x5 = 0.2Mb
+[2018.01.18-21.46.29:816][780]LogVolumetricLightmapImport:      Bricks at Level
+[2018.01.18-21.46.29:816][780]LogVolumetricLightmapImport:          0: 1.4% covering 100.0% of volume
+[2018.01.18-21.46.29:816][780]LogVolumetricLightmapImport:          1: 12.5% covering 14.1% of volume
+[2018.01.18-21.46.29:816][780]LogVolumetricLightmapImport:          2: 86.1% covering 1.5% of volume
+[2018.01.18-21.46.29:874][780]LogTexture: Display: Building textures: HQ_Lightmap0_1 (AutoDXT, 256X256)
+[2018.01.18-21.46.29:874][780]LogTexture: Display: Building textures: LQ_Lightmap_0_1 (DXT1, 256X256)
+[2018.01.18-21.46.29:874][780]LogTexture: Display: Building textures: ShadowMapTexture2D_3 (G8, 512X32)
+[2018.01.18-21.46.29:886][780]Lightmass on DESKTOP-T965EAC: 4.51 sec total, 95 ms importing, 22 ms setup, 550 ms photons, 3.82 sec processing, 0 ms extra exporting [16/16 mappings]. Threads: 26.6 sec total, 3.84 sec processing.
+[2018.01.18-21.46.29:889][780]LogStaticLightingSystem: Illumination: 9.43 sec (39 ms encoding lightmaps, 10 ms encoding shadowmaps)
+[2018.01.18-21.46.29:889][780]LogStaticLightingSystem: Lightmap texture memory:  0.1 MB (0.1 MB streaming, 0.0 MB non-streaming), 2 textures
+[2018.01.18-21.46.29:889][780]LogStaticLightingSystem: Shadowmap texture memory: 0.0 MB (0.0 MB streaming, 0.0 MB non-streaming), 1 textures
+[2018.01.18-21.46.29:957][780]DumpUnbuiltLightIteractions
+[2018.01.18-21.46.29:957][780]Lights with unbuilt interactions: 0
+[2018.01.18-21.46.29:957][780]
+[2018.01.18-21.46.29:957][780]Primitives with unbuilt interactions: 0
+[2018.01.18-21.46.29:964][781]Cmd: MAP CHECK NOTIFYRESULTS
+[2018.01.18-21.46.29:964][781]MapCheck: New page: Untitled_2 - Jan 18, 2018, 7:46:29 AM
+[2018.01.18-21.46.30:019][781]MapCheck: Map check complete: 0 Error(s), 0 Warning(s), took 54.705ms to complete.
+[2018.01.18-21.46.37:117][624]LogTemp: Repeating last play command: Selected Viewport
+[2018.01.18-21.46.37:127][624]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.01.18-21.46.37:127][624]PIE: New page: PIE session: Untitled_2 (Jan 18, 2018, 7:46:37 AM)
+[2018.01.18-21.46.37:127][624]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_2
+[2018.01.18-21.46.37:130][624]LogPlayLevel: PIE: StaticDuplicateObject took: (0.003233s)
+[2018.01.18-21.46.37:131][624]LogAIModule: Creating AISystem for world Untitled
+[2018.01.18-21.46.37:131][624]LogPlayLevel: PIE: World Init took: (0.000598s)
+[2018.01.18-21.46.37:131][624]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_2.Untitled to /Temp/UEDPIE_0_Untitled_2.Untitled (0.004042s)
+[2018.01.18-21.46.37:142][624]LogInit: XAudio2 using 'Speakers (2- Wireless Stereo Headset)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.01.18-21.46.37:147][624]LogInit: FAudioDevice initialized.
+[2018.01.18-21.46.37:178][624]LogLoad: Game class is 'GameModeBase'
+[2018.01.18-21.46.37:179][624]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_2.Untitled up for play (max tick rate 0) at 2018.01.18-14.46.37
+[2018.01.18-21.46.37:179][624]LogWorld: Bringing up level for play took: 0.000639
+[2018.01.18-21.46.37:180][624]PIE: Play in editor start time for /Temp/UEDPIE_0_Untitled_2 -0.712
+[2018.01.18-21.47.57:013][946]MapCheck: New page: Map Check
+[2018.01.18-21.47.57:023][946]LightingResults: New page: Lighting Build - Jan 18, 2018, 7:47:57 AM
+[2018.01.18-21.47.57:034][946]LogSwarmInterface: [OpenConnection] Registering TCP channel ...
+[2018.01.18-21.47.57:036][946]LogSwarmInterface: [OpenConnection] Connecting to agent ...
+[2018.01.18-21.47.57:036][946]LogSwarmInterface: [TryOpenConnection] Testing the Agent
+[2018.01.18-21.47.57:036][946]LogSwarmInterface: [TryOpenConnection] Opening Connection to Agent
+[2018.01.18-21.47.57:036][946]LogSwarmInterface: [TryOpenConnection] Local Process ID is 9080
+[2018.01.18-21.48.01:543][946]LogStaticLightingSystem: Warning: No importance volume found, so the scene bounding box was used.  You can optimize your scene's quality and lighting build times by adding importance volumes.
+[2018.01.18-21.48.01:544][946]LogStaticLightingSystem: Running Lightmass w/ ImmediateImport mode ENABLED
+[2018.01.18-21.48.01:544][946]LogStaticLightingSystem: Running Lightmass w/ ImmediateProcess mode ENABLED
+[2018.01.18-21.48.01:544][946]LogStaticLightingSystem: Running Lightmass w/ Sorting mode ENABLED
+[2018.01.18-21.48.01:544][946]LogStaticLightingSystem: Running Lightmass w/ Mapping paddings ENABLED
+[2018.01.18-21.48.01:544][946]LogStaticLightingSystem: Running Lightmass w/ Mapping debug paddings DISABLED
+[2018.01.18-21.48.01:625][946]LogEditorBuildUtils: Build time 0:04
+[2018.01.18-21.48.03:025][ 47]Job is a success!
+[2018.01.18-21.48.03:057][ 48]LogVolumetricLightmapImport: Imported Volumetric Lightmap in 0.007s
+[2018.01.18-21.48.03:057][ 48]LogVolumetricLightmapImport:      Indirection Texture 16x16x16 = 0.0Mb
+[2018.01.18-21.48.03:057][ 48]LogVolumetricLightmapImport:      BrickData 345x5x5 = 0.2Mb
+[2018.01.18-21.48.03:057][ 48]LogVolumetricLightmapImport:      Bricks at Level
+[2018.01.18-21.48.03:057][ 48]LogVolumetricLightmapImport:          0: 1.4% covering 100.0% of volume
+[2018.01.18-21.48.03:057][ 48]LogVolumetricLightmapImport:          1: 13.0% covering 14.1% of volume
+[2018.01.18-21.48.03:057][ 48]LogVolumetricLightmapImport:          2: 85.5% covering 1.4% of volume
+[2018.01.18-21.48.03:111][ 48]LogTexture: Display: Building textures: HQ_Lightmap1_1 (AutoDXT, 256X256)
+[2018.01.18-21.48.03:111][ 48]LogTexture: Display: Building textures: LQ_Lightmap_1_1 (DXT1, 256X256)
+[2018.01.18-21.48.03:111][ 48]LogTexture: Display: Building textures: ShadowMapTexture2D_4 (G8, 512X32)
+[2018.01.18-21.48.03:127][ 48]Lightmass on DESKTOP-T965EAC: 1.15 sec total, 102 ms importing, 24 ms setup, 405 ms photons, 588 ms processing, 0 ms extra exporting [16/16 mappings]. Threads: 3.95 sec total, 999 ms processing.
+[2018.01.18-21.48.03:146][ 48]LogStaticLightingSystem: Illumination: 6.11 sec (35 ms encoding lightmaps, 10 ms encoding shadowmaps)
+[2018.01.18-21.48.03:146][ 48]LogStaticLightingSystem: Lightmap texture memory:  0.1 MB (0.1 MB streaming, 0.0 MB non-streaming), 2 textures
+[2018.01.18-21.48.03:146][ 48]LogStaticLightingSystem: Shadowmap texture memory: 0.0 MB (0.0 MB streaming, 0.0 MB non-streaming), 1 textures
+[2018.01.18-21.48.03:544][ 48]DumpUnbuiltLightIteractions
+[2018.01.18-21.48.03:544][ 48]Lights with unbuilt interactions: 0
+[2018.01.18-21.48.03:544][ 48]
+[2018.01.18-21.48.03:544][ 48]Primitives with unbuilt interactions: 0
+[2018.01.18-21.48.03:553][ 49]Cmd: MAP CHECK NOTIFYRESULTS
+[2018.01.18-21.48.03:553][ 49]MapCheck: New page: Untitled_2 - Jan 18, 2018, 7:48:03 AM
+[2018.01.18-21.48.03:607][ 49]MapCheck: Map check complete: 0 Error(s), 0 Warning(s), took 54.415ms to complete.
+[2018.01.18-21.48.05:924][323]LogEditorViewport: Clicking on Actor (LMB): SphereReflectionCapture (SphereReflectionCapture)
+[2018.01.18-21.48.06:586][401]Cmd: DELETE
+[2018.01.18-21.48.06:586][401]Cmd: ACTOR DELETE
+[2018.01.18-21.48.06:588][401]LogEditorActor: Deleted Actor: SphereReflectionCapture
+[2018.01.18-21.48.06:595][401]LogEditorActor: Deleted 1 Actors (0.008 secs)
+[2018.01.18-21.48.34:316][719]LogTexture: Display: Building textures: Texture2D_0 (BGRA8, 64X64)
+[2018.01.18-21.48.34:374][719]LogSavePackage: Save=64.55ms
+[2018.01.18-21.48.34:374][719]LogSavePackage: Moving '../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Saved/Untitled_2_Auto346FB082A4CAE7556FC9BBFA16DD61E3E.tmp' to '../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Saved/Autosaves/Temp/Untitled_2_Auto3.umap'
+[2018.01.18-21.48.34:376][719]LogSavePackage: Display: Finished SavePackage ../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Saved/Autosaves/Temp/Untitled_2_Auto3.umap
+[2018.01.18-21.48.34:377][719]LogFileHelpers: Editor autosave (incl. sublevels) for '/Temp/Untitled_2' took 0.077
+[2018.01.18-21.48.34:378][719]LogFileHelpers: Editor autosave (incl. sublevels) for all levels took 0.077
+[2018.01.18-21.49.02:174][293]LogEditorViewport: Clicking on Actor (LMB): DirectionalLight (DirectionalLight)
+[2018.01.18-21.49.24:573][907]Cmd: TRANSACTION UNDO
+[2018.01.18-21.49.24:573][907]LogEditorTransaction: Undo Edit Intensity
+[2018.01.18-21.49.24:874][940]Cmd: TRANSACTION UNDO
+[2018.01.18-21.49.24:874][940]LogEditorTransaction: Undo Rotate Actors
+[2018.01.18-21.49.25:105][964]Cmd: TRANSACTION UNDO
+[2018.01.18-21.49.25:105][964]LogEditorTransaction: Undo Move Actors
+[2018.01.18-21.49.25:405][998]Cmd: TRANSACTION UNDO
+[2018.01.18-21.49.25:405][998]LogEditorTransaction: Undo Move Actors
+[2018.01.18-21.49.42:840][ 73]MapCheck: New page: Map Check
+[2018.01.18-21.49.42:850][ 73]LightingResults: New page: Lighting Build - Jan 18, 2018, 7:49:42 AM
+[2018.01.18-21.49.42:859][ 73]LogSwarmInterface: [OpenConnection] Registering TCP channel ...
+[2018.01.18-21.49.42:860][ 73]LogSwarmInterface: [OpenConnection] Connecting to agent ...
+[2018.01.18-21.49.42:860][ 73]LogSwarmInterface: [TryOpenConnection] Testing the Agent
+[2018.01.18-21.49.42:861][ 73]LogSwarmInterface: [TryOpenConnection] Opening Connection to Agent
+[2018.01.18-21.49.42:861][ 73]LogSwarmInterface: [TryOpenConnection] Local Process ID is 9080
+[2018.01.18-21.49.47:369][ 73]LogStaticLightingSystem: Warning: No importance volume found, so the scene bounding box was used.  You can optimize your scene's quality and lighting build times by adding importance volumes.
+[2018.01.18-21.49.47:369][ 73]LogStaticLightingSystem: Running Lightmass w/ ImmediateImport mode ENABLED
+[2018.01.18-21.49.47:369][ 73]LogStaticLightingSystem: Running Lightmass w/ ImmediateProcess mode ENABLED
+[2018.01.18-21.49.47:369][ 73]LogStaticLightingSystem: Running Lightmass w/ Sorting mode ENABLED
+[2018.01.18-21.49.47:369][ 73]LogStaticLightingSystem: Running Lightmass w/ Mapping paddings ENABLED
+[2018.01.18-21.49.47:369][ 73]LogStaticLightingSystem: Running Lightmass w/ Mapping debug paddings DISABLED
+[2018.01.18-21.49.47:452][ 73]LogEditorBuildUtils: Build time 0:04
+[2018.01.18-21.49.48:891][172]Job is a success!
+[2018.01.18-21.49.48:928][173]LogVolumetricLightmapImport: Imported Volumetric Lightmap in 0.008s
+[2018.01.18-21.49.48:928][173]LogVolumetricLightmapImport:      Indirection Texture 16x16x16 = 0.0Mb
+[2018.01.18-21.49.48:928][173]LogVolumetricLightmapImport:      BrickData 485x5x5 = 0.3Mb
+[2018.01.18-21.49.48:928][173]LogVolumetricLightmapImport:      Bricks at Level
+[2018.01.18-21.49.48:928][173]LogVolumetricLightmapImport:          0: 1.0% covering 100.0% of volume
+[2018.01.18-21.49.48:928][173]LogVolumetricLightmapImport:          1: 9.3% covering 14.1% of volume
+[2018.01.18-21.49.48:928][173]LogVolumetricLightmapImport:          2: 89.7% covering 2.1% of volume
+[2018.01.18-21.49.48:976][173]LogTexture: Display: Building textures: HQ_Lightmap0_1 (AutoDXT, 256X256)
+[2018.01.18-21.49.48:976][173]LogTexture: Display: Building textures: LQ_Lightmap_0_1 (DXT1, 256X256)
+[2018.01.18-21.49.48:976][173]LogTexture: Display: Building textures: ShadowMapTexture2D_5 (G8, 512X32)
+[2018.01.18-21.49.48:990][173]Lightmass on DESKTOP-T965EAC: 1.18 sec total, 95 ms importing, 21 ms setup, 407 ms photons, 640 ms processing, 0 ms extra exporting [16/16 mappings]. Threads: 4.32 sec total, 1.08 sec processing.
+[2018.01.18-21.49.48:998][173]LogStaticLightingSystem: Illumination: 6.13 sec (33 ms encoding lightmaps, 6 ms encoding shadowmaps)
+[2018.01.18-21.49.48:998][173]LogStaticLightingSystem: Lightmap texture memory:  0.1 MB (0.1 MB streaming, 0.0 MB non-streaming), 2 textures
+[2018.01.18-21.49.48:998][173]LogStaticLightingSystem: Shadowmap texture memory: 0.0 MB (0.0 MB streaming, 0.0 MB non-streaming), 1 textures
+[2018.01.18-21.49.49:369][173]DumpUnbuiltLightIteractions
+[2018.01.18-21.49.49:369][173]Lights with unbuilt interactions: 0
+[2018.01.18-21.49.49:369][173]
+[2018.01.18-21.49.49:369][173]Primitives with unbuilt interactions: 0
+[2018.01.18-21.49.49:378][174]Cmd: MAP CHECK NOTIFYRESULTS
+[2018.01.18-21.49.49:378][174]MapCheck: New page: Untitled_2 - Jan 18, 2018, 7:49:49 AM
+[2018.01.18-21.49.49:431][174]MapCheck: Map check complete: 0 Error(s), 0 Warning(s), took 53.019ms to complete.
+[2018.01.18-21.50.14:503][153]Cmd: TRANSACTION UNDO
+[2018.01.18-21.50.14:503][153]LogEditorTransaction: Undo Edit Intensity
+[2018.01.18-21.50.25:113][407]MapCheck: New page: Map Check
+[2018.01.18-21.50.25:123][407]LightingResults: New page: Lighting Build - Jan 18, 2018, 7:50:25 AM
+[2018.01.18-21.50.25:131][407]LogSwarmInterface: [OpenConnection] Registering TCP channel ...
+[2018.01.18-21.50.25:132][407]LogSwarmInterface: [OpenConnection] Connecting to agent ...
+[2018.01.18-21.50.25:132][407]LogSwarmInterface: [TryOpenConnection] Testing the Agent
+[2018.01.18-21.50.25:133][407]LogSwarmInterface: [TryOpenConnection] Opening Connection to Agent
+[2018.01.18-21.50.25:133][407]LogSwarmInterface: [TryOpenConnection] Local Process ID is 9080
+[2018.01.18-21.50.29:641][407]LogStaticLightingSystem: Warning: No importance volume found, so the scene bounding box was used.  You can optimize your scene's quality and lighting build times by adding importance volumes.
+[2018.01.18-21.50.29:641][407]LogStaticLightingSystem: Running Lightmass w/ ImmediateImport mode ENABLED
+[2018.01.18-21.50.29:641][407]LogStaticLightingSystem: Running Lightmass w/ ImmediateProcess mode ENABLED
+[2018.01.18-21.50.29:641][407]LogStaticLightingSystem: Running Lightmass w/ Sorting mode ENABLED
+[2018.01.18-21.50.29:641][407]LogStaticLightingSystem: Running Lightmass w/ Mapping paddings ENABLED
+[2018.01.18-21.50.29:641][407]LogStaticLightingSystem: Running Lightmass w/ Mapping debug paddings DISABLED
+[2018.01.18-21.50.29:707][407]LogEditorBuildUtils: Build time 0:04
+[2018.01.18-21.50.31:145][504]Job is a success!
+[2018.01.18-21.50.31:182][506]LogVolumetricLightmapImport: Imported Volumetric Lightmap in 0.008s
+[2018.01.18-21.50.31:182][506]LogVolumetricLightmapImport:      Indirection Texture 16x16x16 = 0.0Mb
+[2018.01.18-21.50.31:182][506]LogVolumetricLightmapImport:      BrickData 485x5x5 = 0.3Mb
+[2018.01.18-21.50.31:182][506]LogVolumetricLightmapImport:      Bricks at Level
+[2018.01.18-21.50.31:182][506]LogVolumetricLightmapImport:          0: 1.0% covering 100.0% of volume
+[2018.01.18-21.50.31:182][506]LogVolumetricLightmapImport:          1: 9.3% covering 14.1% of volume
+[2018.01.18-21.50.31:182][506]LogVolumetricLightmapImport:          2: 89.7% covering 2.1% of volume
+[2018.01.18-21.50.31:229][506]LogTexture: Display: Building textures: HQ_Lightmap1_1 (AutoDXT, 256X256)
+[2018.01.18-21.50.31:229][506]LogTexture: Display: Building textures: LQ_Lightmap_1_1 (DXT1, 256X256)
+[2018.01.18-21.50.31:229][506]LogTexture: Display: Building textures: ShadowMapTexture2D_6 (G8, 512X32)
+[2018.01.18-21.50.31:242][506]Lightmass on DESKTOP-T965EAC: 1.18 sec total, 96 ms importing, 20 ms setup, 406 ms photons, 640 ms processing, 0 ms extra exporting [16/16 mappings]. Threads: 4.32 sec total, 1.03 sec processing.
+[2018.01.18-21.50.31:250][506]LogStaticLightingSystem: Illumination: 6.10 sec (31 ms encoding lightmaps, 8 ms encoding shadowmaps)
+[2018.01.18-21.50.31:250][506]LogStaticLightingSystem: Lightmap texture memory:  0.1 MB (0.1 MB streaming, 0.0 MB non-streaming), 2 textures
+[2018.01.18-21.50.31:250][506]LogStaticLightingSystem: Shadowmap texture memory: 0.0 MB (0.0 MB streaming, 0.0 MB non-streaming), 1 textures
+[2018.01.18-21.50.31:642][506]DumpUnbuiltLightIteractions
+[2018.01.18-21.50.31:642][506]Lights with unbuilt interactions: 0
+[2018.01.18-21.50.31:642][506]
+[2018.01.18-21.50.31:642][506]Primitives with unbuilt interactions: 0
+[2018.01.18-21.50.31:651][507]Cmd: MAP CHECK NOTIFYRESULTS
+[2018.01.18-21.50.31:651][507]MapCheck: New page: Untitled_2 - Jan 18, 2018, 7:50:31 AM
+[2018.01.18-21.50.31:706][507]MapCheck: Map check complete: 0 Error(s), 0 Warning(s), took 55.044ms to complete.
+[2018.01.18-21.50.50:674][765]Cmd: TRANSACTION UNDO
+[2018.01.18-21.50.50:674][765]LogEditorTransaction: Undo Edit Bloom Tint
+[2018.01.18-21.51.41:175][653]Cmd: DELETE
+[2018.01.18-21.51.41:175][653]Cmd: ACTOR DELETE
+[2018.01.18-21.51.41:177][653]LogEditorActor: Deleted Actor: SphereReflectionCapture
+[2018.01.18-21.51.41:183][653]LogEditorActor: Deleted 1 Actors (0.008 secs)
+[2018.01.18-21.52.51:577][683]Cmd: DELETE
+[2018.01.18-21.52.51:577][683]Cmd: ACTOR DELETE
+[2018.01.18-21.52.51:578][683]LogEditorActor: Deleted Actor: SkyLight
+[2018.01.18-21.52.51:586][683]LogEditorActor: Deleted 1 Actors (0.009 secs)
+[2018.01.18-21.53.18:596][838]MapCheck: New page: Map Check
+[2018.01.18-21.53.18:604][838]LightingResults: New page: Lighting Build - Jan 18, 2018, 7:53:18 AM
+[2018.01.18-21.53.18:612][838]LogSwarmInterface: [OpenConnection] Registering TCP channel ...
+[2018.01.18-21.53.18:613][838]LogSwarmInterface: [OpenConnection] Connecting to agent ...
+[2018.01.18-21.53.18:613][838]LogSwarmInterface: [TryOpenConnection] Testing the Agent
+[2018.01.18-21.53.18:614][838]LogSwarmInterface: [TryOpenConnection] Opening Connection to Agent
+[2018.01.18-21.53.18:614][838]LogSwarmInterface: [TryOpenConnection] Local Process ID is 9080
+[2018.01.18-21.53.23:122][838]LogStaticLightingSystem: Warning: No importance volume found, so the scene bounding box was used.  You can optimize your scene's quality and lighting build times by adding importance volumes.
+[2018.01.18-21.53.23:122][838]LogStaticLightingSystem: Running Lightmass w/ ImmediateImport mode ENABLED
+[2018.01.18-21.53.23:122][838]LogStaticLightingSystem: Running Lightmass w/ ImmediateProcess mode ENABLED
+[2018.01.18-21.53.23:122][838]LogStaticLightingSystem: Running Lightmass w/ Sorting mode ENABLED
+[2018.01.18-21.53.23:122][838]LogStaticLightingSystem: Running Lightmass w/ Mapping paddings ENABLED
+[2018.01.18-21.53.23:122][838]LogStaticLightingSystem: Running Lightmass w/ Mapping debug paddings DISABLED
+[2018.01.18-21.53.23:218][838]LogEditorBuildUtils: Build time 0:04
+[2018.01.18-21.53.24:687][939]Job is a success!
+[2018.01.18-21.53.24:722][940]LogVolumetricLightmapImport: Imported Volumetric Lightmap in 0.009s
+[2018.01.18-21.53.24:722][940]LogVolumetricLightmapImport:      Indirection Texture 16x16x16 = 0.0Mb
+[2018.01.18-21.53.24:722][940]LogVolumetricLightmapImport:      BrickData 465x5x5 = 0.4Mb
+[2018.01.18-21.53.24:722][940]LogVolumetricLightmapImport:      Bricks at Level
+[2018.01.18-21.53.24:722][940]LogVolumetricLightmapImport:          0: 1.1% covering 100.0% of volume
+[2018.01.18-21.53.24:722][940]LogVolumetricLightmapImport:          1: 9.7% covering 14.1% of volume
+[2018.01.18-21.53.24:722][940]LogVolumetricLightmapImport:          2: 89.2% covering 2.0% of volume
+[2018.01.18-21.53.24:788][940]LogTexture: Display: Building textures: SkyOcclusion0_1 (AutoDXT, 256X128)
+[2018.01.18-21.53.24:788][940]LogTexture: Display: Building textures: HQ_Lightmap0_1 (AutoDXT, 256X256)
+[2018.01.18-21.53.24:788][940]LogTexture: Display: Building textures: LQ_Lightmap_0_1 (DXT1, 256X256)
+[2018.01.18-21.53.24:788][940]LogTexture: Display: Building textures: ShadowMapTexture2D_7 (G8, 512X32)
+[2018.01.18-21.53.24:801][940]Lightmass on DESKTOP-T965EAC: 1.23 sec total, 109 ms importing, 20 ms setup, 409 ms photons, 672 ms processing, 0 ms extra exporting [16/16 mappings]. Threads: 4.54 sec total, 1.00 sec processing.
+[2018.01.18-21.53.24:807][940]LogStaticLightingSystem: Illumination: 6.18 sec (48 ms encoding lightmaps, 10 ms encoding shadowmaps)
+[2018.01.18-21.53.24:807][940]LogStaticLightingSystem: Lightmap texture memory:  0.2 MB (0.2 MB streaming, 0.0 MB non-streaming), 2 textures
+[2018.01.18-21.53.24:807][940]LogStaticLightingSystem: Shadowmap texture memory: 0.0 MB (0.0 MB streaming, 0.0 MB non-streaming), 1 textures
+[2018.01.18-21.53.25:123][940]DumpUnbuiltLightIteractions
+[2018.01.18-21.53.25:123][940]Lights with unbuilt interactions: 0
+[2018.01.18-21.53.25:123][940]
+[2018.01.18-21.53.25:123][940]Primitives with unbuilt interactions: 0
+[2018.01.18-21.53.25:142][941]Cmd: MAP CHECK NOTIFYRESULTS
+[2018.01.18-21.53.25:142][941]MapCheck: New page: Untitled_2 - Jan 18, 2018, 7:53:25 AM
+[2018.01.18-21.53.25:198][941]MapCheck: Map check complete: 0 Error(s), 0 Warning(s), took 56.909ms to complete.
+[2018.01.18-21.53.29:517][439]LogEditorViewport: Clicking on Actor (LMB): SkyLight (SkyLight)
+[2018.01.18-21.53.30:019][498]Cmd: DELETE
+[2018.01.18-21.53.30:019][498]Cmd: ACTOR DELETE
+[2018.01.18-21.53.30:021][498]LogEditorActor: Deleted Actor: SkyLight
+[2018.01.18-21.53.30:028][498]LogEditorActor: Deleted 1 Actors (0.009 secs)
+[2018.01.18-21.53.34:551][ 39]LogTemp: Repeating last play command: Selected Viewport
+[2018.01.18-21.53.34:562][ 39]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.01.18-21.53.34:562][ 39]PIE: New page: PIE session: Untitled_2 (Jan 18, 2018, 7:53:34 AM)
+[2018.01.18-21.53.34:562][ 39]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_2
+[2018.01.18-21.53.34:565][ 39]LogPlayLevel: PIE: StaticDuplicateObject took: (0.003127s)
+[2018.01.18-21.53.34:566][ 39]LogAIModule: Creating AISystem for world Untitled
+[2018.01.18-21.53.34:566][ 39]LogPlayLevel: PIE: World Init took: (0.000542s)
+[2018.01.18-21.53.34:566][ 39]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_2.Untitled to /Temp/UEDPIE_0_Untitled_2.Untitled (0.003854s)
+[2018.01.18-21.53.34:576][ 39]LogInit: XAudio2 using 'Speakers (2- Wireless Stereo Headset)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.01.18-21.53.34:581][ 39]LogInit: FAudioDevice initialized.
+[2018.01.18-21.53.34:613][ 39]LogLoad: Game class is 'GameModeBase'
+[2018.01.18-21.53.34:614][ 39]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_2.Untitled up for play (max tick rate 0) at 2018.01.18-14.53.34
+[2018.01.18-21.53.34:614][ 39]LogWorld: Bringing up level for play took: 0.000633
+[2018.01.18-21.53.34:615][ 39]PIE: Play in editor start time for /Temp/UEDPIE_0_Untitled_2 0.723
+[2018.01.18-21.55.33:851][857]LogTemp: Repeating last play command: Selected Viewport
+[2018.01.18-21.55.33:863][857]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.01.18-21.55.33:863][857]PIE: New page: PIE session: Untitled_2 (Jan 18, 2018, 7:55:33 AM)
+[2018.01.18-21.55.33:863][857]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_2
+[2018.01.18-21.55.33:866][857]LogPlayLevel: PIE: StaticDuplicateObject took: (0.003530s)
+[2018.01.18-21.55.33:867][857]LogAIModule: Creating AISystem for world Untitled
+[2018.01.18-21.55.33:867][857]LogPlayLevel: PIE: World Init took: (0.000787s)
+[2018.01.18-21.55.33:867][857]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_2.Untitled to /Temp/UEDPIE_0_Untitled_2.Untitled (0.004578s)
+[2018.01.18-21.55.33:878][857]LogInit: XAudio2 using 'Speakers (2- Wireless Stereo Headset)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.01.18-21.55.33:883][857]LogInit: FAudioDevice initialized.
+[2018.01.18-21.55.33:912][857]LogLoad: Game class is 'GameModeBase'
+[2018.01.18-21.55.33:912][857]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_2.Untitled up for play (max tick rate 0) at 2018.01.18-14.55.33
+[2018.01.18-21.55.33:913][857]LogWorld: Bringing up level for play took: 0.000665
+[2018.01.18-21.55.33:913][857]PIE: Play in editor start time for /Temp/UEDPIE_0_Untitled_2 0.021
+[2018.01.18-21.55.43:623][ 13]Cmd: STAT FPS
+[2018.01.18-21.55.45:300][213]LogTemp: Repeating last play command: Selected Viewport
+[2018.01.18-21.55.45:306][213]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.01.18-21.55.45:306][213]PIE: New page: PIE session: Untitled_2 (Jan 18, 2018, 7:55:45 AM)
+[2018.01.18-21.55.45:307][213]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_2
+[2018.01.18-21.55.45:311][213]LogPlayLevel: PIE: StaticDuplicateObject took: (0.004039s)
+[2018.01.18-21.55.45:311][213]LogAIModule: Creating AISystem for world Untitled
+[2018.01.18-21.55.45:311][213]LogPlayLevel: PIE: World Init took: (0.000611s)
+[2018.01.18-21.55.45:311][213]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_2.Untitled to /Temp/UEDPIE_0_Untitled_2.Untitled (0.004856s)
+[2018.01.18-21.55.45:323][213]LogInit: XAudio2 using 'Speakers (2- Wireless Stereo Headset)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.01.18-21.55.45:328][213]LogInit: FAudioDevice initialized.
+[2018.01.18-21.55.45:359][213]LogLoad: Game class is 'GameModeBase'
+[2018.01.18-21.55.45:360][213]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_2.Untitled up for play (max tick rate 0) at 2018.01.18-14.55.45
+[2018.01.18-21.55.45:360][213]LogWorld: Bringing up level for play took: 0.000630
+[2018.01.18-21.55.45:361][213]PIE: Play in editor start time for /Temp/UEDPIE_0_Untitled_2 -0.531
+[2018.01.18-21.56.14:735][695]MapCheck: New page: Map Check
+[2018.01.18-21.56.14:746][695]Cmd: MAP REBUILD ALLVISIBLE
+[2018.01.18-21.56.14:747][695]LogEditorServer: Rebuildmap Clear paths rebuilt
+[2018.01.18-21.56.14:851][695]LogMaterial: Missing cached shader map for material FDebugViewModeMaterialProxy LandscapeGizmo_Mat, compiling. 
+[2018.01.18-21.56.15:108][695]TextureStreamingBuild: Display: Compiling optional shaders took 0.262 seconds.
+[2018.01.18-21.56.15:108][695]LogLevel: Display: Export Material TexCoord Scales took 0.000 seconds.
+[2018.01.18-21.56.15:111][695]TextureStreamingBuild: Display: Build Texture Streaming took 0.002 seconds.
+[2018.01.18-21.56.15:117][695]LightingResults: New page: Lighting Build - Jan 18, 2018, 7:56:15 AM
+[2018.01.18-21.56.15:124][695]LogSwarmInterface: [OpenConnection] Registering TCP channel ...
+[2018.01.18-21.56.15:125][695]LogSwarmInterface: [OpenConnection] Connecting to agent ...
+[2018.01.18-21.56.15:125][695]LogSwarmInterface: [TryOpenConnection] Testing the Agent
+[2018.01.18-21.56.15:126][695]LogSwarmInterface: [TryOpenConnection] Opening Connection to Agent
+[2018.01.18-21.56.15:126][695]LogSwarmInterface: [TryOpenConnection] Local Process ID is 9080
+[2018.01.18-21.56.19:633][695]LogStaticLightingSystem: Warning: No importance volume found, so the scene bounding box was used.  You can optimize your scene's quality and lighting build times by adding importance volumes.
+[2018.01.18-21.56.19:633][695]LogStaticLightingSystem: Running Lightmass w/ ImmediateImport mode ENABLED
+[2018.01.18-21.56.19:633][695]LogStaticLightingSystem: Running Lightmass w/ ImmediateProcess mode ENABLED
+[2018.01.18-21.56.19:633][695]LogStaticLightingSystem: Running Lightmass w/ Sorting mode ENABLED
+[2018.01.18-21.56.19:633][695]LogStaticLightingSystem: Running Lightmass w/ Mapping paddings ENABLED
+[2018.01.18-21.56.19:633][695]LogStaticLightingSystem: Running Lightmass w/ Mapping debug paddings DISABLED
+[2018.01.18-21.56.19:697][695]Cmd: MAP CHECK DONTDISPLAYDIALOG
+[2018.01.18-21.56.19:697][695]MapCheck: New page: Untitled_2 - Jan 18, 2018, 7:56:19 AM
+[2018.01.18-21.56.19:698][695]MapCheck: Error: WorldSettings Maps need lighting rebuilt 
+[2018.01.18-21.56.19:752][695]MapCheck: Map check complete: 1 Error(s), 0 Warning(s), took 54.458ms to complete.
+[2018.01.18-21.56.19:773][695]LogEditorBuildUtils: Build time 0:05
+[2018.01.18-21.56.21:264][783]Job is a success!
+[2018.01.18-21.56.21:305][784]LogVolumetricLightmapImport: Imported Volumetric Lightmap in 0.007s
+[2018.01.18-21.56.21:305][784]LogVolumetricLightmapImport:      Indirection Texture 16x16x16 = 0.0Mb
+[2018.01.18-21.56.21:305][784]LogVolumetricLightmapImport:      BrickData 360x5x5 = 0.2Mb
+[2018.01.18-21.56.21:305][784]LogVolumetricLightmapImport:      Bricks at Level
+[2018.01.18-21.56.21:305][784]LogVolumetricLightmapImport:          0: 1.4% covering 100.0% of volume
+[2018.01.18-21.56.21:305][784]LogVolumetricLightmapImport:          1: 12.5% covering 14.1% of volume
+[2018.01.18-21.56.21:305][784]LogVolumetricLightmapImport:          2: 86.1% covering 1.5% of volume
+[2018.01.18-21.56.21:357][784]LogTexture: Display: Building textures: HQ_Lightmap1_1 (AutoDXT, 256X256)
+[2018.01.18-21.56.21:357][784]LogTexture: Display: Building textures: LQ_Lightmap_1_1 (DXT1, 256X256)
+[2018.01.18-21.56.21:357][784]LogTexture: Display: Building textures: ShadowMapTexture2D_8 (G8, 512X32)
+[2018.01.18-21.56.21:372][784]Lightmass on DESKTOP-T965EAC: 1.18 sec total, 98 ms importing, 22 ms setup, 411 ms photons, 636 ms processing, 0 ms extra exporting [16/16 mappings]. Threads: 4.29 sec total, 1.04 sec processing.
+[2018.01.18-21.56.21:376][784]LogStaticLightingSystem: Illumination: 6.24 sec (32 ms encoding lightmaps, 11 ms encoding shadowmaps)
+[2018.01.18-21.56.21:376][784]LogStaticLightingSystem: Lightmap texture memory:  0.1 MB (0.1 MB streaming, 0.0 MB non-streaming), 2 textures
+[2018.01.18-21.56.21:376][784]LogStaticLightingSystem: Shadowmap texture memory: 0.0 MB (0.0 MB streaming, 0.0 MB non-streaming), 1 textures
+[2018.01.18-21.56.21:634][784]DumpUnbuiltLightIteractions
+[2018.01.18-21.56.21:634][784]Lights with unbuilt interactions: 0
+[2018.01.18-21.56.21:634][784]
+[2018.01.18-21.56.21:634][784]Primitives with unbuilt interactions: 0
+[2018.01.18-21.56.21:647][785]Cmd: MAP CHECK NOTIFYRESULTS
+[2018.01.18-21.56.21:647][785]MapCheck: New page: Untitled_2 - Jan 18, 2018, 7:56:21 AM
+[2018.01.18-21.56.21:702][785]MapCheck: Map check complete: 0 Error(s), 0 Warning(s), took 55.394ms to complete.
+[2018.01.18-21.56.24:147][ 54]LogTemp: Repeating last play command: Selected Viewport
+[2018.01.18-21.56.24:157][ 54]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.01.18-21.56.24:157][ 54]PIE: New page: PIE session: Untitled_2 (Jan 18, 2018, 7:56:24 AM)
+[2018.01.18-21.56.24:157][ 54]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_2
+[2018.01.18-21.56.24:161][ 54]LogPlayLevel: PIE: StaticDuplicateObject took: (0.003609s)
+[2018.01.18-21.56.24:161][ 54]LogAIModule: Creating AISystem for world Untitled
+[2018.01.18-21.56.24:161][ 54]LogPlayLevel: PIE: World Init took: (0.000599s)
+[2018.01.18-21.56.24:162][ 54]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_2.Untitled to /Temp/UEDPIE_0_Untitled_2.Untitled (0.004407s)
+[2018.01.18-21.56.24:173][ 54]LogInit: XAudio2 using 'Speakers (2- Wireless Stereo Headset)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2018.01.18-21.56.24:178][ 54]LogInit: FAudioDevice initialized.
+[2018.01.18-21.56.24:209][ 54]LogLoad: Game class is 'GameModeBase'
+[2018.01.18-21.56.24:210][ 54]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_2.Untitled up for play (max tick rate 0) at 2018.01.18-14.56.24
+[2018.01.18-21.56.24:210][ 54]LogWorld: Bringing up level for play took: 0.000626
+[2018.01.18-21.56.24:211][ 54]PIE: Play in editor start time for /Temp/UEDPIE_0_Untitled_2 0.319
+[2018.01.18-21.57.48:217][318]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Maps/Test" FILE="../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Content/Maps/Test.umap" SILENT=true AUTOSAVING=false KEEPDIRTY=false
+[2018.01.18-21.57.48:282][318]LogSavePackage: Save=56.58ms
+[2018.01.18-21.57.48:282][318]LogSavePackage: Moving '../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Saved/Test5E22893748B8F729CAF26C99D97B7EDA.tmp' to '../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Content/Maps/Test.umap'
+[2018.01.18-21.57.48:286][318]LogSavePackage: Display: Finished SavePackage ../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Content/Maps/Test.umap
+[2018.01.18-21.57.48:311][318]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Maps/Test_BuiltData" FILE="../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Content/Maps/Test_BuiltData.uasset" SILENT=true
+[2018.01.18-21.57.48:325][318]LogSavePackage: Save=11.98ms
+[2018.01.18-21.57.48:325][318]LogSavePackage: Moving '../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Saved/Test_BuiltData8146FD3D44690A0502EF58AD67DDC9A6.tmp' to '../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Content/Maps/Test_BuiltData.uasset'
+[2018.01.18-21.57.48:327][318]LogSavePackage: Display: Finished SavePackage ../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Content/Maps/Test_BuiltData.uasset
+[2018.01.18-21.57.48:330][318]LogFileHelpers: Saving map 'Test' took 0.174
+[2018.01.18-21.58.33:148][664]LogEditorViewport: Clicking on Actor (LMB): Landscape (Landscape)
+[2018.01.18-22.06.18:661][866]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Maps/Test" FILE="../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Content/Maps/Test.umap" SILENT=true AUTOSAVING=false KEEPDIRTY=false
+[2018.01.18-22.06.18:730][866]LogSavePackage: Save=54.13ms
+[2018.01.18-22.06.18:730][866]LogSavePackage: Moving '../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Saved/Test87CF9A854F37D28C73F8FC9115DBDAF5.tmp' to '../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Content/Maps/Test.umap'
+[2018.01.18-22.06.18:731][866]LogSavePackage: Display: Finished SavePackage ../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Content/Maps/Test.umap
+[2018.01.18-22.06.18:749][866]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Maps/Test_BuiltData" FILE="../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Content/Maps/Test_BuiltData.uasset" SILENT=true
+[2018.01.18-22.06.18:767][866]LogSavePackage: Save=12.34ms
+[2018.01.18-22.06.18:767][866]LogSavePackage: Moving '../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Saved/Test_BuiltData5CD22A3A4519164351CF30AF16332BBA.tmp' to '../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Content/Maps/Test_BuiltData.uasset'
+[2018.01.18-22.06.18:769][866]LogSavePackage: Display: Finished SavePackage ../../../../../../Users/Gregory/Documents/GitHub/ProjectPlainSight/PlainSight/Content/Maps/Test_BuiltData.uasset
