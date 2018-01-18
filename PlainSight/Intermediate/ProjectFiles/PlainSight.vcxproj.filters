@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<None Include="..\..\PlainSight.uproject" />
+		<Filter Include="Source">
+			<UniqueIdentifier>{E87ED333-876C-4CBE-87EF-481B43A7CDAB}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Source\PlainSight.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<None Include="..\..\Source\PlainSightEditor.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<Filter Include="Config">
+			<UniqueIdentifier>{7D58252B-6D2D-4868-901E-3BC1494C209B}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Config\DefaultEditor.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultEngine.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultGame.ini">
+			<Filter>Config</Filter>
+		</None >
+		<Filter Include="Source\PlainSight">
+			<UniqueIdentifier>{5C312634-BB9A-4FBB-9ED8-69966DF13D9F}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Source\PlainSight\PlainSight.Build.cs">
+			<Filter>Source\PlainSight</Filter>
+		</None >
+		<ClCompile Include="..\..\Source\PlainSight\PlainSight.cpp">
+			<Filter>Source\PlainSight</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\PlainSight\PlainSight.h">
+			<Filter>Source\PlainSight</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\PlainSight\PlainSightGameModeBase.cpp">
+			<Filter>Source\PlainSight</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\PlainSight\PlainSightGameModeBase.h">
+			<Filter>Source\PlainSight</Filter>
+		</ClInclude >
+	</ItemGroup>
+</Project>

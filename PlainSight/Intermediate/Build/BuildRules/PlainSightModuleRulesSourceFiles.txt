@@ -1,0 +1,3 @@
+C:\Users\Gregory\Documents\GitHub\ProjectPlainSight\PlainSight\Source\PlainSight\PlainSight.Build.cs
+C:\Users\Gregory\Documents\GitHub\ProjectPlainSight\PlainSight\Source\PlainSight.Target.cs
+C:\Users\Gregory\Documents\GitHub\ProjectPlainSight\PlainSight\Source\PlainSightEditor.Target.cs
