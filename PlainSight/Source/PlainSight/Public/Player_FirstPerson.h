@@ -5,10 +5,12 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "Runtime/Engine/Classes/Camera/CameraComponent.h"
+#include "Runtime/Engine/Classes/Components/CapsuleComponent.h"
+#include "Runtime/Engine/Classes/Components/SkeletalMeshComponent.h"
 #include "Player_FirstPerson.generated.h"
 
+UCLASS() 
 
-UCLASS()
 class PLAINSIGHT_API APlayer_FirstPerson : public ACharacter
 {
 	GENERATED_BODY()
@@ -44,6 +46,8 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	
+	/** Pawn mesh: 1st person view (arms; seen only by self) */
+	UPROPERTY(VisibleDefaultsOnly, Category = Mesh)
+		USkeletalMeshComponent* FirstPersonMesh;
 	
 };

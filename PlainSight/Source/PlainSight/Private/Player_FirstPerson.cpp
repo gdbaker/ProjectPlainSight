@@ -2,7 +2,9 @@
 
 #include "Player_FirstPerson.h"
 #include "Components/CapsuleComponent.h" 
+
 #include "Runtime/Engine/Classes/Components/CapsuleComponent.h"
+#include "Runtime/Engine/Classes/Components/SkeletalMeshComponent.h"
 
 // Sets default values
 APlayer_FirstPerson::APlayer_FirstPerson()
@@ -72,5 +74,15 @@ APlayer_FirstPerson::APlayer_FirstPerson(const FObjectInitializer& ObjectInitial
 	FirstPersonCameraComponent->SetRelativeLocation(FVector(0.0f, 0.0f, 50.0f + BaseEyeHeight));
 	// Allow the pawn to control camera rotation.
 	FirstPersonCameraComponent->bUsePawnControlRotation = true;
+
+
+	// Create a mesh component that will be used when being viewed from a '1st person' view (when controlling this pawn)
+	FirstPersonMesh = ObjectInitializer.CreateDefaultSubobject<USkeletalMeshComponent>(this, TEXT("FirstPersonMesh"));
+	FirstPersonMesh->SetOnlyOwnerSee(true);         // only the owning player will see this mesh
+	FirstPersonMesh->AttachTo(FirstPersonCameraComponent);
+	FirstPersonMesh->bCastDynamicShadow = false;
+	FirstPersonMesh->CastShadow = false;
+	// everyone but the owner can see the regular body mesh
+	GetMesh()->SetOwnerNoSee(true);
 }
 
