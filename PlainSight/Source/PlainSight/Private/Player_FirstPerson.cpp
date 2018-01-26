@@ -1,10 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "Player_FirstPerson.h"
-#include "Components/CapsuleComponent.h" 
 
-#include "Runtime/Engine/Classes/Components/CapsuleComponent.h"
-#include "Runtime/Engine/Classes/Components/SkeletalMeshComponent.h"
 
 // Sets default values
 APlayer_FirstPerson::APlayer_FirstPerson()
@@ -62,27 +59,5 @@ void APlayer_FirstPerson::SetupPlayerInputComponent(UInputComponent* PlayerInput
 	InputComponent->BindAxis("Normal_Left_Right", this, &APlayer_FirstPerson::Normal_Left_Right);
 	InputComponent->BindAxis("Turn", this, &APlayer_FirstPerson::AddControllerYawInput);
 	InputComponent->BindAxis("LookUpDown", this, &APlayer_FirstPerson::AddControllerPitchInput);
-}
-
-//Constructor for mesh player
-
-APlayer_FirstPerson::APlayer_FirstPerson(const FObjectInitializer& ObjectInitializer)
-{
-	// Create a CameraComponent 
-	FirstPersonCameraComponent = ObjectInitializer.CreateDefaultSubobject<UCameraComponent>(this, TEXT("FirstPersonCamera"));
-	FirstPersonCameraComponent->AttachTo((USceneComponent*)GetCapsuleComponent());
-	FirstPersonCameraComponent->SetRelativeLocation(FVector(0.0f, 0.0f, 50.0f + BaseEyeHeight));
-	// Allow the pawn to control camera rotation.
-	FirstPersonCameraComponent->bUsePawnControlRotation = true;
-
-
-	// Create a mesh component that will be used when being viewed from a '1st person' view (when controlling this pawn)
-	FirstPersonMesh = ObjectInitializer.CreateDefaultSubobject<USkeletalMeshComponent>(this, TEXT("FirstPersonMesh"));
-	FirstPersonMesh->SetOnlyOwnerSee(true);         // only the owning player will see this mesh
-	FirstPersonMesh->AttachTo(FirstPersonCameraComponent);
-	FirstPersonMesh->bCastDynamicShadow = false;
-	FirstPersonMesh->CastShadow = false;
-	// everyone but the owner can see the regular body mesh
-	GetMesh()->SetOwnerNoSee(true);
 }
 
