@@ -7,7 +7,7 @@
 APlainSightGameMode::APlainSightGameMode()
 {
 	//DefaultPawnClass = APlayer_FirstPerson::StaticClass();
-	static ConstructorHelpers::FClassFinder<APawn> PlayerPawnObject(TEXT("Pawn'/Game/Blueprints/Pawns/Mesh_Player'"));
+	static ConstructorHelpers::FClassFinder<APawn> PlayerPawnObject(TEXT("Pawn'/Game/Blueprints/Pawns/Mesh_Player.Mesh_Player_C'"));
 	if (PlayerPawnObject.Class != NULL)
 	{
 		DefaultPawnClass = PlayerPawnObject.Class;

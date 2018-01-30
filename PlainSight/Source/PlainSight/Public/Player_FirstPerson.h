@@ -37,6 +37,7 @@ protected:
 		void Normal_Turn(float InInput);
 	UFUNCTION()
 		void LookUpDown(float InInput);
+	//sets jump flag when key is pressed
 
 
 public:	
@@ -49,5 +50,9 @@ public:
 	/** Pawn mesh: 1st person view (arms; seen only by self) */
 	UPROPERTY(VisibleDefaultsOnly, Category = Mesh)
 		USkeletalMeshComponent* FirstPersonMesh;
-	
+	UFUNCTION()
+		void OnStartJump();
+	//clears jump flag when key is released
+	UFUNCTION()
+		void OnStopJump();
 };
