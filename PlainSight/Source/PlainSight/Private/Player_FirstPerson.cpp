@@ -46,7 +46,14 @@ void APlayer_FirstPerson::Normal_Turn(float InInput)
 void APlayer_FirstPerson::LookUpDown(float InInput)
 {
 }
-
+void APlayer_FirstPerson::OnStartJump()
+{
+	bPressedJump = true;
+}
+void APlayer_FirstPerson::OnStopJump()
+{
+	bPressedJump = false;
+}
 // Called every frame
 void APlayer_FirstPerson::Tick(float DeltaTime)
 {
@@ -62,6 +69,8 @@ void APlayer_FirstPerson::SetupPlayerInputComponent(UInputComponent* PlayerInput
 	InputComponent->BindAxis("Normal_Left_Right", this, &APlayer_FirstPerson::Normal_Left_Right);
 	InputComponent->BindAxis("Turn", this, &APlayer_FirstPerson::AddControllerYawInput);
 	InputComponent->BindAxis("LookUpDown", this, &APlayer_FirstPerson::AddControllerPitchInput);
+	InputComponent->BindAction("Jump", IE_Pressed, this, &APlayer_FirstPerson::OnStartJump);
+	InputComponent->BindAction("Jump", IE_Released, this, &APlayer_FirstPerson::OnStopJump);
 }
 
 //Constructor for mesh player
@@ -83,6 +92,6 @@ APlayer_FirstPerson::APlayer_FirstPerson(const FObjectInitializer& ObjectInitial
 	FirstPersonMesh->bCastDynamicShadow = false;
 	FirstPersonMesh->CastShadow = false;
 	// everyone but the owner can see the regular body mesh
-	GetMesh()->SetOwnerNoSee(true);
+	//GetMesh()->SetOwnerNoSee(true);
 }
 
