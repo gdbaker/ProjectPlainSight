@@ -18,7 +18,7 @@ APlayer_FirstPerson::APlayer_FirstPerson()
 void APlayer_FirstPerson::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	GetMesh()->SetOwnerNoSee(true);
 }
 
 void APlayer_FirstPerson::Normal_Forward_Backward(float InInput)
@@ -92,6 +92,6 @@ APlayer_FirstPerson::APlayer_FirstPerson(const FObjectInitializer& ObjectInitial
 	FirstPersonMesh->bCastDynamicShadow = false;
 	FirstPersonMesh->CastShadow = false;
 	// everyone but the owner can see the regular body mesh
-	//GetMesh()->SetOwnerNoSee(true);
+	GetMesh()->SetOwnerNoSee(true);
 }
 
