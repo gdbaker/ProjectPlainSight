@@ -119,7 +119,7 @@ class PLAINSIGHT_API UPlainSightGameInstance : public UGameInstance
 	void StartOnlineGame();
 
 	UFUNCTION(BlueprintCallable, Category = "Network")
-	void FindOnlineGames();
+	TArray<FOnlineSessionSearchResult> FindOnlineGames();
 
 	UFUNCTION(BlueprintCallable, Category = "Network")
 	void JoinOnlineGame();

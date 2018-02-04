@@ -293,6 +293,7 @@ void UPlainSightGameInstance::FindOnlineGames()
 	ULocalPlayer* const Player = GetFirstGamePlayer();
 
 	FindSessions(Player->GetPreferredUniqueNetId(), true, true);
+	return SessionSearch->SearchResults;
 }
 
 void UPlainSightGameInstance::JoinOnlineGame()
