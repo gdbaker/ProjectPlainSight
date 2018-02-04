@@ -57,6 +57,8 @@ class PLAINSIGHT_API UPlainSightGameInstance : public UGameInstance
 	FOnFindSessionsCompleteDelegate OnFindSessionsCompleteDelegate;
 	/** Delegate for joining a session */
 	FOnJoinSessionCompleteDelegate OnJoinSessionCompleteDelegate;
+	/** Delegate for destroying a session */
+	FOnDestroySessionCompleteDelegate OnDestroySessionCompleteDelegate;
 
 	/** Handles to registered delegates for creating/starting a session */
 	FDelegateHandle OnCreateSessionCompleteDelegateHandle;
@@ -65,6 +67,8 @@ class PLAINSIGHT_API UPlainSightGameInstance : public UGameInstance
 	FDelegateHandle OnFindSessionsCompleteDelegateHandle;
 	/** Handle to registered delegate for joining a session */
 	FDelegateHandle OnJoinSessionCompleteDelegateHandle;
+	/** Handle to registered delegate for destroying a session */
+	FDelegateHandle OnDestroySessionCompleteDelegateHandle;
 
 	//handles settings
 	TSharedPtr<class FOnlineSessionSettings> SessionSettings;
@@ -102,4 +106,24 @@ class PLAINSIGHT_API UPlainSightGameInstance : public UGameInstance
 	*	@param bWasSuccessful true if the async action completed without error, false if there was an error
 	*/
 	void OnJoinSessionComplete(FName SessionName, EOnJoinSessionCompleteResult::Type Result);
+
+	/**
+	*	Delegate fired when a destroying an online session has completed
+	*
+	*	@param SessionName the name of the session this callback is for
+	*	@param bWasSuccessful true if the async action completed without error, false if there was an error
+	*/
+	virtual void OnDestroySessionComplete(FName SessionName, bool bWasSuccessful);
+
+	UFUNCTION(BlueprintCallable, Category = "Network")
+	void StartOnlineGame();
+
+	UFUNCTION(BlueprintCallable, Category = "Network")
+	void FindOnlineGames();
+
+	UFUNCTION(BlueprintCallable, Category = "Network")
+	void JoinOnlineGame();
+
+	UFUNCTION(BlueprintCallable, Category = "Network")
+	void DestroySessionAndLeaveGame();
 };

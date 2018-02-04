@@ -12,6 +12,8 @@ UPlainSightGameInstance::UPlainSightGameInstance(const FObjectInitializer& Objec
 	OnFindSessionsCompleteDelegate = FOnFindSessionsCompleteDelegate::CreateUObject(this, &UPlainSightGameInstance::OnFindSessionsComplete);
 	/** Bind function for JOINING a Session */
 	OnJoinSessionCompleteDelegate = FOnJoinSessionCompleteDelegate::CreateUObject(this, &UPlainSightGameInstance::OnJoinSessionComplete);
+	/** Bind function for DESTROYING a Session */
+	OnDestroySessionCompleteDelegate = FOnDestroySessionCompleteDelegate::CreateUObject(this, &UPlainSightGameInstance::OnDestroySessionComplete);
 }
 
 bool UPlainSightGameInstance::HostSession(TSharedPtr<const FUniqueNetId> UserId, FName SessionName, bool bIsLAN, bool bIsPresence, int32 MaxNumPlayers)
@@ -248,6 +250,90 @@ void UPlainSightGameInstance::OnJoinSessionComplete(FName SessionName, EOnJoinSe
 				// how it really looks like
 				PlayerController->ClientTravel(TravelURL, ETravelType::TRAVEL_Absolute);
 			}
+		}
+	}
+}
+
+void UPlainSightGameInstance::OnDestroySessionComplete(FName SessionName, bool bWasSuccessful)
+{
+	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("OnDestroySessionComplete %s, %d"), *SessionName.ToString(), bWasSuccessful));
+
+	// Get the OnlineSubsystem we want to work with
+	IOnlineSubsystem* OnlineSub = IOnlineSubsystem::Get();
+	if (OnlineSub)
+	{
+		// Get the SessionInterface from the OnlineSubsystem
+		IOnlineSessionPtr Sessions = OnlineSub->GetSessionInterface();
+
+		if (Sessions.IsValid())
+		{
+			// Clear the Delegate
+			Sessions->ClearOnDestroySessionCompleteDelegate_Handle(OnDestroySessionCompleteDelegateHandle);
+
+			// If it was successful, we just load another level (could be a MainMenu!)
+			if (bWasSuccessful)
+			{
+				UGameplayStatics::OpenLevel(GetWorld(), "MainMenu", true);
+			}
+		}
+	}
+}
+
+void UPlainSightGameInstance::StartOnlineGame()
+{
+	// Creating a local player where we can get the UserID from
+	ULocalPlayer* const Player = GetFirstGamePlayer();
+
+	// Call our custom HostSession function. GameSessionName is a GameInstance variable
+	HostSession(Player->GetPreferredUniqueNetId(), GameSessionName, true, true, 4);
+}
+
+void UPlainSightGameInstance::FindOnlineGames()
+{
+	ULocalPlayer* const Player = GetFirstGamePlayer();
+
+	FindSessions(Player->GetPreferredUniqueNetId(), true, true);
+}
+
+void UPlainSightGameInstance::JoinOnlineGame()
+{
+	ULocalPlayer* const Player = GetFirstGamePlayer();
+
+	// Just a SearchResult where we can save the one we want to use, for the case we find more than one!
+	FOnlineSessionSearchResult SearchResult;
+
+	// If the Array is not empty, we can go through it
+	if (SessionSearch->SearchResults.Num() > 0)
+	{
+		for (int32 i = 0; i < SessionSearch->SearchResults.Num(); i++)
+		{
+			// To avoid something crazy, we filter sessions from ourself
+			if (SessionSearch->SearchResults[i].Session.OwningUserId != Player->GetPreferredUniqueNetId())
+			{
+				SearchResult = SessionSearch->SearchResults[i];
+
+				// Once we found sounce a Session that is not ours, just join it. Instead of using a for loop, you could
+				// use a widget where you click on and have a reference for the GameSession it represents which you can use
+				// here
+				JoinSession(Player->GetPreferredUniqueNetId(), GameSessionName, SearchResult);
+				break;
+			}
+		}
+	}
+}
+
+void UPlainSightGameInstance::DestroySessionAndLeaveGame()
+{
+	IOnlineSubsystem* OnlineSub = IOnlineSubsystem::Get();
+	if (OnlineSub)
+	{
+		IOnlineSessionPtr Sessions = OnlineSub->GetSessionInterface();
+
+		if (Sessions.IsValid())
+		{
+			Sessions->AddOnDestroySessionCompleteDelegate_Handle(OnDestroySessionCompleteDelegate);
+
+			Sessions->DestroySession(GameSessionName);
 		}
 	}
 }
