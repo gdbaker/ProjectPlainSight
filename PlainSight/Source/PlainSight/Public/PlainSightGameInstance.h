@@ -1,12 +1,20 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
-
+//#include "FindSessionsCallbackProxy.h"
 #include "Engine.h"
 #include "UnrealNetwork.h"
 #include "Online.h"
 #include "Engine/GameInstance.h"
 #include "PlainSightGameInstance.generated.h"
+
+USTRUCT(BlueprintType)
+struct FSessionResult
+{
+	GENERATED_USTRUCT_BODY()
+
+	FOnlineSessionSearchResult chosenSession;
+};
 
 /**
  * 
@@ -115,14 +123,15 @@ class PLAINSIGHT_API UPlainSightGameInstance : public UGameInstance
 	*/
 	virtual void OnDestroySessionComplete(FName SessionName, bool bWasSuccessful);
 
+ public:
 	UFUNCTION(BlueprintCallable, Category = "Network")
 	void StartOnlineGame();
 
 	UFUNCTION(BlueprintCallable, Category = "Network")
-	TArray<FOnlineSessionSearchResult> FindOnlineGames();
+		TArray<FSessionResult> FindOnlineGames();
 
 	UFUNCTION(BlueprintCallable, Category = "Network")
-	void JoinOnlineGame();
+	void JoinOnlineGame(FSessionResult chosenSession);
 
 	UFUNCTION(BlueprintCallable, Category = "Network")
 	void DestroySessionAndLeaveGame();
