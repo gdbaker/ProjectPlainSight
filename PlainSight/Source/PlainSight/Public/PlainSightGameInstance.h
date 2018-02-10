@@ -14,6 +14,15 @@ struct FSessionResult
 	GENERATED_USTRUCT_BODY()
 
 	FOnlineSessionSearchResult chosenSession;
+	int32 PingInMs;
+
+	/** Owner name of the session */
+	FString OwningUserName;
+
+	/** The number of publicly available connections that are available (read only) */
+	int32 NumOpenConnections;
+
+	int32 NumPossibleConnections;
 };
 
 /**
@@ -128,7 +137,7 @@ class PLAINSIGHT_API UPlainSightGameInstance : public UGameInstance
 	void StartOnlineGame();
 
 	UFUNCTION(BlueprintCallable, Category = "Network")
-		TArray<FSessionResult> FindOnlineGames();
+	TArray<FSessionResult> FindOnlineGames();
 
 	UFUNCTION(BlueprintCallable, Category = "Network")
 	void JoinOnlineGame(FSessionResult chosenSession);

@@ -299,6 +299,12 @@ TArray<FSessionResult> UPlainSightGameInstance::FindOnlineGames()
 	for (auto session : SessionSearch->SearchResults) {
 		FSessionResult sess;
 		sess.chosenSession = session;
+		sess.NumPossibleConnections = session.Session.SessionSettings.NumPublicConnection;
+		
+		sess.NumOpenConnections = session.Session.NumOpenPublicConnections;
+		sess.PingInMs = session.PingInMs;
+		sess.OwningUserName = session.Session.OwningUserName;
+		session.Session.
 		sessionsFound.Add(sess);
 	}
 
@@ -325,7 +331,7 @@ void UPlainSightGameInstance::JoinOnlineGame(FSessionResult chosenSession)
 				// Once we found sounce a Session that is not ours, just join it. Instead of using a for loop, you could
 				// use a widget where you click on and have a reference for the GameSession it represents which you can use
 				// here
-				JoinSession(Player->GetPreferredUniqueNetId(), GameSessionName, chosenSession.chosenSession);
+				JoinSession(Player->GetPreferredUniqueNetId(), GameSessionName, SearchResult);
 				break;
 			}
 		}

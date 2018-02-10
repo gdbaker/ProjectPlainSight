@@ -17,5 +17,6 @@ class PLAINSIGHT_API APlainSightGameMode : public AGameMode
 public:
 	APlainSightGameMode();
 	
-	
+	/** select best spawn point for player */
+	//virtual AActor* ChoosePlayerStart_Implementation(AController* Player) override;
 };
