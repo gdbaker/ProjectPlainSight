@@ -16,7 +16,7 @@ UPlainSightGameInstance::UPlainSightGameInstance(const FObjectInitializer& Objec
 	OnDestroySessionCompleteDelegate = FOnDestroySessionCompleteDelegate::CreateUObject(this, &UPlainSightGameInstance::OnDestroySessionComplete);
 }
 
-bool UPlainSightGameInstance::HostSession(TSharedPtr<const FUniqueNetId> UserId, FName SessionName, bool bIsLAN, bool bIsPresence, int32 MaxNumPlayers)
+bool UPlainSightGameInstance::HostSession(TSharedPtr<const FUniqueNetId> UserId, FName SessionName, FString ServerName, bool bIsLAN, bool bIsPresence, int32 MaxNumPlayers)
 {
 	// Get the Online Subsystem to work with
 	IOnlineSubsystem* const OnlineSub = IOnlineSubsystem::Get();
@@ -47,6 +47,11 @@ bool UPlainSightGameInstance::HostSession(TSharedPtr<const FUniqueNetId> UserId,
 			SessionSettings->bAllowJoinViaPresenceFriendsOnly = false;
 
 			SessionSettings->Set(SETTING_MAPNAME, FString("Test"), EOnlineDataAdvertisementType::ViaOnlineService);
+
+			FOnlineSessionSetting BonusSetting;
+			BonusSetting.Data = ServerName;
+
+			SessionSettings->Settings.Add(SETTING_SERVER_NAME, BonusSetting);
 
 			// Set the delegate to the Handle of the SessionInterface
 			OnCreateSessionCompleteDelegateHandle = Sessions->AddOnCreateSessionCompleteDelegate_Handle(OnCreateSessionCompleteDelegate);
@@ -284,8 +289,11 @@ void UPlainSightGameInstance::StartOnlineGame()
 	// Creating a local player where we can get the UserID from
 	ULocalPlayer* const Player = GetFirstGamePlayer();
 
+	FString name;
+	name = "Test Server Name";
+
 	// Call our custom HostSession function. GameSessionName is a GameInstance variable
-	HostSession(Player->GetPreferredUniqueNetId(), GameSessionName, true, true, 4);
+	HostSession(Player->GetPreferredUniqueNetId(), GameSessionName, name, true, true, 4);
 }
 
 TArray<FSessionResult> UPlainSightGameInstance::FindOnlineGames()
@@ -294,21 +302,20 @@ TArray<FSessionResult> UPlainSightGameInstance::FindOnlineGames()
 
 	FindSessions(Player->GetPreferredUniqueNetId(), true, true);
 
-	TArray<FSessionResult> sessionsFound;
+	TArray<FSessionResult> SessionsFound;
 
-	for (auto session : SessionSearch->SearchResults) {
-		FSessionResult sess;
-		sess.chosenSession = session;
-		sess.NumPossibleConnections = session.Session.SessionSettings.NumPublicConnection;
+	for (auto CurrentSession : SessionSearch->SearchResults) {
+		FSessionResult Sess;
+		Sess.ChosenSession = CurrentSession;
+		Sess.NumPossibleConnections = CurrentSession.Session.SessionSettings.NumPublicConnections;
 		
-		sess.NumOpenConnections = session.Session.NumOpenPublicConnections;
-		sess.PingInMs = session.PingInMs;
-		sess.OwningUserName = session.Session.OwningUserName;
-		session.Session.
-		sessionsFound.Add(sess);
+		Sess.NumOpenConnections = CurrentSession.Session.NumOpenPublicConnections;
+		Sess.PingInMs = CurrentSession.PingInMs;
+		CurrentSession.Session.SessionSettings.Get(SETTING_SERVER_NAME, Sess.ServerName);
+		SessionsFound.Add(Sess);
 	}
-
-	return sessionsFound;
+	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("Num Search Results: %d"), SessionSearch->SearchResults.Num()));
+	return SessionsFound;
 }
 
 void UPlainSightGameInstance::JoinOnlineGame(FSessionResult chosenSession)

@@ -8,20 +8,31 @@
 #include "Engine/GameInstance.h"
 #include "PlainSightGameInstance.generated.h"
 
+
+#define SETTING_SERVER_NAME FName(TEXT("SERVERNAMEKEY"))
+
 USTRUCT(BlueprintType)
 struct FSessionResult
 {
 	GENERATED_USTRUCT_BODY()
 
-	FOnlineSessionSearchResult chosenSession;
+	//session
+	FOnlineSessionSearchResult ChosenSession;
+
+	//ping
+	UPROPERTY(BlueprintReadOnly)
 	int32 PingInMs;
 
-	/** Owner name of the session */
-	FString OwningUserName;
+	//ServerName
+	UPROPERTY(BlueprintReadOnly)
+	FString ServerName;
 
-	/** The number of publicly available connections that are available (read only) */
+	//number of available slots
+	UPROPERTY(BlueprintReadOnly)
 	int32 NumOpenConnections;
 
+	//total server size
+	UPROPERTY(BlueprintReadOnly)
 	int32 NumPossibleConnections;
 };
 
@@ -42,7 +53,7 @@ class PLAINSIGHT_API UPlainSightGameInstance : public UGameInstance
 	*	@Param		bIsPresence		"Is the Session to create a presence Session"
 	*	@Param		MaxNumPlayers	        Number of Maximum allowed players on this "Session" (Server)
 	*/
-	bool HostSession(TSharedPtr<const FUniqueNetId> UserId, FName SessionName, bool bIsLAN, bool bIsPresence, int32 MaxNumPlayers);
+	bool HostSession(TSharedPtr<const FUniqueNetId> UserId, FName SessionName, FString ServerName, bool bIsLAN, bool bIsPresence, int32 MaxNumPlayers);
 	
 	/**
 	*	Find an online session
