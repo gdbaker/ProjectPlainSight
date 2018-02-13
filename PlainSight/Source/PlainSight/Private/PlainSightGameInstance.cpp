@@ -324,7 +324,8 @@ TArray<FSessionResult> UPlainSightGameInstance::GetSessionsList()
 		Sess.NumOpenConnections = CurrentSession.Session.NumOpenPublicConnections;
 		Sess.PingInMs = CurrentSession.PingInMs;
 		CurrentSession.Session.SessionSettings.Get(SETTING_SERVER_NAME, Sess.ServerName);
-		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, Sess.ServerName);
+		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("server name %s", Sess.ServerName)));
+		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("players %d/ %d"), Sess.NumOpenConnections, Sess.NumPossibleConnections));
 		SessionsFound.Add(Sess);
 	}
 	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("Making tarray")));
