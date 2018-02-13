@@ -6,7 +6,10 @@
 #include "UnrealNetwork.h"
 #include "Online.h"
 #include "Engine/GameInstance.h"
+#include "Kismet/BlueprintFunctionLibrary.h"
+#include "UI/MenuUserWidget.h"
 #include "PlainSightGameInstance.generated.h"
+
 
 
 #define SETTING_SERVER_NAME FName(TEXT("SERVERNAMEKEY"))
@@ -143,12 +146,18 @@ class PLAINSIGHT_API UPlainSightGameInstance : public UGameInstance
 	*/
 	virtual void OnDestroySessionComplete(FName SessionName, bool bWasSuccessful);
 
+	//menu widget that call find online games
+	UUserWidget *MenuWidget;
+
  public:
 	UFUNCTION(BlueprintCallable, Category = "Network")
 	void StartOnlineGame();
 
 	UFUNCTION(BlueprintCallable, Category = "Network")
-	TArray<FSessionResult> FindOnlineGames();
+	void FindOnlineGames(UUserWidget *Menu);
+
+	UFUNCTION(BlueprintCallable, Category = "Network")
+	TArray<FSessionResult> GetSessionsList();
 
 	UFUNCTION(BlueprintCallable, Category = "Network")
 	void JoinOnlineGame(FSessionResult chosenSession);

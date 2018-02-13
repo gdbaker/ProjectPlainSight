@@ -3,14 +3,14 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "WidgetBlueprint.h"
-#include "SessionButtonWidget.generated.h"
+#include "Blueprint/UserWidget.h"
+#include "MenuUserWidget.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class PLAINSIGHT_API USessionButtonWidget : public UWidgetBlueprint
+class PLAINSIGHT_API UMenuUserWidget : public UUserWidget
 {
 	GENERATED_BODY()
 	

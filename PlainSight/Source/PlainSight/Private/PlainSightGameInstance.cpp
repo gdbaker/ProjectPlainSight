@@ -14,6 +14,8 @@ UPlainSightGameInstance::UPlainSightGameInstance(const FObjectInitializer& Objec
 	OnJoinSessionCompleteDelegate = FOnJoinSessionCompleteDelegate::CreateUObject(this, &UPlainSightGameInstance::OnJoinSessionComplete);
 	/** Bind function for DESTROYING a Session */
 	OnDestroySessionCompleteDelegate = FOnDestroySessionCompleteDelegate::CreateUObject(this, &UPlainSightGameInstance::OnDestroySessionComplete);
+
+	MenuWidget = NULL;
 }
 
 bool UPlainSightGameInstance::HostSession(TSharedPtr<const FUniqueNetId> UserId, FName SessionName, FString ServerName, bool bIsLAN, bool bIsPresence, int32 MaxNumPlayers)
@@ -193,6 +195,12 @@ void UPlainSightGameInstance::OnFindSessionsComplete(bool bWasSuccessful)
 					GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("Session Number: %d | Sessionname: %s "), SearchIdx + 1, *(SessionSearch->SearchResults[SearchIdx].Session.OwningUserName)));
 				}
 			}
+
+			FOutputDeviceNull ar;
+
+			MenuWidget->CallFunctionByNameWithArguments(TEXT("PopulateServers"), ar, NULL, true);
+			MenuWidget = NULL;
+			GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("Shouldhavecompleted")));
 		}
 	}
 }
@@ -289,32 +297,37 @@ void UPlainSightGameInstance::StartOnlineGame()
 	// Creating a local player where we can get the UserID from
 	ULocalPlayer* const Player = GetFirstGamePlayer();
 
-	FString name;
-	name = "Test Server Name";
+	FString name = FString::Printf(TEXT("Test Name"));
 
 	// Call our custom HostSession function. GameSessionName is a GameInstance variable
 	HostSession(Player->GetPreferredUniqueNetId(), GameSessionName, name, true, true, 4);
 }
 
-TArray<FSessionResult> UPlainSightGameInstance::FindOnlineGames()
+void UPlainSightGameInstance::FindOnlineGames(UUserWidget *Menu)
 {
+	MenuWidget = Menu;
+
 	ULocalPlayer* const Player = GetFirstGamePlayer();
-
+	
 	FindSessions(Player->GetPreferredUniqueNetId(), true, true);
+}
 
+TArray<FSessionResult> UPlainSightGameInstance::GetSessionsList()
+{
 	TArray<FSessionResult> SessionsFound;
 
 	for (auto CurrentSession : SessionSearch->SearchResults) {
 		FSessionResult Sess;
 		Sess.ChosenSession = CurrentSession;
 		Sess.NumPossibleConnections = CurrentSession.Session.SessionSettings.NumPublicConnections;
-		
+
 		Sess.NumOpenConnections = CurrentSession.Session.NumOpenPublicConnections;
 		Sess.PingInMs = CurrentSession.PingInMs;
 		CurrentSession.Session.SessionSettings.Get(SETTING_SERVER_NAME, Sess.ServerName);
+		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, Sess.ServerName);
 		SessionsFound.Add(Sess);
 	}
-	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("Num Search Results: %d"), SessionSearch->SearchResults.Num()));
+	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("Making tarray")));
 	return SessionsFound;
 }
 
