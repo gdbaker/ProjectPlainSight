@@ -13,3 +13,8 @@ APlainSightGameMode::APlainSightGameMode()
 		DefaultPawnClass = PlayerPawnObject.Class;
 	}
 }
+
+/*AActor * APlainSightGameMode::ChoosePlayerStart_Implementation(AController * Player)
+{
+	
+}*/
