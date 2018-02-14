@@ -18,7 +18,7 @@ UPlainSightGameInstance::UPlainSightGameInstance(const FObjectInitializer& Objec
 	MenuWidget = NULL;
 }
 
-bool UPlainSightGameInstance::HostSession(TSharedPtr<const FUniqueNetId> UserId, FName SessionName, FString ServerName, bool bIsLAN, bool bIsPresence, int32 MaxNumPlayers)
+bool UPlainSightGameInstance::HostSession(TSharedPtr<const FUniqueNetId> UserId, FName SessionName, FString ServerName, FString MapName, bool bIsLAN, bool bIsPresence, int32 MaxNumPlayers)
 {
 	// Get the Online Subsystem to work with
 	IOnlineSubsystem* const OnlineSub = IOnlineSubsystem::Get();
@@ -48,11 +48,12 @@ bool UPlainSightGameInstance::HostSession(TSharedPtr<const FUniqueNetId> UserId,
 			SessionSettings->bAllowJoinViaPresence = true;
 			SessionSettings->bAllowJoinViaPresenceFriendsOnly = false;
 
-			SessionSettings->Set(SETTING_MAPNAME, FString("Test"), EOnlineDataAdvertisementType::ViaOnlineService);
+			SessionSettings->Set(SETTING_MAPNAME, MapName, EOnlineDataAdvertisementType::ViaOnlineService);
+			MultiplayerMap = FName(*MapName);
 
 			FOnlineSessionSetting BonusSetting;
 			BonusSetting.Data = ServerName;
-
+			BonusSetting.AdvertisementType = EOnlineDataAdvertisementType::ViaOnlineService;
 			SessionSettings->Settings.Add(SETTING_SERVER_NAME, BonusSetting);
 
 			// Set the delegate to the Handle of the SessionInterface
@@ -118,7 +119,7 @@ void UPlainSightGameInstance::OnStartOnlineGameComplete(FName SessionName, bool 
 	// If the start was successful, we can open a NewMap if we want. Make sure to use "listen" as a parameter!
 	if (bWasSuccessful)
 	{
-		UGameplayStatics::OpenLevel(GetWorld(), "Test", true, "listen");
+		UGameplayStatics::OpenLevel(GetWorld(), MultiplayerMap, true, "listen");
 	}
 }
 
@@ -196,6 +197,7 @@ void UPlainSightGameInstance::OnFindSessionsComplete(bool bWasSuccessful)
 				}
 			}
 
+			//calls blueprint function
 			FOutputDeviceNull ar;
 
 			MenuWidget->CallFunctionByNameWithArguments(TEXT("PopulateServers"), ar, NULL, true);
@@ -292,15 +294,17 @@ void UPlainSightGameInstance::OnDestroySessionComplete(FName SessionName, bool b
 	}
 }
 
-void UPlainSightGameInstance::StartOnlineGame()
+void UPlainSightGameInstance::StartOnlineGame(FString Name, FString Map, int32 MaxPlayers, bool Lan)
 {
 	// Creating a local player where we can get the UserID from
 	ULocalPlayer* const Player = GetFirstGamePlayer();
 
-	FString name = FString::Printf(TEXT("Test Name"));
-
+	//FString name = FString::Printf(TEXT("Test Name"));
+	if (Name.IsEmpty()) {
+		Name = FString::Printf(TEXT("My Server"));
+	}
 	// Call our custom HostSession function. GameSessionName is a GameInstance variable
-	HostSession(Player->GetPreferredUniqueNetId(), GameSessionName, name, true, true, 4);
+	HostSession(Player->GetPreferredUniqueNetId(), GameSessionName, Name, Map, Lan, true, MaxPlayers);
 }
 
 void UPlainSightGameInstance::FindOnlineGames(UUserWidget *Menu)
@@ -321,10 +325,12 @@ TArray<FSessionResult> UPlainSightGameInstance::GetSessionsList()
 		Sess.ChosenSession = CurrentSession;
 		Sess.NumPossibleConnections = CurrentSession.Session.SessionSettings.NumPublicConnections;
 
-		Sess.NumOpenConnections = CurrentSession.Session.NumOpenPublicConnections;
+		Sess.NumOpenConnections = CurrentSession.Session.SessionSettings.NumPublicConnections - CurrentSession.Session.NumOpenPublicConnections;
 		Sess.PingInMs = CurrentSession.PingInMs;
-		CurrentSession.Session.SessionSettings.Get(SETTING_SERVER_NAME, Sess.ServerName);
-		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("server name %s", Sess.ServerName)));
+
+		Sess.ServerName = CurrentSession.Session.SessionSettings.Settings.FindRef(SETTING_SERVER_NAME).Data.ToString();
+		CurrentSession.Session.SessionSettings.Get(SETTING_MAPNAME, Sess.MapName);
+		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, Sess.MapName);
 		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("players %d/ %d"), Sess.NumOpenConnections, Sess.NumPossibleConnections));
 		SessionsFound.Add(Sess);
 	}

@@ -30,6 +30,10 @@ struct FSessionResult
 	UPROPERTY(BlueprintReadOnly)
 	FString ServerName;
 
+	//ServerName
+	UPROPERTY(BlueprintReadOnly)
+	FString MapName;
+
 	//number of available slots
 	UPROPERTY(BlueprintReadOnly)
 	int32 NumOpenConnections;
@@ -56,7 +60,7 @@ class PLAINSIGHT_API UPlainSightGameInstance : public UGameInstance
 	*	@Param		bIsPresence		"Is the Session to create a presence Session"
 	*	@Param		MaxNumPlayers	        Number of Maximum allowed players on this "Session" (Server)
 	*/
-	bool HostSession(TSharedPtr<const FUniqueNetId> UserId, FName SessionName, FString ServerName, bool bIsLAN, bool bIsPresence, int32 MaxNumPlayers);
+	bool HostSession(TSharedPtr<const FUniqueNetId> UserId, FName SessionName, FString ServerName, FString MapName, bool bIsLAN, bool bIsPresence, int32 MaxNumPlayers);
 	
 	/**
 	*	Find an online session
@@ -149,9 +153,11 @@ class PLAINSIGHT_API UPlainSightGameInstance : public UGameInstance
 	//menu widget that call find online games
 	UUserWidget *MenuWidget;
 
+	FName MultiplayerMap;
+
  public:
 	UFUNCTION(BlueprintCallable, Category = "Network")
-	void StartOnlineGame();
+	void StartOnlineGame(FString Name, FString Map, int32 MaxPlayers, bool Lan);
 
 	UFUNCTION(BlueprintCallable, Category = "Network")
 	void FindOnlineGames(UUserWidget *Menu);
