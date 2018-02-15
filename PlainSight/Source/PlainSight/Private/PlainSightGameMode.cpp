@@ -18,10 +18,14 @@ APlainSightGameMode::APlainSightGameMode()
 	PlayerControllerClass = APlainSightPlayerController::StaticClass();
 	PlayerStateClass = APlainSightPlayerState::StaticClass();
 	GameStateClass = APlainSightGameState::StaticClass();
-
 }
 
-/*AActor * APlainSightGameMode::ChoosePlayerStart_Implementation(AController * Player)
+AActor * APlainSightGameMode::ChoosePlayerStart_Implementation(AController * Player)
 {
-	
-}*/
+	return Super::ChoosePlayerStart_Implementation(Player);
+}
+
+bool APlainSightGameMode::ShouldSpawnAtStartSpot(AController* Player)
+{
+	return false;
+}

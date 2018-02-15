@@ -14,7 +14,7 @@ class PLAINSIGHT_API APlainSightPlayerController : public APlayerController
 {
 	GENERATED_BODY()
 	
-	
-	
+	/** respawn after dying */
+	virtual void UnFreeze() override;
 	
 };

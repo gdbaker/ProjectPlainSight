@@ -5,3 +5,7 @@
 
 
 
+void APlainSightPlayerController::UnFreeze()
+{
+	ServerRestartPlayer();
+}
