@@ -2,6 +2,9 @@
 
 #include "PlainSightGameMode.h"
 #include "PlainSight.h"
+#include "Player/PlainSightPlayerController.h"
+#include "Player/PlainSightPlayerState.h"
+#include "PlainSightGameState.h"
 #include "ConstructorHelpers.h"
 
 APlainSightGameMode::APlainSightGameMode()
@@ -12,6 +15,10 @@ APlainSightGameMode::APlainSightGameMode()
 	{
 		DefaultPawnClass = PlayerPawnObject.Class;
 	}
+	PlayerControllerClass = APlainSightPlayerController::StaticClass();
+	PlayerStateClass = APlainSightPlayerState::StaticClass();
+	GameStateClass = APlainSightGameState::StaticClass();
+
 }
 
 /*AActor * APlainSightGameMode::ChoosePlayerStart_Implementation(AController * Player)

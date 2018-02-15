@@ -7,7 +7,7 @@
 #include "PlainSightGameModeBase.generated.h"
 
 /**
- * 
+ *  i do not believe this is in use
  */
 UCLASS()
 class PLAINSIGHT_API APlainSightGameModeBase : public AGameModeBase
