@@ -2,7 +2,7 @@
 
 #include "Player_FirstPerson.h"
 #include "Components/CapsuleComponent.h" 
-
+#include "UnrealNetwork.h"
 #include "Runtime/Engine/Classes/Components/CapsuleComponent.h"
 #include "Runtime/Engine/Classes/Components/SkeletalMeshComponent.h"
 
@@ -11,7 +11,6 @@ APlayer_FirstPerson::APlayer_FirstPerson()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
 }
 
 // Called when the game starts or when spawned
@@ -21,6 +20,22 @@ void APlayer_FirstPerson::BeginPlay()
 	GetMesh()->SetOwnerNoSee(true);
 }
 
+/*void APlayer_FirstPerson::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+	// Replicate to everyone
+	DOREPLIFETIME(APlayer_FirstPerson, Health);
+}*/
+
+void APlayer_FirstPerson::OnDeath() {
+	DetachFromControllerPendingDestroy();
+	Destroy();
+}
+
+void APlayer_FirstPerson::Suicide() {
+	OnDeath();
+}
 void APlayer_FirstPerson::Normal_Forward_Backward(float InInput)
 {
 	FRotator Rotation = GetControlRotation();
@@ -95,3 +110,8 @@ APlayer_FirstPerson::APlayer_FirstPerson(const FObjectInitializer& ObjectInitial
 	GetMesh()->SetOwnerNoSee(true);
 }
 
+
+bool APlayer_FirstPerson::IsAlive() const
+{
+	return Health > 0;
+}
