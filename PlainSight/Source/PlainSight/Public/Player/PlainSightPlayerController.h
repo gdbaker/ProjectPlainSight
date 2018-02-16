@@ -16,5 +16,13 @@ class PLAINSIGHT_API APlainSightPlayerController : public APlayerController
 	
 	/** respawn after dying */
 	virtual void UnFreeze() override;
+
+public:
+	/** Causes the player to commit suicide */
+	UFUNCTION(exec, BlueprintCallable, Category = "Suicide")
+	virtual void Suicide();
 	
+	/** Notifies the server that the client has suicided */
+	UFUNCTION(reliable, server, WithValidation)
+	void ServerSuicide();
 };
