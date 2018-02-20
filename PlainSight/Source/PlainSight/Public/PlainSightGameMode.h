@@ -13,9 +13,13 @@ UCLASS()
 class PLAINSIGHT_API APlainSightGameMode : public AGameMode
 {
 	GENERATED_BODY()
-	
+
+	/** always pick new random spawn */
+	virtual bool ShouldSpawnAtStartSpot(AController* Player) override;
+
 public:
 	APlainSightGameMode();
 	
-	
+	/** select best spawn point for player */
+	virtual AActor* ChoosePlayerStart_Implementation(AController* Player) override;
 };

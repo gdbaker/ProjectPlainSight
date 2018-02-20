@@ -25,9 +25,17 @@ public:
 	// Constructor for AFPSCharacter
 	APlayer_FirstPerson(const FObjectInitializer& ObjectInitializer);
 
+	/** check if pawn is still alive */
+	bool IsAlive() const;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
+	//player dies
+	virtual void OnDeath();
+
+	//void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const;
 
 	UFUNCTION()
 		void Normal_Forward_Backward(float InInput);
@@ -47,12 +55,20 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	/** Pawn suicide */
+	virtual void Suicide();
+
 	/** Pawn mesh: 1st person view (arms; seen only by self) */
-	UPROPERTY(VisibleDefaultsOnly, Category = Mesh)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Mesh)
 		USkeletalMeshComponent* FirstPersonMesh;
+
 	UFUNCTION()
 		void OnStartJump();
 	//clears jump flag when key is released
 	UFUNCTION()
 		void OnStopJump();
+
+	// Current health of the Pawn
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Replicated, Category = Health)
+	float Health;
 };
