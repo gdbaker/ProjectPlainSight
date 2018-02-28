@@ -301,6 +301,7 @@ APlayer_FirstPerson::APlayer_FirstPerson(const FObjectInitializer& ObjectInitial
 	FirstPersonMesh->AttachTo(FirstPersonCameraComponent);
 	FirstPersonMesh->bCastDynamicShadow = false;
 	FirstPersonMesh->CastShadow = false;
+	FirstPersonMesh->SetCollisionResponseToChannel(COLLISION_BLADE, ECR_Ignore);
 	// everyone but the owner can see the regular body mesh
 	//GetMesh()->SetOwnerNoSee(true);
 	GetMesh()->SetCollisionResponseToChannel(COLLISION_BLADE, ECR_Block);
