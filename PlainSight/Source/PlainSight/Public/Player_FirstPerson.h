@@ -73,6 +73,8 @@ protected:
 	/** Time at which point the last take hit info for the actor times out and won't be replicated; Used to stop join-in-progress effects all over the screen */
 	float LastTakeHitTimeTimeout;
 
+	//traces weapon
+	FHitResult WeaponTrace(const FVector& StartTrace, const FVector& EndTrace);
 
 public:	
 
@@ -122,4 +124,7 @@ public:
 	/** Identifies if pawn is in its dying state */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Health)
 	uint32 bIsDying : 1;
+
+	UFUNCTION(reliable, server, WithValidation)
+	void Attack(const FVector& StartTrace, const FVector& EndTrace);
 };

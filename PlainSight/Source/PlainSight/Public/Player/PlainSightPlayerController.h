@@ -25,4 +25,7 @@ public:
 	/** Notifies the server that the client has suicided */
 	UFUNCTION(reliable, server, WithValidation)
 	void ServerSuicide();
+
+	UFUNCTION(exec, BlueprintCallable, Category = "Attack")
+	virtual void CallAttack(const FVector& StartTrace, const FVector& EndTrace);
 };

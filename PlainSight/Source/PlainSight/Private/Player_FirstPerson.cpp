@@ -2,6 +2,7 @@
 
 #include "Player_FirstPerson.h"
 #include "PlainSightGameMode.h"
+#include "PlainSight.h"
 #include "Player/PlainSightPlayerState.h"
 #include "Components/CapsuleComponent.h" 
 #include "UnrealNetwork.h"
@@ -53,9 +54,49 @@ int32 APlayer_FirstPerson::GetMaxHealth() const
 	return GetClass()->GetDefaultObject<APlayer_FirstPerson>()->Health;
 }
 
-float APlayer_FirstPerson::TakeDamage(float Damage, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, class AActor* DamageCauser)
+bool APlayer_FirstPerson::Attack_Validate(const FVector& StartTrace, const FVector& EndTrace)
+{
+	return true;
+}
+
+
+void APlayer_FirstPerson::Attack_Implementation(const FVector& StartTrace, const FVector& EndTrace)
+{
+	FHitResult Impact = WeaponTrace(StartTrace, EndTrace);
+	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("In attack function")));
+	if (Impact.bBlockingHit && (Impact.GetActor() != NULL))
+	{
+		FPointDamageEvent PointDmg;
+		PointDmg.HitInfo = Impact;
+		//PointDmg.ShotDirection = ShootDir;
+
+		//change this to a variable at some point for damage
+		PointDmg.Damage = 100.0f;
+		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("applying damage")));
+		Impact.GetActor()->TakeDamage(PointDmg.Damage, PointDmg, this->Controller, this);
+	}
+
+}
+
+FHitResult APlayer_FirstPerson::WeaponTrace(const FVector& StartTrace, const FVector& EndTrace)
 {
 
+	// Perform trace to retrieve hit info
+	FCollisionQueryParams TraceParams = FCollisionQueryParams(FName(TEXT("BLADE_TRACE")), true, this);
+	TraceParams.AddIgnoredActor(this);
+	TraceParams.bTraceComplex = true;
+	TraceParams.bTraceAsyncScene = true;
+	TraceParams.bReturnPhysicalMaterial = true;
+
+	FHitResult Hit(ForceInit);
+	GetWorld()->LineTraceSingleByChannel(Hit, StartTrace, EndTrace, COLLISION_BLADE, TraceParams);
+
+	return Hit;
+}
+
+float APlayer_FirstPerson::TakeDamage(float Damage, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, class AActor* DamageCauser)
+{
+	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("taking damage")));
 	if (Health <= 0.f)
 	{
 		return 0.f;
@@ -79,6 +120,7 @@ float APlayer_FirstPerson::TakeDamage(float Damage, struct FDamageEvent const& D
 		Health -= ActualDamage;
 		if (Health <= 0)
 		{
+			GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("death damage")));
 			Die(ActualDamage, DamageEvent, EventInstigator, DamageCauser);
 		}
 		else
@@ -261,6 +303,7 @@ APlayer_FirstPerson::APlayer_FirstPerson(const FObjectInitializer& ObjectInitial
 	FirstPersonMesh->CastShadow = false;
 	// everyone but the owner can see the regular body mesh
 	//GetMesh()->SetOwnerNoSee(true);
+	GetMesh()->SetCollisionResponseToChannel(COLLISION_BLADE, ECR_Block);
 }
 
 
