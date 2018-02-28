@@ -1,6 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "Player_FirstPerson.h"
+#include "PlainSightGameMode.h"
+#include "Player/PlainSightPlayerState.h"
 #include "Components/CapsuleComponent.h" 
 #include "UnrealNetwork.h"
 #include "Runtime/Engine/Classes/Components/CapsuleComponent.h"
@@ -12,29 +14,178 @@ APlayer_FirstPerson::APlayer_FirstPerson()
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 }
+void APlayer_FirstPerson::PostInitializeComponents()
+{
+	Super::PostInitializeComponents();
 
+	if (Role == ROLE_Authority)
+	{
+		Health = GetMaxHealth();
+	}
+
+}
 // Called when the game starts or when spawned
 void APlayer_FirstPerson::BeginPlay()
 {
 	Super::BeginPlay();
 	GetMesh()->SetOwnerNoSee(true);
 }
+void APlayer_FirstPerson::PreReplication(IRepChangedPropertyTracker & ChangedPropertyTracker)
+{
+	Super::PreReplication(ChangedPropertyTracker);
 
-/*void APlayer_FirstPerson::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLifetimeProps) const
+	// Only replicate this property for a short duration after it changes so join in progress players don't get spammed with fx when joining late
+	DOREPLIFETIME_ACTIVE_OVERRIDE(APlayer_FirstPerson, LastTakeHitInfo, GetWorld() && GetWorld()->GetTimeSeconds() < LastTakeHitTimeTimeout);
+}
+
+void APlayer_FirstPerson::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLifetimeProps) const
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
+	DOREPLIFETIME_CONDITION(APlayer_FirstPerson, LastTakeHitInfo, COND_Custom);
+
 	// Replicate to everyone
 	DOREPLIFETIME(APlayer_FirstPerson, Health);
-}*/
+}
 
-void APlayer_FirstPerson::OnDeath() {
+int32 APlayer_FirstPerson::GetMaxHealth() const
+{
+	return GetClass()->GetDefaultObject<APlayer_FirstPerson>()->Health;
+}
+
+float APlayer_FirstPerson::TakeDamage(float Damage, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, class AActor* DamageCauser)
+{
+
+	if (Health <= 0.f)
+	{
+		return 0.f;
+	}
+
+	if (this && EventInstigator)
+	{
+		APlainSightPlayerState* DamagedPlayerState = Cast<APlainSightPlayerState>(this->PlayerState);
+		APlainSightPlayerState* InstigatorPlayerState = Cast<APlainSightPlayerState>(EventInstigator->PlayerState);
+
+		//dont kill self
+		if (InstigatorPlayerState == DamagedPlayerState)
+		{
+			Damage = 0.f;
+		}
+	}
+
+	const float ActualDamage = Super::TakeDamage(Damage, DamageEvent, EventInstigator, DamageCauser);
+	if (ActualDamage > 0.f)
+	{
+		Health -= ActualDamage;
+		if (Health <= 0)
+		{
+			Die(ActualDamage, DamageEvent, EventInstigator, DamageCauser);
+		}
+		else
+		{
+			//PlayHit(ActualDamage, DamageEvent, EventInstigator ? EventInstigator->GetPawn() : NULL, DamageCauser);
+		}
+	}
+
+	return ActualDamage;
+}
+
+bool APlayer_FirstPerson::CanDie(float KillingDamage, FDamageEvent const& DamageEvent, AController* Killer, AActor* DamageCauser) const
+{
+	if (bIsDying										// already dying
+		|| IsPendingKill()								// already destroyed
+		|| Role != ROLE_Authority						// not authority
+		|| GetWorld()->GetAuthGameMode<APlainSightGameMode>() == NULL
+		|| GetWorld()->GetAuthGameMode<APlainSightGameMode>()->GetMatchState() == MatchState::LeavingMap)	// level transition occurring
+	{
+		return false;
+	}
+
+	return true;
+}
+
+bool APlayer_FirstPerson::Die(float KillingDamage, struct FDamageEvent const& DamageEvent, class AController* Killer, class AActor* DamageCauser) {
+	if (!CanDie(KillingDamage, DamageEvent, Killer, DamageCauser))
+	{
+		return false;
+	}
+
+	OnDeath(KillingDamage, DamageEvent, Killer ? Killer->GetPawn():NULL, DamageCauser);
+
+	return true;
+}
+
+void APlayer_FirstPerson::OnDeath(float KillingDamage, struct FDamageEvent const& DamageEvent, class APawn* PawnInstigator, class AActor* DamageCauser){
+	if (bIsDying)
+	{
+		return;
+	}
+
+	//bReplicateMovement = false;
+	bTearOff = true;
+	bIsDying = true;
+
+	if (Role == ROLE_Authority)
+	{
+		ReplicateHit(KillingDamage, DamageEvent, PawnInstigator, DamageCauser, true);
+	}
+
 	DetachFromControllerPendingDestroy();
+
+	//instead of destroy could add death animation
 	Destroy();
+
+}
+
+void APlayer_FirstPerson::ReplicateHit(float Damage, struct FDamageEvent const& DamageEvent, class APawn* PawnInstigator, class AActor* DamageCauser, bool bKilled)
+{
+	const float TimeoutTime = GetWorld()->GetTimeSeconds() + 0.5f;
+
+	FDamageEvent const& LastDamageEvent = LastTakeHitInfo.GetDamageEvent();
+	if ((PawnInstigator == LastTakeHitInfo.PawnInstigator.Get()) && (LastDamageEvent.DamageTypeClass == LastTakeHitInfo.DamageTypeClass) && (LastTakeHitTimeTimeout == TimeoutTime))
+	{
+		// same frame damage
+		if (bKilled && LastTakeHitInfo.bKilled)
+		{
+			// Redundant death take hit, just ignore it
+			return;
+		}
+
+		// otherwise, accumulate damage done this frame
+		Damage += LastTakeHitInfo.ActualDamage;
+	}
+
+	LastTakeHitInfo.ActualDamage = Damage;
+	LastTakeHitInfo.PawnInstigator = Cast<APlayer_FirstPerson>(PawnInstigator);
+	LastTakeHitInfo.DamageCauser = DamageCauser;
+	LastTakeHitInfo.SetDamageEvent(DamageEvent);
+	LastTakeHitInfo.bKilled = bKilled;
+	LastTakeHitInfo.EnsureReplication();
+
+	LastTakeHitTimeTimeout = TimeoutTime;
+}
+
+void APlayer_FirstPerson::OnRep_LastTakeHitInfo()
+{
+	if (LastTakeHitInfo.bKilled)
+	{
+		OnDeath(LastTakeHitInfo.ActualDamage, LastTakeHitInfo.GetDamageEvent(), LastTakeHitInfo.PawnInstigator.Get(), LastTakeHitInfo.DamageCauser.Get());
+	}
+	else
+	{
+		//can use play hit from shootergame here
+		//PlayHit(LastTakeHitInfo.ActualDamage, LastTakeHitInfo.GetDamageEvent(), LastTakeHitInfo.PawnInstigator.Get(), LastTakeHitInfo.DamageCauser.Get());
+	}
 }
 
 void APlayer_FirstPerson::Suicide() {
-	OnDeath();
+	if (Role == ROLE_Authority && !bIsDying)
+	{
+		AController* Killer = NULL;
+
+		Die(Health, FDamageEvent(UDamageType::StaticClass()), Killer, NULL);
+	}
+	
 }
 void APlayer_FirstPerson::Normal_Forward_Backward(float InInput)
 {
@@ -73,6 +224,7 @@ void APlayer_FirstPerson::OnStopJump()
 void APlayer_FirstPerson::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	//GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("Health %d"), this->Health));
 
 }
 
