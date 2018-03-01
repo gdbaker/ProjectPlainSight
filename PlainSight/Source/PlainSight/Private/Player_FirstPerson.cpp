@@ -91,6 +91,18 @@ FHitResult APlayer_FirstPerson::WeaponTrace(const FVector& StartTrace, const FVe
 
 	return Hit;
 }
+bool APlayer_FirstPerson::InvisibleAttack_Validate()
+{
+	return true;
+}
+
+
+void APlayer_FirstPerson::InvisibleAttack_Implementation()
+{
+	//UGameplayStatics::ApplyRadialDamage(this, WeaponConfig.ExplosionDamage, NudgedImpactLocation, WeaponConfig.ExplosionRadius, WeaponConfig.DamageType, TArray<AActor*>(), this, MyController.Get());
+
+
+}
 
 float APlayer_FirstPerson::TakeDamage(float Damage, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, class AActor* DamageCauser)
 {

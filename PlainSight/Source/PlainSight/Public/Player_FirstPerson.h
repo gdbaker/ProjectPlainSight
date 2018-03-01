@@ -130,4 +130,7 @@ public:
 
 	UFUNCTION(reliable, server, WithValidation)
 	void Attack(const FVector& StartTrace, const FVector& EndTrace);
+
+	UFUNCTION(reliable, server, WithValidation)
+	void InvisibleAttack();
 };
