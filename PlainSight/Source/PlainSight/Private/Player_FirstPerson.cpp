@@ -103,13 +103,13 @@ void APlayer_FirstPerson::InvisibleAttack_Implementation()
 	if (Role == ROLE_Authority) {
 		/*float Damage = 0.0f;*/
 		float Radius = 1000.0f;
-		//GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("Applying radial")));
+		//GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("Applying radial %d"), this->PlayerState->PlayerId));
 		/*UGameplayStatics::ApplyRadialDamage(this, Damage, this->GetActorLocation(), Radius, UEMPDamageType::StaticClass(), TArray<AActor*>(), this, this->GetController(), true, COLLISION_BLADE);*/
 
 		for (TActorIterator<APlayer_FirstPerson> it(GetWorld()); it; ++it)
 		{
 			float Distance = GetDistanceTo(*it);
-
+			//GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("Applying radial %f"), Distance));
 			if (Distance <= Radius)
 			{
 				it->GoVisible();
@@ -119,17 +119,27 @@ void APlayer_FirstPerson::InvisibleAttack_Implementation()
 	}
 
 }
+bool APlayer_FirstPerson::GoVisible_Validate()
+{
+	return true;
+}
 
-void APlayer_FirstPerson::GoVisible()
+bool APlayer_FirstPerson::GoInvisible_Validate()
+{
+	return true;
+}
+
+void APlayer_FirstPerson::GoVisible_Implementation()
 {
 	if (GetMesh()) {
 		FirstPersonMesh->SetVisibility(true);
 		GetMesh()->SetVisibility(true);
+		
 		GetWorldTimerManager().SetTimer(InvisibilityTimerHandle, this, &APlayer_FirstPerson::GoInvisible, 5.0f, false, 5.0f);
 	}
 }
 
-void APlayer_FirstPerson::GoInvisible()
+void APlayer_FirstPerson::GoInvisible_Implementation()
 {
 	if (GetMesh()) {
 		FirstPersonMesh->SetVisibility(false);

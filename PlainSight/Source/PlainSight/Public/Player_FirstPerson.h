@@ -79,8 +79,10 @@ protected:
 	//traces weapon
 	FHitResult WeaponTrace(const FVector& StartTrace, const FVector& EndTrace);
 
+	UFUNCTION(reliable, NetMultiCast, WithValidation)
 	virtual void GoVisible();
 
+	UFUNCTION(reliable, NetMultiCast, WithValidation)
 	virtual void GoInvisible();
 
 	/* Handle to manage the timer */
