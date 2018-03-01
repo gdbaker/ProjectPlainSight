@@ -124,7 +124,7 @@ void APlayer_FirstPerson::GoVisible()
 {
 	FirstPersonMesh->SetVisibility(true);
 	GetMesh()->SetVisibility(true);
-	GetWorldTimerManager().SetTimer(InvisibilityTimerHandle, this, &APlayer_FirstPerson::GoInvisible, 5.0f, false, 2.0f);
+	GetWorldTimerManager().SetTimer(InvisibilityTimerHandle, this, &APlayer_FirstPerson::GoInvisible, 5.0f, false, 5.0f);
 }
 
 void APlayer_FirstPerson::GoInvisible()
@@ -205,7 +205,7 @@ void APlayer_FirstPerson::OnDeath(float KillingDamage, struct FDamageEvent const
 		return;
 	}
 
-	//bReplicateMovement = false;
+	bReplicateMovement = false;
 	bTearOff = true;
 	bIsDying = true;
 
