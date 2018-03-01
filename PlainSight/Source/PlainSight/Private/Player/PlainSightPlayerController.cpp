@@ -60,5 +60,6 @@ void APlainSightPlayerController::MakeInvisible()
 		{
 			MyPawn->InvisibleAttack();
 		}
+
 	}
 }
