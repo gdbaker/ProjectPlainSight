@@ -17,7 +17,7 @@ class PLAINSIGHT_API APlainSightPlayerState : public APlayerState
 public:
 	/** Identifies if pawn is in its dying state */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attack")
-	uint32 bIsAttacking : 1;
+	uint32  IsAttacking : 1;
 	
 	
 };
