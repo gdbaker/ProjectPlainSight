@@ -56,6 +56,9 @@ protected:
 
 	virtual void GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLifetimeProps) const override;
 
+	/** switch to ragdoll */
+	void SetRagdollPhysics();
+
 	UFUNCTION()
 		void Normal_Forward_Backward(float InInput);
 	UFUNCTION()
