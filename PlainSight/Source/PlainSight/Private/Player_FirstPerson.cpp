@@ -63,7 +63,6 @@ bool APlayer_FirstPerson::Attack_Validate(const FVector& StartTrace, const FVect
 void APlayer_FirstPerson::Attack_Implementation(const FVector& StartTrace, const FVector& EndTrace)
 {
 	FHitResult Impact = WeaponTrace(StartTrace, EndTrace);
-	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("In attack function")));
 	if (Impact.bBlockingHit && (Impact.GetActor() != NULL))
 	{
 		FPointDamageEvent PointDmg;
@@ -72,7 +71,6 @@ void APlayer_FirstPerson::Attack_Implementation(const FVector& StartTrace, const
 
 		//change this to a variable at some point for damage
 		PointDmg.Damage = 100.0f;
-		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("applying damage")));
 		Impact.GetActor()->TakeDamage(PointDmg.Damage, PointDmg, this->Controller, this);
 	}
 
@@ -96,7 +94,7 @@ FHitResult APlayer_FirstPerson::WeaponTrace(const FVector& StartTrace, const FVe
 
 float APlayer_FirstPerson::TakeDamage(float Damage, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, class AActor* DamageCauser)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("taking damage")));
+
 	if (Health <= 0.f)
 	{
 		return 0.f;
@@ -120,7 +118,6 @@ float APlayer_FirstPerson::TakeDamage(float Damage, struct FDamageEvent const& D
 		Health -= ActualDamage;
 		if (Health <= 0)
 		{
-			GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("death damage")));
 			Die(ActualDamage, DamageEvent, EventInstigator, DamageCauser);
 		}
 		else
