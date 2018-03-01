@@ -122,15 +122,19 @@ void APlayer_FirstPerson::InvisibleAttack_Implementation()
 
 void APlayer_FirstPerson::GoVisible()
 {
-	FirstPersonMesh->SetVisibility(true);
-	GetMesh()->SetVisibility(true);
-	GetWorldTimerManager().SetTimer(InvisibilityTimerHandle, this, &APlayer_FirstPerson::GoInvisible, 5.0f, false, 5.0f);
+	if (GetMesh()) {
+		FirstPersonMesh->SetVisibility(true);
+		GetMesh()->SetVisibility(true);
+		GetWorldTimerManager().SetTimer(InvisibilityTimerHandle, this, &APlayer_FirstPerson::GoInvisible, 5.0f, false, 5.0f);
+	}
 }
 
 void APlayer_FirstPerson::GoInvisible()
 {
-	FirstPersonMesh->SetVisibility(false);
-	GetMesh()->SetVisibility(false);
+	if (GetMesh()) {
+		FirstPersonMesh->SetVisibility(false);
+		GetMesh()->SetVisibility(false);
+	}
 }
 
 float APlayer_FirstPerson::TakeDamage(float Damage, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, class AActor* DamageCauser)
@@ -215,7 +219,7 @@ void APlayer_FirstPerson::OnDeath(float KillingDamage, struct FDamageEvent const
 	}
 
 	DetachFromControllerPendingDestroy();
-
+	GetWorldTimerManager().ClearTimer(InvisibilityTimerHandle);
 	//instead of destroy could add death animation
 	//Destroy();
 
@@ -223,6 +227,8 @@ void APlayer_FirstPerson::OnDeath(float KillingDamage, struct FDamageEvent const
 	{
 		static FName CollisionProfileName(TEXT("Ragdoll"));
 		GetMesh()->SetCollisionProfileName(CollisionProfileName);
+		FirstPersonMesh->SetVisibility(true);
+		GetMesh()->SetVisibility(true);
 	}
 	SetActorEnableCollision(true);
 
@@ -266,11 +272,11 @@ void APlayer_FirstPerson::SetRagdollPhysics()
 		// hide and set short lifespan
 		TurnOff();
 		SetActorHiddenInGame(true);
-		SetLifeSpan(10.0f);
+		SetLifeSpan(1.0f);
 	}
 	else
 	{
-		SetLifeSpan(10.0f);
+		SetLifeSpan(11.0f);
 	}
 }
 
@@ -406,4 +412,10 @@ APlayer_FirstPerson::APlayer_FirstPerson(const FObjectInitializer& ObjectInitial
 bool APlayer_FirstPerson::IsAlive() const
 {
 	return Health > 0;
+}
+
+//Pawn::PlayDying sets this lifespan, but when that function is called on client, dead pawn's role is still SimulatedProxy despite bTearOff being true. 
+void APlayer_FirstPerson::TornOff()
+{
+	SetLifeSpan(25.f);
 }

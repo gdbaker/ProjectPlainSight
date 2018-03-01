@@ -86,6 +86,9 @@ protected:
 	/* Handle to manage the timer */
 	FTimerHandle InvisibilityTimerHandle;
 
+	/** Responsible for cleaning up bodies on clients. */
+	virtual void TornOff();
+
 public:	
 
 	/**
