@@ -103,7 +103,7 @@ void APlayer_FirstPerson::InvisibleAttack_Implementation()
 	if (Role == ROLE_Authority) {
 		/*float Damage = 0.0f;*/
 		float Radius = 1000.0f;
-		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("Applying radial")));
+		//GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("Applying radial")));
 		/*UGameplayStatics::ApplyRadialDamage(this, Damage, this->GetActorLocation(), Radius, UEMPDamageType::StaticClass(), TArray<AActor*>(), this, this->GetController(), true, COLLISION_BLADE);*/
 
 		for (TActorIterator<APlayer_FirstPerson> it(GetWorld()); it; ++it)
