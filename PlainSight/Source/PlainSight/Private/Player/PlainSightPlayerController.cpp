@@ -49,3 +49,17 @@ void APlainSightPlayerController::CallAttack(const FVector& StartTrace, const FV
 		}
 	}
 }
+
+
+void APlainSightPlayerController::MakeInvisible()
+{
+	if ((GetPawn() != NULL) && ((GetWorld()->TimeSeconds - GetPawn()->CreationTime > 1) || (GetNetMode() == NM_Standalone)) && IsInState(NAME_Playing))
+	{
+		APlayer_FirstPerson* MyPawn = Cast<APlayer_FirstPerson>(GetPawn());
+		if (MyPawn)
+		{
+			MyPawn->InvisibleAttack();
+		}
+
+	}
+}

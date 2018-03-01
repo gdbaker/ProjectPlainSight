@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "Player_FirstPerson.h"
+#include "EMPDamageType.h"
 #include "PlainSightGameMode.h"
 #include "PlainSight.h"
 #include "Player/PlainSightPlayerState.h"
@@ -91,14 +92,58 @@ FHitResult APlayer_FirstPerson::WeaponTrace(const FVector& StartTrace, const FVe
 
 	return Hit;
 }
+bool APlayer_FirstPerson::InvisibleAttack_Validate()
+{
+	return true;
+}
+
+
+void APlayer_FirstPerson::InvisibleAttack_Implementation()
+{
+	if (Role == ROLE_Authority) {
+		/*float Damage = 0.0f;*/
+		float Radius = 1000.0f;
+		//GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("Applying radial")));
+		/*UGameplayStatics::ApplyRadialDamage(this, Damage, this->GetActorLocation(), Radius, UEMPDamageType::StaticClass(), TArray<AActor*>(), this, this->GetController(), true, COLLISION_BLADE);*/
+
+		for (TActorIterator<APlayer_FirstPerson> it(GetWorld()); it; ++it)
+		{
+			float Distance = GetDistanceTo(*it);
+
+			if (Distance <= Radius)
+			{
+				it->GoVisible();
+			}
+		}
+
+	}
+
+}
+
+void APlayer_FirstPerson::GoVisible()
+{
+	FirstPersonMesh->SetVisibility(true);
+	GetMesh()->SetVisibility(true);
+	GetWorldTimerManager().SetTimer(InvisibilityTimerHandle, this, &APlayer_FirstPerson::GoInvisible, 5.0f, false, 5.0f);
+}
+
+void APlayer_FirstPerson::GoInvisible()
+{
+	FirstPersonMesh->SetVisibility(false);
+	GetMesh()->SetVisibility(false);
+}
 
 float APlayer_FirstPerson::TakeDamage(float Damage, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, class AActor* DamageCauser)
 {
-
 	if (Health <= 0.f)
 	{
 		return 0.f;
 	}
+
+	/*if (DamageEvent.DamageTypeClass == UEMPDamageType::StaticClass()) {
+		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("taking radial")));
+		return 0.f;
+	}*/
 
 	if (this && EventInstigator)
 	{
@@ -160,7 +205,7 @@ void APlayer_FirstPerson::OnDeath(float KillingDamage, struct FDamageEvent const
 		return;
 	}
 
-	//bReplicateMovement = false;
+	bReplicateMovement = false;
 	bTearOff = true;
 	bIsDying = true;
 

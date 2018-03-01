@@ -79,6 +79,13 @@ protected:
 	//traces weapon
 	FHitResult WeaponTrace(const FVector& StartTrace, const FVector& EndTrace);
 
+	virtual void GoVisible();
+
+	virtual void GoInvisible();
+
+	/* Handle to manage the timer */
+	FTimerHandle InvisibilityTimerHandle;
+
 public:	
 
 	/**
@@ -130,4 +137,7 @@ public:
 
 	UFUNCTION(reliable, server, WithValidation)
 	void Attack(const FVector& StartTrace, const FVector& EndTrace);
+
+	UFUNCTION(reliable, server, WithValidation)
+	void InvisibleAttack();
 };
