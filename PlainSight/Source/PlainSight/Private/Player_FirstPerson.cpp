@@ -1,6 +1,10 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "Player_FirstPerson.h"
+#include "EMPDamageType.h"
+#include "PlainSightGameMode.h"
+#include "PlainSight.h"
+#include "Player/PlainSightPlayerState.h"
 #include "Components/CapsuleComponent.h" 
 #include "UnrealNetwork.h"
 #include "Runtime/Engine/Classes/Components/CapsuleComponent.h"
@@ -12,29 +16,329 @@ APlayer_FirstPerson::APlayer_FirstPerson()
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 }
+void APlayer_FirstPerson::PostInitializeComponents()
+{
+	Super::PostInitializeComponents();
 
+	if (Role == ROLE_Authority)
+	{
+		Health = GetMaxHealth();
+	}
+
+}
 // Called when the game starts or when spawned
 void APlayer_FirstPerson::BeginPlay()
 {
 	Super::BeginPlay();
-	GetMesh()->SetOwnerNoSee(true);
+	//GetMesh()->SetOwnerNoSee(true);
+}
+void APlayer_FirstPerson::PreReplication(IRepChangedPropertyTracker & ChangedPropertyTracker)
+{
+	Super::PreReplication(ChangedPropertyTracker);
+
+	// Only replicate this property for a short duration after it changes so join in progress players don't get spammed with fx when joining late
+	DOREPLIFETIME_ACTIVE_OVERRIDE(APlayer_FirstPerson, LastTakeHitInfo, GetWorld() && GetWorld()->GetTimeSeconds() < LastTakeHitTimeTimeout);
 }
 
-/*void APlayer_FirstPerson::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLifetimeProps) const
+void APlayer_FirstPerson::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLifetimeProps) const
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
+	DOREPLIFETIME_CONDITION(APlayer_FirstPerson, LastTakeHitInfo, COND_Custom);
+
 	// Replicate to everyone
 	DOREPLIFETIME(APlayer_FirstPerson, Health);
-}*/
+}
 
-void APlayer_FirstPerson::OnDeath() {
+int32 APlayer_FirstPerson::GetMaxHealth() const
+{
+	return GetClass()->GetDefaultObject<APlayer_FirstPerson>()->Health;
+}
+
+bool APlayer_FirstPerson::Attack_Validate(const FVector& StartTrace, const FVector& EndTrace)
+{
+	return true;
+}
+
+
+void APlayer_FirstPerson::Attack_Implementation(const FVector& StartTrace, const FVector& EndTrace)
+{
+	FHitResult Impact = WeaponTrace(StartTrace, EndTrace);
+	if (Impact.bBlockingHit && (Impact.GetActor() != NULL))
+	{
+		FPointDamageEvent PointDmg;
+		PointDmg.HitInfo = Impact;
+		//PointDmg.ShotDirection = ShootDir;
+
+		//change this to a variable at some point for damage
+		PointDmg.Damage = 100.0f;
+		Impact.GetActor()->TakeDamage(PointDmg.Damage, PointDmg, this->Controller, this);
+	}
+
+}
+
+FHitResult APlayer_FirstPerson::WeaponTrace(const FVector& StartTrace, const FVector& EndTrace)
+{
+
+	// Perform trace to retrieve hit info
+	FCollisionQueryParams TraceParams = FCollisionQueryParams(FName(TEXT("BLADE_TRACE")), true, this);
+	TraceParams.AddIgnoredActor(this);
+	TraceParams.bTraceComplex = true;
+	TraceParams.bTraceAsyncScene = true;
+	TraceParams.bReturnPhysicalMaterial = true;
+
+	FHitResult Hit(ForceInit);
+	GetWorld()->LineTraceSingleByChannel(Hit, StartTrace, EndTrace, COLLISION_BLADE, TraceParams);
+
+	return Hit;
+}
+bool APlayer_FirstPerson::InvisibleAttack_Validate()
+{
+	return true;
+}
+
+
+void APlayer_FirstPerson::InvisibleAttack_Implementation()
+{
+	if (Role == ROLE_Authority) {
+		/*float Damage = 0.0f;*/
+		float Radius = 1000.0f;
+		//GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("Applying radial %d"), this->PlayerState->PlayerId));
+		/*UGameplayStatics::ApplyRadialDamage(this, Damage, this->GetActorLocation(), Radius, UEMPDamageType::StaticClass(), TArray<AActor*>(), this, this->GetController(), true, COLLISION_BLADE);*/
+
+		for (TActorIterator<APlayer_FirstPerson> it(GetWorld()); it; ++it)
+		{
+			float Distance = GetDistanceTo(*it);
+			//GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("Applying radial %f"), Distance));
+			if (Distance <= Radius)
+			{
+				it->GoVisible();
+			}
+		}
+
+	}
+
+}
+bool APlayer_FirstPerson::GoVisible_Validate()
+{
+	return true;
+}
+
+bool APlayer_FirstPerson::GoInvisible_Validate()
+{
+	return true;
+}
+
+void APlayer_FirstPerson::GoVisible_Implementation()
+{
+	if (GetMesh()) {
+		FirstPersonMesh->SetVisibility(true);
+		GetMesh()->SetVisibility(true);
+		
+		GetWorldTimerManager().SetTimer(InvisibilityTimerHandle, this, &APlayer_FirstPerson::GoInvisible, 5.0f, false, 5.0f);
+	}
+}
+
+void APlayer_FirstPerson::GoInvisible_Implementation()
+{
+	if (GetMesh()) {
+		FirstPersonMesh->SetVisibility(false);
+		GetMesh()->SetVisibility(false);
+	}
+}
+
+float APlayer_FirstPerson::TakeDamage(float Damage, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, class AActor* DamageCauser)
+{
+	if (Health <= 0.f)
+	{
+		return 0.f;
+	}
+
+	/*if (DamageEvent.DamageTypeClass == UEMPDamageType::StaticClass()) {
+		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("taking radial")));
+		return 0.f;
+	}*/
+
+	if (this && EventInstigator)
+	{
+		APlainSightPlayerState* DamagedPlayerState = Cast<APlainSightPlayerState>(this->PlayerState);
+		APlainSightPlayerState* InstigatorPlayerState = Cast<APlainSightPlayerState>(EventInstigator->PlayerState);
+
+		//dont kill self
+		if (InstigatorPlayerState == DamagedPlayerState)
+		{
+			Damage = 0.f;
+		}
+	}
+
+	const float ActualDamage = Super::TakeDamage(Damage, DamageEvent, EventInstigator, DamageCauser);
+	if (ActualDamage > 0.f)
+	{
+		Health -= ActualDamage;
+		if (Health <= 0)
+		{
+			Die(ActualDamage, DamageEvent, EventInstigator, DamageCauser);
+		}
+		else
+		{
+			//PlayHit(ActualDamage, DamageEvent, EventInstigator ? EventInstigator->GetPawn() : NULL, DamageCauser);
+		}
+	}
+
+	return ActualDamage;
+}
+
+bool APlayer_FirstPerson::CanDie(float KillingDamage, FDamageEvent const& DamageEvent, AController* Killer, AActor* DamageCauser) const
+{
+	if (bIsDying										// already dying
+		|| IsPendingKill()								// already destroyed
+		|| Role != ROLE_Authority						// not authority
+		|| GetWorld()->GetAuthGameMode<APlainSightGameMode>() == NULL
+		|| GetWorld()->GetAuthGameMode<APlainSightGameMode>()->GetMatchState() == MatchState::LeavingMap)	// level transition occurring
+	{
+		return false;
+	}
+
+	return true;
+}
+
+bool APlayer_FirstPerson::Die(float KillingDamage, struct FDamageEvent const& DamageEvent, class AController* Killer, class AActor* DamageCauser) {
+	if (!CanDie(KillingDamage, DamageEvent, Killer, DamageCauser))
+	{
+		return false;
+	}
+
+	OnDeath(KillingDamage, DamageEvent, Killer ? Killer->GetPawn():NULL, DamageCauser);
+
+	return true;
+}
+
+void APlayer_FirstPerson::OnDeath(float KillingDamage, struct FDamageEvent const& DamageEvent, class APawn* PawnInstigator, class AActor* DamageCauser){
+	if (bIsDying)
+	{
+		return;
+	}
+
+	bReplicateMovement = false;
+	bTearOff = true;
+	bIsDying = true;
+
+	if (Role == ROLE_Authority)
+	{
+		ReplicateHit(KillingDamage, DamageEvent, PawnInstigator, DamageCauser, true);
+	}
+
 	DetachFromControllerPendingDestroy();
-	Destroy();
+	GetWorldTimerManager().ClearTimer(InvisibilityTimerHandle);
+	//instead of destroy could add death animation
+	//Destroy();
+
+	if (GetMesh())
+	{
+		static FName CollisionProfileName(TEXT("Ragdoll"));
+		GetMesh()->SetCollisionProfileName(CollisionProfileName);
+		FirstPersonMesh->SetVisibility(true);
+		GetMesh()->SetVisibility(true);
+	}
+	SetActorEnableCollision(true);
+
+	// Ragdoll
+	SetRagdollPhysics();
+
+	// disable collisions on capsule
+	GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	GetCapsuleComponent()->SetCollisionResponseToAllChannels(ECR_Ignore);
+
+}
+
+void APlayer_FirstPerson::SetRagdollPhysics()
+{
+	bool bInRagdoll = false;
+
+	if (IsPendingKill())
+	{
+		bInRagdoll = false;
+	}
+	else if (!GetMesh() || !GetMesh()->GetPhysicsAsset())
+	{
+		bInRagdoll = false;
+	}
+	else
+	{
+		// initialize physics/etc
+		GetMesh()->SetSimulatePhysics(true);
+		GetMesh()->WakeAllRigidBodies();
+		GetMesh()->bBlendPhysics = true;
+
+		bInRagdoll = true;
+	}
+
+	GetCharacterMovement()->StopMovementImmediately();
+	GetCharacterMovement()->DisableMovement();
+	GetCharacterMovement()->SetComponentTickEnabled(false);
+
+	if (!bInRagdoll)
+	{
+		// hide and set short lifespan
+		TurnOff();
+		SetActorHiddenInGame(true);
+		SetLifeSpan(1.0f);
+	}
+	else
+	{
+		SetLifeSpan(11.0f);
+	}
+}
+
+void APlayer_FirstPerson::ReplicateHit(float Damage, struct FDamageEvent const& DamageEvent, class APawn* PawnInstigator, class AActor* DamageCauser, bool bKilled)
+{
+	const float TimeoutTime = GetWorld()->GetTimeSeconds() + 0.5f;
+
+	FDamageEvent const& LastDamageEvent = LastTakeHitInfo.GetDamageEvent();
+	if ((PawnInstigator == LastTakeHitInfo.PawnInstigator.Get()) && (LastDamageEvent.DamageTypeClass == LastTakeHitInfo.DamageTypeClass) && (LastTakeHitTimeTimeout == TimeoutTime))
+	{
+		// same frame damage
+		if (bKilled && LastTakeHitInfo.bKilled)
+		{
+			// Redundant death take hit, just ignore it
+			return;
+		}
+
+		// otherwise, accumulate damage done this frame
+		Damage += LastTakeHitInfo.ActualDamage;
+	}
+
+	LastTakeHitInfo.ActualDamage = Damage;
+	LastTakeHitInfo.PawnInstigator = Cast<APlayer_FirstPerson>(PawnInstigator);
+	LastTakeHitInfo.DamageCauser = DamageCauser;
+	LastTakeHitInfo.SetDamageEvent(DamageEvent);
+	LastTakeHitInfo.bKilled = bKilled;
+	LastTakeHitInfo.EnsureReplication();
+
+	LastTakeHitTimeTimeout = TimeoutTime;
+}
+
+void APlayer_FirstPerson::OnRep_LastTakeHitInfo()
+{
+	if (LastTakeHitInfo.bKilled)
+	{
+		OnDeath(LastTakeHitInfo.ActualDamage, LastTakeHitInfo.GetDamageEvent(), LastTakeHitInfo.PawnInstigator.Get(), LastTakeHitInfo.DamageCauser.Get());
+	}
+	else
+	{
+		//can use play hit from shootergame here
+		//PlayHit(LastTakeHitInfo.ActualDamage, LastTakeHitInfo.GetDamageEvent(), LastTakeHitInfo.PawnInstigator.Get(), LastTakeHitInfo.DamageCauser.Get());
+	}
 }
 
 void APlayer_FirstPerson::Suicide() {
-	OnDeath();
+	if (Role == ROLE_Authority && !bIsDying)
+	{
+		AController* Killer = NULL;
+
+		Die(Health, FDamageEvent(UDamageType::StaticClass()), Killer, NULL);
+	}
+	
 }
 void APlayer_FirstPerson::Normal_Forward_Backward(float InInput)
 {
@@ -69,10 +373,12 @@ void APlayer_FirstPerson::OnStopJump()
 {
 	bPressedJump = false;
 }
+
 // Called every frame
 void APlayer_FirstPerson::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	//GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("Health %d"), this->Health));
 
 }
 
@@ -106,12 +412,20 @@ APlayer_FirstPerson::APlayer_FirstPerson(const FObjectInitializer& ObjectInitial
 	FirstPersonMesh->AttachTo(FirstPersonCameraComponent);
 	FirstPersonMesh->bCastDynamicShadow = false;
 	FirstPersonMesh->CastShadow = false;
+	FirstPersonMesh->SetCollisionResponseToChannel(COLLISION_BLADE, ECR_Ignore);
 	// everyone but the owner can see the regular body mesh
-	GetMesh()->SetOwnerNoSee(true);
+	//GetMesh()->SetOwnerNoSee(true);
+	GetMesh()->SetCollisionResponseToChannel(COLLISION_BLADE, ECR_Block);
 }
 
 
 bool APlayer_FirstPerson::IsAlive() const
 {
 	return Health > 0;
+}
+
+//Pawn::PlayDying sets this lifespan, but when that function is called on client, dead pawn's role is still SimulatedProxy despite bTearOff being true. 
+void APlayer_FirstPerson::TornOff()
+{
+	SetLifeSpan(25.f);
 }

@@ -65,7 +65,7 @@ bool UPlainSightGameInstance::HostSession(TSharedPtr<const FUniqueNetId> UserId,
 	}
 	else
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, TEXT("No OnlineSubsytem found!"));
+		//GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, TEXT("No OnlineSubsytem found!"));
 	}
 
 	return false;
@@ -73,7 +73,7 @@ bool UPlainSightGameInstance::HostSession(TSharedPtr<const FUniqueNetId> UserId,
 
 void UPlainSightGameInstance::OnCreateSessionComplete(FName SessionName, bool bWasSuccessful)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("OnCreateSessionComplete %s, %d"), *SessionName.ToString(), bWasSuccessful));
+	//GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("OnCreateSessionComplete %s, %d"), *SessionName.ToString(), bWasSuccessful));
 
 	// Get the OnlineSubsystem so we can get the Session Interface
 	IOnlineSubsystem* OnlineSub = IOnlineSubsystem::Get();
@@ -101,7 +101,7 @@ void UPlainSightGameInstance::OnCreateSessionComplete(FName SessionName, bool bW
 
 void UPlainSightGameInstance::OnStartOnlineGameComplete(FName SessionName, bool bWasSuccessful)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("OnStartSessionComplete %s, %d"), *SessionName.ToString(), bWasSuccessful));
+	//GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("OnStartSessionComplete %s, %d"), *SessionName.ToString(), bWasSuccessful));
 
 	// Get the Online Subsystem so we can get the Session Interface
 	IOnlineSubsystem* OnlineSub = IOnlineSubsystem::Get();
@@ -168,7 +168,7 @@ void UPlainSightGameInstance::FindSessions(TSharedPtr<const FUniqueNetId> UserId
 
 void UPlainSightGameInstance::OnFindSessionsComplete(bool bWasSuccessful)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("OFindSessionsComplete bSuccess: %d"), bWasSuccessful));
+	//GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("OFindSessionsComplete bSuccess: %d"), bWasSuccessful));
 
 	// Get OnlineSubsystem we want to work with
 	IOnlineSubsystem* const OnlineSub = IOnlineSubsystem::Get();
@@ -182,7 +182,7 @@ void UPlainSightGameInstance::OnFindSessionsComplete(bool bWasSuccessful)
 			Sessions->ClearOnFindSessionsCompleteDelegate_Handle(OnFindSessionsCompleteDelegateHandle);
 
 			// Just debugging the Number of Search results. Can be displayed in UMG or something later on
-			GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("Num Search Results: %d"), SessionSearch->SearchResults.Num()));
+			//GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("Num Search Results: %d"), SessionSearch->SearchResults.Num()));
 
 			// If we have found at least 1 session, we just going to debug them. You could add them to a list of UMG Widgets, like it is done in the BP version!
 			if (SessionSearch->SearchResults.Num() > 0)
@@ -193,7 +193,7 @@ void UPlainSightGameInstance::OnFindSessionsComplete(bool bWasSuccessful)
 				{
 					// OwningUserName is just the SessionName for now. I guess you can create your own Host Settings class and GameSession Class and add a proper GameServer Name here.
 					// This is something you can't do in Blueprint for example!
-					GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("Session Number: %d | Sessionname: %s "), SearchIdx + 1, *(SessionSearch->SearchResults[SearchIdx].Session.OwningUserName)));
+					//GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("Session Number: %d | Sessionname: %s "), SearchIdx + 1, *(SessionSearch->SearchResults[SearchIdx].Session.OwningUserName)));
 				}
 			}
 
@@ -202,7 +202,7 @@ void UPlainSightGameInstance::OnFindSessionsComplete(bool bWasSuccessful)
 
 			MenuWidget->CallFunctionByNameWithArguments(TEXT("PopulateServers"), ar, NULL, true);
 			MenuWidget = NULL;
-			GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("Shouldhavecompleted")));
+			//GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("Shouldhavecompleted")));
 		}
 	}
 }
@@ -236,7 +236,7 @@ bool UPlainSightGameInstance::JoinSession(TSharedPtr<const FUniqueNetId> UserId,
 
 void UPlainSightGameInstance::OnJoinSessionComplete(FName SessionName, EOnJoinSessionCompleteResult::Type Result)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("OnJoinSessionComplete %s, %d"), *SessionName.ToString(), static_cast<int32>(Result)));
+	//GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("OnJoinSessionComplete %s, %d"), *SessionName.ToString(), static_cast<int32>(Result)));
 
 	// Get the OnlineSubsystem we want to work with
 	IOnlineSubsystem* OnlineSub = IOnlineSubsystem::Get();
@@ -271,7 +271,7 @@ void UPlainSightGameInstance::OnJoinSessionComplete(FName SessionName, EOnJoinSe
 
 void UPlainSightGameInstance::OnDestroySessionComplete(FName SessionName, bool bWasSuccessful)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("OnDestroySessionComplete %s, %d"), *SessionName.ToString(), bWasSuccessful));
+	//GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("OnDestroySessionComplete %s, %d"), *SessionName.ToString(), bWasSuccessful));
 
 	// Get the OnlineSubsystem we want to work with
 	IOnlineSubsystem* OnlineSub = IOnlineSubsystem::Get();
@@ -330,11 +330,11 @@ TArray<FSessionResult> UPlainSightGameInstance::GetSessionsList()
 
 		Sess.ServerName = CurrentSession.Session.SessionSettings.Settings.FindRef(SETTING_SERVER_NAME).Data.ToString();
 		CurrentSession.Session.SessionSettings.Get(SETTING_MAPNAME, Sess.MapName);
-		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, Sess.MapName);
-		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("players %d/ %d"), Sess.NumOpenConnections, Sess.NumPossibleConnections));
+		//GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, Sess.MapName);
+		//GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("players %d/ %d"), Sess.NumOpenConnections, Sess.NumPossibleConnections));
 		SessionsFound.Add(Sess);
 	}
-	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("Making tarray")));
+	//GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("Making tarray")));
 	return SessionsFound;
 }
 
