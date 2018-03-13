@@ -145,4 +145,11 @@ public:
 
 	UFUNCTION(reliable, server, WithValidation)
 	void InvisibleAttack();
+
+	UFUNCTION(BlueprintImplementableEvent, category = "")
+		void opacityinvisible();
+	UFUNCTION(BlueprintImplementableEvent, category = "")
+		void opacityvisible();
+
+
 };

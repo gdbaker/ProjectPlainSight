@@ -132,9 +132,9 @@ bool APlayer_FirstPerson::GoInvisible_Validate()
 void APlayer_FirstPerson::GoVisible_Implementation()
 {
 	if (GetMesh()) {
-		FirstPersonMesh->SetVisibility(true);
-		GetMesh()->SetVisibility(true);
-		
+		//FirstPersonMesh->SetVisibility(true);
+		//GetMesh()->SetVisibility(true);
+		opacityvisible();
 		GetWorldTimerManager().SetTimer(InvisibilityTimerHandle, this, &APlayer_FirstPerson::GoInvisible, 5.0f, false, 5.0f);
 	}
 }
@@ -142,8 +142,10 @@ void APlayer_FirstPerson::GoVisible_Implementation()
 void APlayer_FirstPerson::GoInvisible_Implementation()
 {
 	if (GetMesh()) {
-		FirstPersonMesh->SetVisibility(false);
-		GetMesh()->SetVisibility(false);
+
+		opacityinvisible();
+		//FirstPersonMesh->SetVisibility(false);
+		//GetMesh()->SetVisibility(false);
 	}
 }
 
@@ -268,7 +270,7 @@ void APlayer_FirstPerson::SetRagdollPhysics()
 		// initialize physics/etc
 		GetMesh()->SetSimulatePhysics(true);
 		GetMesh()->WakeAllRigidBodies();
-		GetMesh()->bBlendPhysics = true;
+		GetMesh()->bBlendPhysics =true;
 
 		bInRagdoll = true;
 	}
