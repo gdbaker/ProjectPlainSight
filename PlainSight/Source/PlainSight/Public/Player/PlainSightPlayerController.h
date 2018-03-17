@@ -21,8 +21,14 @@ public:
 	/** Causes the player to commit suicide */
 	UFUNCTION(exec, BlueprintCallable, Category = "Suicide")
 	virtual void Suicide();
+
+	UFUNCTION(exec, BlueprintCallable, Category = "Invisible")
+	virtual void MakeInvisible();
 	
 	/** Notifies the server that the client has suicided */
 	UFUNCTION(reliable, server, WithValidation)
 	void ServerSuicide();
+
+	UFUNCTION(exec, BlueprintCallable, Category = "Attack")
+	virtual void CallAttack(const FVector& StartTrace, const FVector& EndTrace);
 };
