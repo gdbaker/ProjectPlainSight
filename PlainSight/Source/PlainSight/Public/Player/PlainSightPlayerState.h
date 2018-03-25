@@ -18,6 +18,9 @@ public:
 	/** Identifies if pawn is in its dying state */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attack")
 	uint32  IsAttacking : 1;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Texture")
+		uint32 IsMuddy : 1;
 	
 	
 };

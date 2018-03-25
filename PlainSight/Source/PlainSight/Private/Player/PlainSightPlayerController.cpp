@@ -63,3 +63,8 @@ void APlainSightPlayerController::MakeInvisible()
 
 	}
 }
+
+void APlainSightPlayerController::CallMud()
+{
+	printf("MUDDY");
+}
