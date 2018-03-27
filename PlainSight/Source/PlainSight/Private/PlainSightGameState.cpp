@@ -16,3 +16,54 @@ void APlainSightGameState::GetLifetimeReplicatedProps(TArray< FLifetimeProperty 
 	DOREPLIFETIME(APlainSightGameState, RemainingTime);
 }
 
+APlainSightPlayerState* APlainSightGameState::GetLeader()
+{
+
+	int32 BestPlayer = -1;
+	float BestScore = -1;
+
+	for (int32 i = 0; i < PlayerArray.Num(); i++)
+	{
+		const float PlayerScore = PlayerArray[i]->Score;
+		if (BestScore < PlayerScore)
+		{
+			BestScore = PlayerScore;
+			BestPlayer = i;
+		}
+	}
+
+	APlainSightPlayerState* Leader = Cast<APlainSightPlayerState>(PlayerArray[BestPlayer]);
+
+	return Leader;
+}
+
+APlainSightPlayerState* APlainSightGameState::GetSecondPlace()
+{
+	int32 BestPlayer = -1;
+	int32 SecondPlayer = -1;
+	float BestScore = -1;
+	float SecondScore = -1;
+
+	for (int32 i = 0; i < PlayerArray.Num(); i++)
+	{
+		const float PlayerScore = PlayerArray[i]->Score;
+		if (BestScore < PlayerScore)
+		{
+			BestScore = PlayerScore;
+			BestPlayer = i;
+		}
+		else if (SecondScore < PlayerScore)
+		{
+			SecondScore = PlayerScore;
+			SecondPlayer = i;
+		}
+	}
+
+	if (SecondScore == -1) {
+		SecondPlayer = BestPlayer;
+	}
+
+	APlainSightPlayerState* Leader = Cast<APlainSightPlayerState>(PlayerArray[SecondPlayer]);
+	return Leader;
+
+}

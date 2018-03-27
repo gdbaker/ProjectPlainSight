@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameMode.h"
+#include "Player/PlainSightPlayerState.h"
 #include "PlainSightGameMode.generated.h"
 
 /**
@@ -28,6 +29,9 @@ public:
 	
 	/** select best spawn point for player */
 	virtual AActor* ChoosePlayerStart_Implementation(AController* Player) override;
+
+	/** notify about kills */
+	virtual void Killed(AController* Killer, AController* KilledPlayer, APawn* KilledPawn, const UDamageType* DamageType);
 
 protected:
 

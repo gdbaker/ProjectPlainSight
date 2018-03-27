@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
+#include "Player/PlainSightPlayerState.h"
+#include "PlainSightGameMode.h"
 #include "PlainSightPlayerController.generated.h"
 
 /**

@@ -19,6 +19,12 @@ public:
 	/** Identifies if pawn is in its dying state */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attack")
 	uint32  IsAttacking : 1;
+
+	/** player killed someone */
+	void ScoreKill(APlainSightPlayerState* Victim, int32 Points);
+
+	/** player died */
+	void ScoreDeath(APlainSightPlayerState* KilledBy, int32 Points);
 	
 protected:
 	/** number of kills */

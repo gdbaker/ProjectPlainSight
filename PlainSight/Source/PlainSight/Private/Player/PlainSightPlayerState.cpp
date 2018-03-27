@@ -18,3 +18,14 @@ void APlainSightPlayerState::GetLifetimeReplicatedProps(TArray< FLifetimePropert
 	DOREPLIFETIME(APlainSightPlayerState, NumKills);
 	DOREPLIFETIME(APlainSightPlayerState, NumDeaths);
 }
+
+void APlainSightPlayerState::ScoreKill(APlainSightPlayerState* Victim, int32 Points)
+{
+	NumKills++;
+	Score += 1;
+}
+
+void APlainSightPlayerState::ScoreDeath(APlainSightPlayerState* KilledBy, int32 Points)
+{
+	NumDeaths++;
+}

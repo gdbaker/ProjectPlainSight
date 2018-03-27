@@ -77,3 +77,23 @@ void APlainSightGameMode::DefaultTimer()
 		}
 	}
 }
+
+void APlainSightGameMode::Killed(AController* Killer, AController* KilledPlayer, APawn* KilledPawn, const UDamageType* DamageType)
+{
+	APlainSightPlayerState* KillerPlayerState = Killer ? Cast<APlainSightPlayerState>(Killer->PlayerState) : NULL;
+	APlainSightPlayerState* VictimPlayerState = KilledPlayer ? Cast<APlainSightPlayerState>(KilledPlayer->PlayerState) : NULL;
+	int32 KillScore = 1;
+	int32 DeathScore = 1;
+
+	if (KillerPlayerState && KillerPlayerState != VictimPlayerState)
+	{
+		KillerPlayerState->ScoreKill(VictimPlayerState, KillScore);
+		//KillerPlayerState->InformAboutKill(KillerPlayerState, DamageType, VictimPlayerState);
+	}
+
+	if (VictimPlayerState)
+	{
+		VictimPlayerState->ScoreDeath(KillerPlayerState, DeathScore);
+		//VictimPlayerState->BroadcastDeath(KillerPlayerState, DamageType, VictimPlayerState);
+	}
+}

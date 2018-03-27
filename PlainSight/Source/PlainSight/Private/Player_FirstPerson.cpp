@@ -210,6 +210,12 @@ bool APlayer_FirstPerson::Die(float KillingDamage, struct FDamageEvent const& Da
 		return false;
 	}
 
+	// if this is an environmental death then refer to the previous killer so that they receive credit (knocked into lava pits, etc)
+	UDamageType const* const DamageType = DamageEvent.DamageTypeClass ? DamageEvent.DamageTypeClass->GetDefaultObject<UDamageType>() : GetDefault<UDamageType>();
+	Killer = GetDamageInstigator(Killer, *DamageType);
+
+	AController* const KilledPlayer = (Controller != NULL) ? Controller : Cast<AController>(GetOwner());
+	GetWorld()->GetAuthGameMode<APlainSightGameMode>()->Killed(Killer, KilledPlayer, this, DamageType);
 	OnDeath(KillingDamage, DamageEvent, Killer ? Killer->GetPawn():NULL, DamageCauser);
 
 	return true;

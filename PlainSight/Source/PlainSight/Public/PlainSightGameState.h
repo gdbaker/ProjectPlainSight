@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameState.h"
+#include "Player/PlainSightPlayerState.h"
 #include "PlainSightGameState.generated.h"
 
 /**
@@ -17,6 +18,12 @@ class PLAINSIGHT_API APlainSightGameState : public AGameState
 
 public:
 	/** time left for warmup / match */
-	UPROPERTY(Transient, Replicated)
+	UPROPERTY(BlueprintReadOnly, Transient, Replicated)
 	int32 RemainingTime;
+
+	UFUNCTION(BlueprintCallable, Category = "Scores")
+	APlainSightPlayerState* GetLeader();
+
+	UFUNCTION(BlueprintCallable, Category = "Scores")
+	APlainSightPlayerState* GetSecondPlace();
 };
