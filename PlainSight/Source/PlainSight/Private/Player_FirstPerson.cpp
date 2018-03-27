@@ -431,3 +431,20 @@ void APlayer_FirstPerson::TornOff()
 {
 	SetLifeSpan(25.f);
 }
+
+
+bool APlayer_FirstPerson::SwitchTexture_Validate()
+{
+	return true;
+}
+
+//Changes the texture depending on status of player (muddy/bloody)
+void APlayer_FirstPerson::SwitchTexture_Implementation() {
+
+	//if (APlainSightPlayerState::IsMuddy) {
+		//FirstPersonMesh->SetMaterial()
+	GoVisible_Implementation();
+	//} else if (APlainSightPlayerState::IsMuddy) {
+
+	
+}

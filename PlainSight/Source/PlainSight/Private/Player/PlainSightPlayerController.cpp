@@ -70,7 +70,7 @@ void APlainSightPlayerController::CallMud()
 		APlayer_FirstPerson* MyPawn = Cast<APlayer_FirstPerson>(GetPawn());
 		if (MyPawn)
 		{
-			MyPawn->GoVisible();
+			MyPawn->SwitchTexture();
 		}
 		printf("MUDDY");
 	}
