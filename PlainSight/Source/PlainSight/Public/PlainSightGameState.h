@@ -13,8 +13,10 @@ UCLASS()
 class PLAINSIGHT_API APlainSightGameState : public AGameState
 {
 	GENERATED_BODY()
-	
-	
-	
-	
+	APlainSightGameState(const FObjectInitializer& ObjectInitializer);
+
+public:
+	/** time left for warmup / match */
+	UPROPERTY(Transient, Replicated)
+	int32 RemainingTime;
 };

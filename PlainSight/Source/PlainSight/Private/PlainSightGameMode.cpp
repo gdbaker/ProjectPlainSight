@@ -29,3 +29,51 @@ bool APlainSightGameMode::ShouldSpawnAtStartSpot(AController* Player)
 {
 	return false;
 }
+
+void APlainSightGameMode::PreInitializeComponents()
+{
+	Super::PreInitializeComponents();
+
+	GetWorldTimerManager().SetTimer(TimerHandle_DefaultTimer, this, &APlainSightGameMode::DefaultTimer, GetWorldSettings()->GetEffectiveTimeDilation(), true);
+}
+
+void APlainSightGameMode::DefaultTimer()
+{
+
+	APlainSightGameState* const MyGameState = Cast<APlainSightGameState>(GameState);
+	if (MyGameState && MyGameState->RemainingTime > 0)
+	{
+		MyGameState->RemainingTime--;
+
+		if (MyGameState->RemainingTime <= 0)
+		{
+			if (GetMatchState() == MatchState::WaitingPostMatch)
+			{
+				RestartGame();
+			}
+			else if (GetMatchState() == MatchState::InProgress)
+			{
+				//FinishMatch();
+				EndMatch();
+
+				// Send end round events
+				/*for (FConstControllerIterator It = GetWorld()->GetControllerIterator(); It; ++It)
+				{
+					APlainSightPlayerController* PlayerController = Cast<APlainSightPlayerController>(*It);
+
+					if (PlayerController && MyGameState)
+					{
+						APlainSightGameState* PlayerState = Cast<APlainSightGameState>((*It)->PlayerState);
+						const bool bIsWinner = IsWinner(PlayerState);
+
+						PlayerController->ClientSendRoundEndEvent(bIsWinner, MyGameState->ElapsedTime);
+					}
+				}*/
+			}
+			else if (GetMatchState() == MatchState::WaitingToStart)
+			{
+				StartMatch();
+			}
+		}
+	}
+}

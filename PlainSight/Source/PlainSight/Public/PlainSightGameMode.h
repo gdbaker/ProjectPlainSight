@@ -13,13 +13,24 @@ UCLASS()
 class PLAINSIGHT_API APlainSightGameMode : public AGameMode
 {
 	GENERATED_BODY()
+	
+	virtual void PreInitializeComponents() override;
 
 	/** always pick new random spawn */
 	virtual bool ShouldSpawnAtStartSpot(AController* Player) override;
+
+	/** update remaining time */
+	virtual void DefaultTimer();
+
 
 public:
 	APlainSightGameMode();
 	
 	/** select best spawn point for player */
 	virtual AActor* ChoosePlayerStart_Implementation(AController* Player) override;
+
+protected:
+
+	/** Handle for efficient management of DefaultTimer timer */
+	FTimerHandle TimerHandle_DefaultTimer;
 };
