@@ -28,11 +28,11 @@ public:
 	
 protected:
 	/** number of kills */
-	UPROPERTY(Transient, Replicated)
+	UPROPERTY(BlueprintReadOnly, Transient, Replicated, Category="Scores")
 	int32 NumKills;
 
 	/** number of deaths */
-	UPROPERTY(Transient, Replicated)
+	UPROPERTY(BlueprintReadOnly, Transient, Replicated, Category = "Scores")
 	int32 NumDeaths;
 
 	/** whether the user quit the match */
