@@ -58,14 +58,14 @@ bool UPlainSightGameInstance::HostSession(TSharedPtr<const FUniqueNetId> UserId,
 
 			// Set the delegate to the Handle of the SessionInterface
 			OnCreateSessionCompleteDelegateHandle = Sessions->AddOnCreateSessionCompleteDelegate_Handle(OnCreateSessionCompleteDelegate);
-
+			GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, TEXT("Created session"));
 			// Our delegate should get called when this is complete (doesn't need to be successful!)
 			return Sessions->CreateSession(*UserId, SessionName, *SessionSettings);
 		}
 	}
 	else
 	{
-		//GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, TEXT("No OnlineSubsytem found!"));
+		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, TEXT("No OnlineSubsytem found!"));
 	}
 
 	return false;
@@ -73,7 +73,7 @@ bool UPlainSightGameInstance::HostSession(TSharedPtr<const FUniqueNetId> UserId,
 
 void UPlainSightGameInstance::OnCreateSessionComplete(FName SessionName, bool bWasSuccessful)
 {
-	//GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("OnCreateSessionComplete %s, %d"), *SessionName.ToString(), bWasSuccessful));
+	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("OnCreateSessionComplete %s, %d"), *SessionName.ToString(), bWasSuccessful));
 
 	// Get the OnlineSubsystem so we can get the Session Interface
 	IOnlineSubsystem* OnlineSub = IOnlineSubsystem::Get();
@@ -101,7 +101,7 @@ void UPlainSightGameInstance::OnCreateSessionComplete(FName SessionName, bool bW
 
 void UPlainSightGameInstance::OnStartOnlineGameComplete(FName SessionName, bool bWasSuccessful)
 {
-	//GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("OnStartSessionComplete %s, %d"), *SessionName.ToString(), bWasSuccessful));
+	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("OnStartSessionComplete %s, %d"), *SessionName.ToString(), bWasSuccessful));
 
 	// Get the Online Subsystem so we can get the Session Interface
 	IOnlineSubsystem* OnlineSub = IOnlineSubsystem::Get();
@@ -296,6 +296,7 @@ void UPlainSightGameInstance::OnDestroySessionComplete(FName SessionName, bool b
 
 void UPlainSightGameInstance::StartOnlineGame(FString Name, FString Map, int32 MaxPlayers, bool Lan)
 {
+	DestroySessionAndLeaveGame();
 	// Creating a local player where we can get the UserID from
 	ULocalPlayer* const Player = GetFirstGamePlayer();
 
@@ -383,6 +384,7 @@ void UPlainSightGameInstance::DestroySessionAndLeaveGame()
 
 		if (Sessions.IsValid())
 		{
+			GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, TEXT("destroyed session"));
 			Sessions->AddOnDestroySessionCompleteDelegate_Handle(OnDestroySessionCompleteDelegate);
 
 			Sessions->DestroySession(GameSessionName);
