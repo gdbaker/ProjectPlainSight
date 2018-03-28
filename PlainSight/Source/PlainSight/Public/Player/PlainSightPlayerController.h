@@ -31,4 +31,7 @@ public:
 
 	UFUNCTION(exec, BlueprintCallable, Category = "Attack")
 	virtual void CallAttack(const FVector& StartTrace, const FVector& EndTrace);
+
+	UFUNCTION(exec, BlueprintCallable, Category = "Texture")
+		virtual void CallMud();
 };
