@@ -73,6 +73,8 @@ void APlayer_FirstPerson::Attack_Implementation(const FVector& StartTrace, const
 		//change this to a variable at some point for damage
 		PointDmg.Damage = 100.0f;
 		Impact.GetActor()->TakeDamage(PointDmg.Damage, PointDmg, this->Controller, this);
+		//Test for blood
+		GoVisible();
 	}
 
 }
@@ -443,7 +445,7 @@ void APlayer_FirstPerson::SwitchTexture_Implementation() {
 
 	//if (APlainSightPlayerState::IsMuddy) {
 		//FirstPersonMesh->SetMaterial()
-	GoVisible_Implementation();
+	GoVisible();
 	//} else if (APlainSightPlayerState::IsMuddy) {
 
 	
