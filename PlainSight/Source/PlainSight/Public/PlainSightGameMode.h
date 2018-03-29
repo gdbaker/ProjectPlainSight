@@ -35,6 +35,8 @@ public:
 	/** notify about kills */
 	virtual void Killed(AController* Killer, AController* KilledPlayer, APawn* KilledPawn, const UDamageType* DamageType);
 
+	void FinishMatch();
+
 protected:
 
 	/** Handle for efficient management of DefaultTimer timer */

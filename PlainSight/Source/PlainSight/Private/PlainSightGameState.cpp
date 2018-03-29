@@ -7,7 +7,7 @@
 APlainSightGameState::APlainSightGameState(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {
 
-	RemainingTime = 300;
+	RemainingTime = 180;
 }
 
 void APlainSightGameState::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLifetimeProps) const

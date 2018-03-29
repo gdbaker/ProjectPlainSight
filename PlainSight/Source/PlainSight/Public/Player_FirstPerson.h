@@ -30,6 +30,8 @@ public:
 	// Constructor for AFPSCharacter
 	APlayer_FirstPerson(const FObjectInitializer& ObjectInitializer);
 	
+	void DestroyForTransfer();
+
 	/** get max health */
 	int32 GetMaxHealth() const;
 

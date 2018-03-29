@@ -224,6 +224,10 @@ bool APlayer_FirstPerson::Die(float KillingDamage, struct FDamageEvent const& Da
 	return true;
 }
 
+void APlayer_FirstPerson::DestroyForTransfer() {
+	Destroy();
+}
+
 void APlayer_FirstPerson::OnDeath(float KillingDamage, struct FDamageEvent const& DamageEvent, class APawn* PawnInstigator, class AActor* DamageCauser){
 	if (bIsDying)
 	{

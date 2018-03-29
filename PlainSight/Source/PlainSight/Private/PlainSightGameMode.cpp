@@ -5,6 +5,7 @@
 #include "Player/PlainSightPlayerController.h"
 #include "Player/PlainSightPlayerState.h"
 #include "PlainSightGameState.h"
+#include "Player_FirstPerson.h"
 #include "ConstructorHelpers.h"
 
 APlainSightGameMode::APlainSightGameMode()
@@ -56,13 +57,21 @@ void APlainSightGameMode::DefaultTimer()
 			if (GetMatchState() == MatchState::WaitingPostMatch)
 			{
 				GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, TEXT("Restarting"));
+				/*for (TActorIterator<AActor> It(GetWorld(), DefaultPawnClass); It; ++It)
+				{
+					APlayer_FirstPerson* KillActor = Cast<APlayer_FirstPerson>(*It);
+					if (KillActor && !KillActor->IsPendingKill())
+					{
+						KillActor->DestroyForTransfer();
+					}
+				}*/
 				RestartGame();
 			}
 			else if (GetMatchState() == MatchState::InProgress)
 			{
-				//FinishMatch();
+				FinishMatch();
 				GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, TEXT("Ending"));
-				EndMatch();
+				//EndMatch();
 
 				// Send end round events
 				/*for (FConstControllerIterator It = GetWorld()->GetControllerIterator(); It; ++It)
@@ -85,6 +94,10 @@ void APlainSightGameMode::DefaultTimer()
 			}
 		}
 	}
+}
+
+void APlainSightGameMode::FinishMatch() {
+	EndMatch();
 }
 
 void APlainSightGameMode::Killed(AController* Killer, AController* KilledPlayer, APawn* KilledPawn, const UDamageType* DamageType)
