@@ -15,6 +15,8 @@ UPlainSightGameInstance::UPlainSightGameInstance(const FObjectInitializer& Objec
 	/** Bind function for DESTROYING a Session */
 	OnDestroySessionCompleteDelegate = FOnDestroySessionCompleteDelegate::CreateUObject(this, &UPlainSightGameInstance::OnDestroySessionComplete);
 
+	TimeLimit = 300;
+
 	MenuWidget = NULL;
 }
 

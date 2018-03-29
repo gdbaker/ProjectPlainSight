@@ -170,4 +170,7 @@ class PLAINSIGHT_API UPlainSightGameInstance : public UGameInstance
 
 	UFUNCTION(BlueprintCallable, Category = "Network")
 	void DestroySessionAndLeaveGame();
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Time")
+	int32 TimeLimit;
 };

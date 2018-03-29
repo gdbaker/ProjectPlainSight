@@ -18,7 +18,7 @@ class PLAINSIGHT_API APlainSightGameState : public AGameState
 
 public:
 	/** time left for warmup / match */
-	UPROPERTY(BlueprintReadOnly, Transient, Replicated)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient, Replicated)
 	int32 RemainingTime;
 
 	UFUNCTION(BlueprintCallable, Category = "Scores")

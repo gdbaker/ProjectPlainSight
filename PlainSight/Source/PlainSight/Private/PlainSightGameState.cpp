@@ -2,11 +2,13 @@
 
 #include "PlainSightGameState.h"
 #include "PlainSight.h"
+#include "PlainSightGameInstance.h"
 #include "UnrealNetwork.h"
 
 APlainSightGameState::APlainSightGameState(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {
-	RemainingTime = 0;
+	UPlainSightGameInstance * GameInstance = Cast<UPlainSightGameInstance>(GetGameInstance());
+	RemainingTime = GameInstance->TimeLimit;
 }
 
 void APlainSightGameState::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLifetimeProps) const

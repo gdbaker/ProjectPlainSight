@@ -20,6 +20,12 @@ APlainSightGameMode::APlainSightGameMode()
 	GameStateClass = APlainSightGameState::StaticClass();
 }
 
+void APlainSightGameMode::Tick(float DeltaSeconds)
+{
+	Super::Tick(DeltaSeconds);
+
+}
+
 AActor * APlainSightGameMode::ChoosePlayerStart_Implementation(AController * Player)
 {
 	return Super::ChoosePlayerStart_Implementation(Player);
@@ -49,11 +55,13 @@ void APlainSightGameMode::DefaultTimer()
 		{
 			if (GetMatchState() == MatchState::WaitingPostMatch)
 			{
+				GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, TEXT("Restarting"));
 				RestartGame();
 			}
 			else if (GetMatchState() == MatchState::InProgress)
 			{
 				//FinishMatch();
+				GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, TEXT("Ending"));
 				EndMatch();
 
 				// Send end round events
@@ -72,6 +80,7 @@ void APlainSightGameMode::DefaultTimer()
 			}
 			else if (GetMatchState() == MatchState::WaitingToStart)
 			{
+				GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, TEXT("Starting"));
 				StartMatch();
 			}
 		}

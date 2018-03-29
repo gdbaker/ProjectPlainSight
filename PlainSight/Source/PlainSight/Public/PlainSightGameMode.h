@@ -25,6 +25,8 @@ class PLAINSIGHT_API APlainSightGameMode : public AGameMode
 
 
 public:
+	virtual void Tick(float DeltaSeconds) override;
+
 	APlainSightGameMode();
 	
 	/** select best spawn point for player */
