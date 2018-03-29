@@ -34,4 +34,7 @@ public:
 
 	UFUNCTION(exec, BlueprintCallable, Category = "Texture")
 		virtual void CallMud();
+
+	UFUNCTION(exec, BlueprintCallable, Category = "Texture")
+		virtual void CallClean();
 };

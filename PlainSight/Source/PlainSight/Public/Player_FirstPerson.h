@@ -149,8 +149,12 @@ public:
 	UFUNCTION(reliable, server, WithValidation)
 		void SwitchTexture();
 
+	UFUNCTION(reliable, server, WithValidation)
+		void InvisTexture();
+
 	UFUNCTION(BlueprintImplementableEvent, category = "")
 		void opacityinvisible();
+
 	UFUNCTION(BlueprintImplementableEvent, category = "")
 		void opacityvisible();
 

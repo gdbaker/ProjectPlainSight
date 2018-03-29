@@ -74,7 +74,8 @@ void APlayer_FirstPerson::Attack_Implementation(const FVector& StartTrace, const
 		PointDmg.Damage = 100.0f;
 		Impact.GetActor()->TakeDamage(PointDmg.Damage, PointDmg, this->Controller, this);
 		//Test for blood
-		GoVisible();
+		//APlainSightPlayerState::IsBloody(true);
+		//GoVisible();
 	}
 
 }
@@ -440,6 +441,11 @@ bool APlayer_FirstPerson::SwitchTexture_Validate()
 	return true;
 }
 
+bool APlayer_FirstPerson::InvisTexture_Validate()
+{
+	return true;
+}
+
 //Changes the texture depending on status of player (muddy/bloody)
 void APlayer_FirstPerson::SwitchTexture_Implementation() {
 
@@ -449,4 +455,15 @@ void APlayer_FirstPerson::SwitchTexture_Implementation() {
 	//} else if (APlainSightPlayerState::IsMuddy) {
 
 	
+}
+
+//goes invis if not bloody or muddy
+void APlayer_FirstPerson::InvisTexture_Implementation() {
+
+	//if (APlainSightPlayerState::IsMuddy) {
+	//FirstPersonMesh->SetMaterial()
+	GoInvisible();
+	//} else if (APlainSightPlayerState::IsMuddy) {
+
+
 }

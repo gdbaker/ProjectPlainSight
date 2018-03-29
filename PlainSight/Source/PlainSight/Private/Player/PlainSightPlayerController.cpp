@@ -74,4 +74,17 @@ void APlainSightPlayerController::CallMud()
 		}
 		printf("MUDDY");
 	}
+
+
+}
+
+void APlainSightPlayerController::CallClean()
+{
+	if ((GetPawn() != NULL) && ((GetWorld()->TimeSeconds - GetPawn()->CreationTime > 1) || (GetNetMode() == NM_Standalone))) {
+		APlayer_FirstPerson* MyPawn = Cast<APlayer_FirstPerson>(GetPawn());
+		if (MyPawn)
+		{
+			MyPawn->InvisTexture();
+		}
+	}
 }
