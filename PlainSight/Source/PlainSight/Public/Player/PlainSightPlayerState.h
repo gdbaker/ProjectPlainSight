@@ -26,7 +26,6 @@ public:
 	/** player died */
 	void ScoreDeath(APlainSightPlayerState* KilledBy, int32 Points);
 	
-protected:
 	/** number of kills */
 	UPROPERTY(BlueprintReadOnly, Transient, Replicated, Category="Scores")
 	int32 NumKills;
@@ -35,6 +34,7 @@ protected:
 	UPROPERTY(BlueprintReadOnly, Transient, Replicated, Category = "Scores")
 	int32 NumDeaths;
 
+protected:
 	/** whether the user quit the match */
 	UPROPERTY()
 	uint8 bQuitter : 1;

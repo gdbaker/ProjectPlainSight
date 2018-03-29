@@ -21,14 +21,19 @@ APlainSightPlayerState* APlainSightGameState::GetLeader()
 
 	int32 BestPlayer = -1;
 	float BestScore = -1;
+	int32 BestDeaths = 9999;
 
 	for (int32 i = 0; i < PlayerArray.Num(); i++)
 	{
 		const float PlayerScore = PlayerArray[i]->Score;
-		if (BestScore < PlayerScore)
+		if (BestScore <= PlayerScore)
 		{
-			BestScore = PlayerScore;
-			BestPlayer = i;
+			APlainSightPlayerState* TempLeader = Cast<APlainSightPlayerState>(PlayerArray[i]);
+			if (TempLeader->NumDeaths < BestDeaths) {
+				BestScore = PlayerScore;
+				BestPlayer = i;
+				BestDeaths = TempLeader->NumDeaths;
+			}
 		}
 	}
 
