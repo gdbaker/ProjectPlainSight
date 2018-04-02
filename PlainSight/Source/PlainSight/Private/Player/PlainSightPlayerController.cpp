@@ -3,7 +3,6 @@
 #include "PlainSightPlayerController.h"
 #include "Player_FirstPerson.h"
 #include "PlainSight.h"
-#include "Player/PlainSightPlayerState.h"
 
 
 
@@ -61,5 +60,30 @@ void APlainSightPlayerController::MakeInvisible()
 			MyPawn->InvisibleAttack();
 		}
 
+	}
+}
+
+void APlainSightPlayerController::CallMud()
+{
+	if ((GetPawn() != NULL) && ((GetWorld()->TimeSeconds - GetPawn()->CreationTime > 1) || (GetNetMode() == NM_Standalone))){
+		APlayer_FirstPerson* MyPawn = Cast<APlayer_FirstPerson>(GetPawn());
+		if (MyPawn)
+		{
+			MyPawn->SwitchTexture();
+		}
+		printf("MUDDY");
+	}
+
+
+}
+
+void APlainSightPlayerController::CallClean()
+{
+	if ((GetPawn() != NULL) && ((GetWorld()->TimeSeconds - GetPawn()->CreationTime > 1) || (GetNetMode() == NM_Standalone))) {
+		APlayer_FirstPerson* MyPawn = Cast<APlayer_FirstPerson>(GetPawn());
+		if (MyPawn)
+		{
+			MyPawn->InvisTexture();
+		}
 	}
 }

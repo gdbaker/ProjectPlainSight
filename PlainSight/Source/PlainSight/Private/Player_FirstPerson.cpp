@@ -73,6 +73,9 @@ void APlayer_FirstPerson::Attack_Implementation(const FVector& StartTrace, const
 		//change this to a variable at some point for damage
 		PointDmg.Damage = 100.0f;
 		Impact.GetActor()->TakeDamage(PointDmg.Damage, PointDmg, this->Controller, this);
+		//Test for blood
+		//APlainSightPlayerState::IsBloody(true);
+		//GoVisible();
 	}
 
 }
@@ -210,9 +213,19 @@ bool APlayer_FirstPerson::Die(float KillingDamage, struct FDamageEvent const& Da
 		return false;
 	}
 
+	// if this is an environmental death then refer to the previous killer so that they receive credit (knocked into lava pits, etc)
+	UDamageType const* const DamageType = DamageEvent.DamageTypeClass ? DamageEvent.DamageTypeClass->GetDefaultObject<UDamageType>() : GetDefault<UDamageType>();
+	Killer = GetDamageInstigator(Killer, *DamageType);
+
+	AController* const KilledPlayer = (Controller != NULL) ? Controller : Cast<AController>(GetOwner());
+	GetWorld()->GetAuthGameMode<APlainSightGameMode>()->Killed(Killer, KilledPlayer, this, DamageType);
 	OnDeath(KillingDamage, DamageEvent, Killer ? Killer->GetPawn():NULL, DamageCauser);
 
 	return true;
+}
+
+void APlayer_FirstPerson::DestroyForTransfer() {
+	Destroy();
 }
 
 void APlayer_FirstPerson::OnDeath(float KillingDamage, struct FDamageEvent const& DamageEvent, class APawn* PawnInstigator, class AActor* DamageCauser){
@@ -430,4 +443,37 @@ bool APlayer_FirstPerson::IsAlive() const
 void APlayer_FirstPerson::TornOff()
 {
 	SetLifeSpan(25.f);
+}
+
+
+bool APlayer_FirstPerson::SwitchTexture_Validate()
+{
+	return true;
+}
+
+bool APlayer_FirstPerson::InvisTexture_Validate()
+{
+	return true;
+}
+
+//Changes the texture depending on status of player (muddy/bloody)
+void APlayer_FirstPerson::SwitchTexture_Implementation() {
+
+	//if (APlainSightPlayerState::IsMuddy) {
+		//FirstPersonMesh->SetMaterial()
+	GoVisible();
+	//} else if (APlainSightPlayerState::IsMuddy) {
+
+	
+}
+
+//goes invis if not bloody or muddy
+void APlayer_FirstPerson::InvisTexture_Implementation() {
+
+	//if (APlainSightPlayerState::IsMuddy) {
+	//FirstPersonMesh->SetMaterial()
+	GoInvisible();
+	//} else if (APlainSightPlayerState::IsMuddy) {
+
+
 }

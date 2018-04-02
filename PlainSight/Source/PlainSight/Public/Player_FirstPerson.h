@@ -30,6 +30,8 @@ public:
 	// Constructor for AFPSCharacter
 	APlayer_FirstPerson(const FObjectInitializer& ObjectInitializer);
 	
+	void DestroyForTransfer();
+
 	/** get max health */
 	int32 GetMaxHealth() const;
 
@@ -146,8 +148,15 @@ public:
 	UFUNCTION(reliable, server, WithValidation)
 	void InvisibleAttack();
 
+	UFUNCTION(reliable, server, WithValidation)
+		void SwitchTexture();
+
+	UFUNCTION(reliable, server, WithValidation)
+		void InvisTexture();
+
 	UFUNCTION(BlueprintImplementableEvent, category = "")
 		void opacityinvisible();
+
 	UFUNCTION(BlueprintImplementableEvent, category = "")
 		void opacityvisible();
 
