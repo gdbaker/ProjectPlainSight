@@ -16,6 +16,8 @@ class PLAINSIGHT_API APlainSightPlayerState : public APlayerState
 	APlainSightPlayerState(const FObjectInitializer& ObjectInitializer);
 
 public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Invisible")
+		uint32  IsInvisible : 1;
 	/** Identifies if pawn is in its dying state */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attack")
 		uint32  IsAttacking : 1;
