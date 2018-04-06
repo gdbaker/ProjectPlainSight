@@ -69,7 +69,13 @@ APlainSightPlayerState* APlainSightGameState::GetLeader()
 
 	//APlainSightPlayerState* Leader = Cast<APlainSightPlayerState>(PlayerArray[BestPlayer]);
 
-	return TempPlayerArray[0];
+	if (TempPlayerArray.Num() > 0) {
+		return TempPlayerArray[0];
+	}
+	else {
+		APlainSightPlayerState * Leader = Cast<APlainSightPlayerState>(PlayerArray[0]);
+		return Leader;
+	}
 }
 
 APlainSightPlayerState* APlainSightGameState::GetSecondPlace()
