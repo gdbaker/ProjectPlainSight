@@ -73,8 +73,8 @@ APlainSightPlayerState* APlainSightGameState::GetLeader()
 		return TempPlayerArray[0];
 	}
 	else {
-		APlainSightPlayerState * Leader = Cast<APlainSightPlayerState>(PlayerArray[0]);
-		return Leader;
+
+		return nullptr;
 	}
 }
 
