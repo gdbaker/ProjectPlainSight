@@ -36,6 +36,8 @@ bool UPlainSightGameInstance::HostSession(TSharedPtr<const FUniqueNetId> UserId,
 			There are more with SessionSettings.Set(...);
 			For example the Map or the GameMode/Type.
 			*/
+
+			//GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("Lan %d"), bIsLAN));
 			SessionSettings = MakeShareable(new FOnlineSessionSettings());
 
 			SessionSettings->bIsLANMatch = bIsLAN;

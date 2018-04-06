@@ -8,7 +8,8 @@ public class PlainSightTarget : TargetRules
 	public PlainSightTarget(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Game;
+        bUsesSteam = true;
 
-		ExtraModuleNames.AddRange( new string[] { "PlainSight" } );
+        ExtraModuleNames.AddRange( new string[] { "PlainSight" } );
 	}
 }

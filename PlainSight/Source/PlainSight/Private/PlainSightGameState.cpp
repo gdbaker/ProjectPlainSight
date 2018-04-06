@@ -17,10 +17,39 @@ void APlainSightGameState::GetLifetimeReplicatedProps(TArray< FLifetimeProperty 
 	DOREPLIFETIME(APlainSightGameState, RemainingTime);
 }
 
+TArray<APlainSightPlayerState*> APlainSightGameState::SortPlayersArray() {
+
+	TArray<APlainSightPlayerState*> TempPlayerArray;
+
+	for (int32 i = 0; i < PlayerArray.Num(); i++) {
+
+		if (APlainSightPlayerState* TempPlayer = Cast<APlainSightPlayerState>(PlayerArray[i]))
+		{
+			TempPlayerArray.Add(TempPlayer);
+		}
+	}
+
+	TempPlayerArray.Sort(APlainSightGameState::ConstPredicate);
+
+	return TempPlayerArray;
+}
+
 APlainSightPlayerState* APlainSightGameState::GetLeader()
 {
+	//GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("Here")));
+	TArray<APlainSightPlayerState*> TempPlayerArray;
 
-	int32 BestPlayer = -1;
+	for (int32 i = 0; i < PlayerArray.Num(); i++) {
+
+		if (APlainSightPlayerState* TempPlayer = Cast<APlainSightPlayerState>(PlayerArray[i]))
+		{
+			TempPlayerArray.Add(TempPlayer);
+		}
+	}
+
+	TempPlayerArray.Sort(APlainSightGameState::ConstPredicate);
+
+	/*int32 BestPlayer = -1;
 	float BestScore = -1;
 	int32 BestDeaths = 9999;
 
@@ -36,16 +65,27 @@ APlainSightPlayerState* APlainSightGameState::GetLeader()
 				BestDeaths = TempLeader->NumDeaths;
 			}
 		}
-	}
+	}*/
 
-	APlainSightPlayerState* Leader = Cast<APlainSightPlayerState>(PlayerArray[BestPlayer]);
+	//APlainSightPlayerState* Leader = Cast<APlainSightPlayerState>(PlayerArray[BestPlayer]);
 
-	return Leader;
+	return TempPlayerArray[0];
 }
 
 APlainSightPlayerState* APlainSightGameState::GetSecondPlace()
 {
-	int32 BestPlayer = -1;
+	TArray<APlainSightPlayerState*> TempPlayerArray;
+
+	for (int32 i = 0; i < PlayerArray.Num(); i++) {
+
+		if (APlainSightPlayerState* TempPlayer = Cast<APlainSightPlayerState>(PlayerArray[i]))
+		{
+			TempPlayerArray.Add(TempPlayer);
+		}
+	}
+
+	TempPlayerArray.Sort(APlainSightGameState::ConstPredicate);
+	/*int32 BestPlayer = -1;
 	int32 SecondPlayer = -1;
 	float BestScore = -1;
 	float SecondScore = -1;
@@ -69,7 +109,13 @@ APlainSightPlayerState* APlainSightGameState::GetSecondPlace()
 		SecondPlayer = BestPlayer;
 	}
 
-	APlainSightPlayerState* Leader = Cast<APlainSightPlayerState>(PlayerArray[SecondPlayer]);
-	return Leader;
+	APlainSightPlayerState* Leader = Cast<APlainSightPlayerState>(PlayerArray[SecondPlayer]);*/
+
+	if (TempPlayerArray.Num() > 1) {
+		return TempPlayerArray[1];
+	}
+	else {
+		return TempPlayerArray[0];
+	}
 
 }
