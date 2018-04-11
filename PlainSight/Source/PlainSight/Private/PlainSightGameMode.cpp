@@ -41,7 +41,7 @@ void APlainSightGameMode::PreInitializeComponents()
 {
 	Super::PreInitializeComponents();
 
-	GetWorldTimerManager().SetTimer(TimerHandle_DefaultTimer, this, &APlainSightGameMode::DefaultTimer, GetWorldSettings()->GetEffectiveTimeDilation(), true);
+	GetWorldTimerManager().SetTimer(TimerHandle_DefaultTimer, this, &APlainSightGameMode::DefaultTimer, 1, true);
 }
 
 void APlainSightGameMode::DefaultTimer()
@@ -56,7 +56,7 @@ void APlainSightGameMode::DefaultTimer()
 		{
 			if (GetMatchState() == MatchState::WaitingPostMatch)
 			{
-				GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, TEXT("Restarting"));
+				//GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, TEXT("Restarting"));
 				/*for (TActorIterator<AActor> It(GetWorld(), DefaultPawnClass); It; ++It)
 				{
 					APlayer_FirstPerson* KillActor = Cast<APlayer_FirstPerson>(*It);
@@ -70,7 +70,7 @@ void APlainSightGameMode::DefaultTimer()
 			else if (GetMatchState() == MatchState::InProgress)
 			{
 				FinishMatch();
-				GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, TEXT("Ending"));
+				//GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, TEXT("Ending"));
 				//EndMatch();
 
 				// Send end round events
