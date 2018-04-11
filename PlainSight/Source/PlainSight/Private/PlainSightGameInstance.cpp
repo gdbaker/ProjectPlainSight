@@ -143,7 +143,7 @@ void UPlainSightGameInstance::FindSessions(TSharedPtr<const FUniqueNetId> UserId
 			SessionSearch = MakeShareable(new FOnlineSessionSearch());
 
 			SessionSearch->bIsLanQuery = bIsLAN;
-			SessionSearch->MaxSearchResults = 20;
+			SessionSearch->MaxSearchResults = 99999;
 			SessionSearch->PingBucketSize = 50;
 
 			// We only want to set this Query Setting if "bIsPresence" is true
@@ -345,10 +345,10 @@ void UPlainSightGameInstance::JoinOnlineGame(FSessionResult chosenSession)
 	ULocalPlayer* const Player = GetFirstGamePlayer();
 
 	// Just a SearchResult where we can save the one we want to use, for the case we find more than one!
-	FOnlineSessionSearchResult SearchResult;
+	//FOnlineSessionSearchResult SearchResult;
 
 	// If the Array is not empty, we can go through it
-	if (SessionSearch->SearchResults.Num() > 0)
+	/*if (SessionSearch->SearchResults.Num() > 0)
 	{
 		for (int32 i = 0; i < SessionSearch->SearchResults.Num(); i++)
 		{
@@ -364,7 +364,8 @@ void UPlainSightGameInstance::JoinOnlineGame(FSessionResult chosenSession)
 				break;
 			}
 		}
-	}
+	}*/
+	JoinSession(Player->GetPreferredUniqueNetId(), GameSessionName, chosenSession.ChosenSession);
 }
 
 void UPlainSightGameInstance::DestroySessionAndLeaveGame()
