@@ -309,13 +309,13 @@ void UPlainSightGameInstance::StartOnlineGame(FString Name, FString Map, int32 M
 	HostSession(Player->GetPreferredUniqueNetId(), GameSessionName, Name, Map, Lan, true, MaxPlayers);
 }
 
-void UPlainSightGameInstance::FindOnlineGames(UUserWidget *Menu)
+void UPlainSightGameInstance::FindOnlineGames(UUserWidget *Menu, bool Lan)
 {
 	MenuWidget = Menu;
 
 	ULocalPlayer* const Player = GetFirstGamePlayer();
 	
-	FindSessions(Player->GetPreferredUniqueNetId(), true, true);
+	FindSessions(Player->GetPreferredUniqueNetId(), Lan, true);
 }
 
 TArray<FSessionResult> UPlainSightGameInstance::GetSessionsList()

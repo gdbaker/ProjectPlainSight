@@ -160,7 +160,7 @@ class PLAINSIGHT_API UPlainSightGameInstance : public UGameInstance
 	void StartOnlineGame(FString Name, FString Map, int32 MaxPlayers, bool Lan);
 
 	UFUNCTION(BlueprintCallable, Category = "Network")
-	void FindOnlineGames(UUserWidget *Menu);
+	void FindOnlineGames(UUserWidget *Menu, bool Lan);
 
 	UFUNCTION(BlueprintCallable, Category = "Network")
 	TArray<FSessionResult> GetSessionsList();
